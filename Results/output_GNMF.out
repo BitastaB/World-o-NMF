@@ -1,0 +1,19 @@
+Dataset : jaffe.mat
+max iterations : 100
+myeps_1 : 1e-12
+myeps_2 : 1e-10
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+##################################################################################################
+ k = 10 :  k_knn = 5  
+ ACC : 98.12206572769952, with theta = 0.1
+ NMI : 97.364566906026, with theta = 0.1
+ Reconstruction Error : 3.493931557758758
+##################################################################################################
+The results of running the Kmeans method 20 times and the average of 20 runs
+##################################################################################################
+k = 10 :  k_knn = 5 
+ ACC : 98.12206572769952, with lambda = 0.1
+ NMI : 97.36456690602598, with lambda = 0.1
+ Reconstruction Error : 3.493931557758758
+##################################################################################################
+done

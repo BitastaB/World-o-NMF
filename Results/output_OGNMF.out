@@ -1,0 +1,17 @@
+Dataset : jaffe.mat
+max iterations : 100
+myeps_1 : 1e-12
+myeps_2 : 1e-10
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 10 : best max_acc = 81.69014084507043 , with parameters = (10.0, 1), k_knn = 5
+k = 10 : best max_nmi = 87.9442116809448 , with parameters = (10.0, 1), k_knn = 5
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 10 : best avg_acc = 79.24388435878429 , with parameters = (0.1, 0.1), k_knn = 5
+k = 10 : best avg_nmi = 87.37064684024692 , with parameters = (10.0, 0.1), k_knn = 5
+**********************************************************************************************************
+done!
