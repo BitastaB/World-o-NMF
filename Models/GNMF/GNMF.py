@@ -141,10 +141,10 @@ def run_model(matImg, y, k_knn_list, k_list, lambda_list, maxiter, maxiter_kmean
             maxnmi_final[k] = [max(maxNmi[k]), lambda_list[np.argmax(maxNmi[k])]]
             maxrecon_final[k] = [max(maxRecon_reeor[k]), lambda_list[np.argmax(maxRecon_reeor[k])]]
             print(f"##################################################################################################")
-            print(f" k = {k} :  k_knn = {knn}  ")
-            print(f" ACC : {maxacc_final[k][0]}, with theta = {lambda_list[np.argmax(maxAcc[k])]}")
-            print(f" NMI : {maxnmi_final[k][0]}, with theta = {lambda_list[np.argmax(maxNmi[k])]}")
-            print(f" Reconstruction Error : {maxrecon_final[k][0]}")
+            print(f" k_knn = {knn}  ")
+            print(f" k = {k} :  Max ACC : {maxacc_final[k][0]}, with theta = {lambda_list[np.argmax(maxAcc[k])]}")
+            print(f" k = {k} :  Max NMI : {maxnmi_final[k][0]}, with theta = {lambda_list[np.argmax(maxNmi[k])]}")
+            print(f" k = {k} :  Reconstruction Error : {maxrecon_final[k][0]}")
             print(f"##################################################################################################")
         ##
 
@@ -158,10 +158,10 @@ def run_model(matImg, y, k_knn_list, k_list, lambda_list, maxiter, maxiter_kmean
             meannmi_final[k] = [max(meanNmi[k]), lambda_list[np.argmax(meanNmi[k])]]
             meanrecon_final[k] = [max(meanRecon_reeor[k]), lambda_list[np.argmax(meanRecon_reeor[k])]]
             print(f"##################################################################################################")
-            print(f"k = {k} :  k_knn = {knn} ")
-            print(f" ACC : {meanacc_final[k][0]}, with lambda = {lambda_list[np.argmax(meanAcc[k])]}")
-            print(f" NMI : {meannmi_final[k][0]}, with lambda = {lambda_list[np.argmax(meanNmi[k])]}")
-            print(f" Reconstruction Error : {meanrecon_final[k][0]}")
+            print(f" k_knn = {knn} ")
+            print(f" k = {k} :  Avg ACC : {meanacc_final[k][0]}, with lambda = {lambda_list[np.argmax(meanAcc[k])]}")
+            print(f" k = {k} :  Avg NMI : {meannmi_final[k][0]}, with lambda = {lambda_list[np.argmax(meanNmi[k])]}")
+            print(f" k = {k} :  Reconstruction Error : {meanrecon_final[k][0]}")
             print(f"##################################################################################################")
     ##**
     print("done")

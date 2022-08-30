@@ -48,6 +48,11 @@ def ERWNMF(X, nu, k, m, n, maxiter):
 
 def run_model(matImg, y, k_list, maxiter, maxiter_kmeans):
 
+    best_nmi = 0
+    best_acc = 0
+    best_k_acc = 0
+    best_k_nmi = 0
+
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
     norma += 1e-10
@@ -103,6 +108,14 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans):
             avg_lst_acc_k.append(statistics.mean(lst_acc))
             avg_lst_nmi_k.append(statistics.mean(lst_nmi))
 
+        if max(avg_lst_acc_k) > best_acc:
+            best_acc = max(avg_lst_acc_k)
+            best_k_acc = k
+        if max(avg_lst_nmi_k) > best_nmi:
+            best_nmi = max(avg_lst_nmi_k)
+            best_k_nmi = k
+
+
         print(
             "**********************************************************************************************************")
         print("The results of running the Kmeans method 20 times and the report of maximum of 20 runs\n")
@@ -113,5 +126,10 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans):
         print(f"k = {k} : best avg_nmi = {max(avg_lst_nmi_k)} , with nu = {nu_list[np.argmax(avg_lst_nmi_k)]} ")
         print(
             "**********************************************************************************************************")
+
+    print("\n....................................................")
+    print(f" best acc(avg) = {best_acc} for k = {best_k_acc}")
+    print(f" best nmi(avg) = {best_nmi} for k = {best_k_nmi}")
+    print("....................................................")
 
     print(f"done!")

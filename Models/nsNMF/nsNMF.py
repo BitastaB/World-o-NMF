@@ -145,13 +145,13 @@ def computeHm(X, A, r, n, maxiter_inner):
     return Hfinal, E
 
 
-def nsNMF(X, theta, p, n, r, maxiter, maxiter_inner):
-    m = 1
+def nsNMF(X, theta, p, n, r, m, maxiter, maxiter_inner):
     Z, H = pretrain(X, m, r)
     iter = 1
     E = {}
     EE = {iter: (obj(X, Z, H, theta, r, m, p, n))[1]}
-    while iter <= maxiter:
+    err = 1
+    while iter <= maxiter and err >= 1e-06:
         start = 2
         final = m
         B = constructB(Z, H, theta, r, m, start, final)
@@ -176,6 +176,7 @@ def nsNMF(X, theta, p, n, r, maxiter, maxiter_inner):
         A = constructA(Z, theta, p, r, final)
         H[m], _ = computeHm(X, A, r[m], n, maxiter_inner)
         E[iter], EE[iter] = obj(X, Z, H, theta, r, m, p, n)
+        err = (E[iter - 1] - E[iter]) / max(1, E[iter - 1])
 
     final = m
     ZSfinal = constructA(Z, theta, p, r, final)
@@ -183,8 +184,8 @@ def nsNMF(X, theta, p, n, r, maxiter, maxiter_inner):
     return ZSfinal, Hfinal, E, EE
 
 
-def run_model(theta_list, matImg, y, k1_list, k2_list, maxiter, maxiter_inner, maxiter_kmeans):
-
+def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kmeans):
+    l = 1
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
     norma += 1e-10
@@ -198,111 +199,57 @@ def run_model(theta_list, matImg, y, k1_list, k2_list, maxiter, maxiter_inner, m
     # Initialise Kmeans
     kmeans = init_kmeans(y)
 
-    for k1 in k1_list:
-        maxAcc = {}
-        maxNmi = {}
-        maxRecon_reeor = {}
-        ##
-        meanAcc = {}
-        meanNmi = {}
-        meanRecon_reeor = {}
+    for k in k_list:
 
-        for k2 in k2_list:
+        max_lst_acc_k = []
+        max_lst_nmi_k = []
+        max_lst_recon_err_k = []
 
-            maxlst_acc = []
-            maxlst_nmi = []
-            maxlst_recon_err = []
-            ##
-            meanlst_acc = []
-            meanlst_nmi = []
-            meanlst_recon_err = []
+        avg_lst_acc_k = []
+        avg_lst_nmi_k = []
+        avg_lst_recon_err_k = []
 
-            r = {}
-            r[1] = k1
-            r[2] = k2
+        r = {1: k}
+        for theta in theta_list:
+            Z, H, _, _ = nsNMF(X, theta, m, n, r, l, maxiter, maxiter_inner)
 
-            for theta in theta_list:
-                Z, H, _, _ = nsNMF(X, theta, m, n, r, maxiter, maxiter_inner)
+            ## Reconstructed matix
+            X_reconstructed = Z @ H
 
-                ## Reconstructed matix
-                X_reconstructed = Z @ H
+            ## Kmeans task
+            lst_acc = []
+            lst_nmi = []
 
-                ## Kmeans task
-                lst_acc = []
-                lst_nmi = []
-                lst_recon_err = []
+            for i in range(1, maxiter_kmeans):
+                pred = kmeans.fit_predict(H.T)
 
-                for i in range(1, maxiter_kmeans):
-                    pred = []
-                    pred = kmeans.fit_predict(H.T)
+                ## NMI
+                nmi = 100 * evaluate_nmi(y, pred)
 
-                    ## NMI
-                    nmi = 100 * evaluate_nmi(y, pred)
+                ## ACC
+                acc = 100 * accuracy(y, pred)
 
-                    ## ACC
-                    acc = 100 * accuracy(y, pred)
-
-                    ## Reconstruction Error
-                    a = np.linalg.norm(X - X_reconstructed, 'fro')
-                    recon_reeor = (a)  # /n
-
-                    lst_acc.append(acc)
-                    lst_nmi.append(nmi)
-                    lst_recon_err.append(recon_reeor)
-                    ## End for
-
-                ##
-                maxlst_acc.append(max(lst_acc))
-                maxlst_nmi.append(max(lst_nmi))
-                maxlst_recon_err.append(max(lst_recon_err))
-
-                ##
-                meanlst_acc.append(statistics.mean(lst_acc))
-                meanlst_nmi.append(statistics.mean(lst_nmi))
-                meanlst_recon_err.append(statistics.mean(lst_recon_err))
+                lst_acc.append(acc)
+                lst_nmi.append(nmi)
                 ## End for
 
-            maxAcc[k2] = maxlst_acc
-            maxNmi[k2] = maxlst_nmi
-            maxRecon_reeor[k2] = maxlst_recon_err
+            ## Add max values to list for one theta
+            max_lst_acc_k.append(max(lst_acc))
+            max_lst_nmi_k.append(max(lst_nmi))
 
-            ##
-            meanAcc[k2] = meanlst_acc
-            meanNmi[k2] = meanlst_nmi
-            meanRecon_reeor[k2] = meanlst_recon_err
-            ## ENd for k2
+            ## Add avg values to list for one theta
+            avg_lst_acc_k.append(statistics.mean(lst_acc))
+            avg_lst_nmi_k.append(statistics.mean(lst_nmi))
 
-        maxacc_final = {}
-        maxnmi_final = {}
-        maxrecon_final = {}
+        print(
+            "**********************************************************************************************************")
+        print("The results of running the Kmeans method 20 times and the report of maximum of 20 runs\n")
+        print(f"k = {k} : best max_acc = {max(max_lst_acc_k)} , with nu = {theta_list[np.argmax(max_lst_acc_k)]}")
+        print(f"k = {k} : best max_nmi = {max(max_lst_nmi_k)} , with nu = {theta_list[np.argmax(max_lst_acc_k)]}")
+        print("\n\nThe results of running the Kmeans method 20 times and the report of average of 20 runs\n")
+        print(f"k = {k} : best avg_acc = {max(avg_lst_acc_k)} , with nu = {theta_list[np.argmax(avg_lst_acc_k)]} ")
+        print(f"k = {k} : best avg_nmi = {max(avg_lst_nmi_k)} , with nu = {theta_list[np.argmax(avg_lst_nmi_k)]} ")
+        print(
+            "**********************************************************************************************************")
 
-        print("The results of running the Kmeans method 20 times and the report of maximum of 20 runs")
-        for k_2 in k2_list:
-            maxacc_final[k_2] = [max(maxAcc[k_2]), theta_list[np.argmax(maxAcc[k_2])]]
-            maxnmi_final[k_2] = [max(maxNmi[k_2]), theta_list[np.argmax(maxNmi[k_2])]]
-            maxrecon_final[k_2] = [max(maxRecon_reeor[k_2]), theta_list[np.argmax(maxRecon_reeor[k_2])]]
-            print(f"##################################################################################################")
-            print(f" k1 = {k1} : k2 = {k_2} ")
-            print(f" ACC : {maxacc_final[k_2][0]}, with theta = {theta_list[np.argmax(maxAcc[k_2])]}")
-            print(f" NMI : {maxnmi_final[k_2][0]}, with theta = {theta_list[np.argmax(maxNmi[k_2])]}")
-            print(f" Reconstruction Error : {maxrecon_final[k_2][0]}")
-            print(f"##################################################################################################")
-        ##
-
-        meanacc_final = {}
-        meannmi_final = {}
-        meanrecon_final = {}
-
-        print("The results of running the Kmeans method 20 times and the average of 20 runs")
-        for k_2 in k2_list:
-            meanacc_final[k_2] = [max(meanAcc[k_2]), theta_list[np.argmax(meanAcc[k_2])]]
-            meannmi_final[k_2] = [max(meanNmi[k_2]), theta_list[np.argmax(meanNmi[k_2])]]
-            meanrecon_final[k_2] = [max(meanRecon_reeor[k_2]), theta_list[np.argmax(meanRecon_reeor[k_2])]]
-            print(f"##################################################################################################")
-            print(f" k1 = {k1} : k2 = {k_2}")
-            print(f" ACC : {meanacc_final[k_2][0]}, with theta = {theta_list[np.argmax(meanAcc[k_2])]}")
-            print(f" NMI : {meannmi_final[k_2][0]}, with theta = {theta_list[np.argmax(meanNmi[k_2])]}")
-            print(f" Reconstruction Error : {meanrecon_final[k_2][0]}")
-            print(f"##################################################################################################")
-    ##**
     print("done")

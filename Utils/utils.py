@@ -10,7 +10,8 @@ def init_kmeans(y):
     return kmeans
 
 
-def print_static(dataset, max_iter, eps_1, eps_2):
+def print_static(model, dataset, max_iter, eps_1, eps_2):
+    print(f"Model : {model}")
     print(f"Dataset : {dataset}")
     print(f"max iterations : {max_iter}")
     print(f"myeps_1 : {eps_1}") if eps_1 else ''

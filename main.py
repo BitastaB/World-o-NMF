@@ -71,7 +71,6 @@ def load_dataset(dataset):
 
 def run_model(model, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1, eps_2, y,
               maxiter_inner, pos_alpha_range, pos_beta_range, lambda_range, k_knn_list):
-
     if model == "DGONMF":
         deepgonmf.run_model(alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1,
                             eps_2, y)
@@ -102,13 +101,12 @@ def run_model(model, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_km
         NMF.run_model(matImg, y, k2_list, maxiter_kmeans)
 
     elif model == "nsNMF":
-        nsNMF.run_model(alphas, matImg, y, k1_list, k2_list, maxiter, maxiter_inner, maxiter_kmeans)
-
+        nsNMF.run_model(alphas, matImg, y, k2_list, maxiter, maxiter_inner, maxiter_kmeans)
 
 
 if __name__ == '__main__':
     dataset = "jaffe"
-    model = "nsNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
+    model = "GNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
     write_to_file = True
 
     if write_to_file:
@@ -120,7 +118,7 @@ if __name__ == '__main__':
 
     # Setting parameters and hyper-parameters
     l = 2  # The number of layers
-    k1_list = [80]  # [80, 100, 120, 200]  # The size of the first layer
+    k1_list = [80, 100, 120, 200]  # The size of the first layer
     k2_list = [10, 20, 30, 40, 50, 60, 70]
     alpha_range = [1e-03, 1e-02, 1e-01, 1e01]
     beta_range = [1e-02, 1e-01, 1]
@@ -135,7 +133,7 @@ if __name__ == '__main__':
     eps_2 = 1e-10
 
     # Print static params
-    print_static(dataset, max_iter, eps_1, eps_2)
+    print_static(model, dataset, max_iter, eps_1, eps_2)
 
     # Run model
     run_model(model, alpha_range, beta_range, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, max_iter, eps_1,
