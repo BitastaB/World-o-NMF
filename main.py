@@ -105,12 +105,12 @@ def run_model(model, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_km
 
 
 if __name__ == '__main__':
-    dataset = "jaffe"
-    model = "GNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
+    dataset = "orl"
+    model = "ERWNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
     write_to_file = True
 
     if write_to_file:
-        path = f"Results/output_{model}.out"
+        path = f"Results/{dataset}/output_{model}_{dataset}.out"
         sys.stdout = open(path, 'w')
 
     # Load dataset
@@ -125,7 +125,7 @@ if __name__ == '__main__':
     pos_alpha_range = [1e03, 1e04, 1e05, 1e06]
     pos_beta_range = [10, 100, 1000]
     lambda_range = [1, 10, 100]
-    k_knn_list = [5]#[3, 5, 6, 11, 21]
+    k_knn_list = [3, 5, 6, 11, 21]
     max_iter = 100  # Maximum Number of Iterations
     maxiter_inner = 100
     maxiter_kmeans = 20

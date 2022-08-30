@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 
 ## ERWNMF
 def erwnmf_lists(rnd):
-    with open('Results/output_ERWNMF.out') as f:
+    with open('Results/jaffe/output_ERWNMF_jaffe.out') as f:
         line_list = list(f)
         acc_list = []
         nmi_list = []
@@ -22,7 +22,7 @@ def erwnmf_lists(rnd):
 
 # Standard NMF
 def nmf_lists(rnd):
-    with open('Results/output_NMF.out') as f:
+    with open('Results/jaffe/output_NMF_jaffe.out') as f:
         line_list = list(f)
         acc_list = []
         nmi_list = []
@@ -41,7 +41,7 @@ def nmf_lists(rnd):
 
 # GNMF
 def gnmf_lists(rnd):
-    with open('Results/output_GNMF.out') as f:
+    with open('Results/jaffe/output_GNMF_jaffe.out') as f:
         line_list = list(f)
         acc_list = {}
         nmi_list = {}
