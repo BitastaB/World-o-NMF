@@ -256,8 +256,8 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
             maxrecon_final[k_2] = [max(maxRecon_reeor[k_2]), parameters[np.argmax(maxRecon_reeor[k_2])]]
             print(f"##################################################################################################")
             print(f" k1 = {k_1} : k2 = {k_2} ")
-            print(f" ACC : {maxacc_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(maxAcc[k_2])]}")
-            print(f" NMI : {maxnmi_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(maxNmi[k_2])]}")
+            print(f" Max ACC : {maxacc_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(maxAcc[k_2])]}")
+            print(f" Max NMI : {maxnmi_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(maxNmi[k_2])]}")
             print(f" Reconstruction Error : {maxrecon_final[k_2][0]}")
             print(f"##################################################################################################")
         ##
@@ -273,8 +273,8 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
             meanrecon_final[k_2] = [max(meanRecon_reeor[k_2]), parameters[np.argmax(meanRecon_reeor[k_2])]]
             print(f"##################################################################################################")
             print(f" k1 = {k_1} : k2 = {k_2}")
-            print(f" ACC : {meanacc_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(meanAcc[k_2])]}")
-            print(f" NMI : {meannmi_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(meanNmi[k_2])]}")
+            print(f" Avg ACC : {meanacc_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(meanAcc[k_2])]}")
+            print(f" Avg NMI : {meannmi_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(meanNmi[k_2])]}")
             print(f" Reconstruction Error : {meanrecon_final[k_2][0]}")
             print(f"##################################################################################################")
 

@@ -175,8 +175,8 @@ def run_model(matImg, y, alpha_list, beta_list, k_knn_range, k_list, lambda_list
                 print(
                     f"##################################################################################################")
                 print(f" k = {k} : alpha,beta = {p} : k_knn = {knn}")
-                print(f" ACC : {maxacc_final[p][0]}, with lambda = {lambda_list[np.argmax(maxAcc[p])]}")
-                print(f" NMI : {maxnmi_final[p][0]}, with lambda = {lambda_list[np.argmax(maxNmi[p])]}")
+                print(f" Max ACC : {maxacc_final[p][0]}, with lambda = {lambda_list[np.argmax(maxAcc[p])]}")
+                print(f" Max NMI : {maxnmi_final[p][0]}, with lambda = {lambda_list[np.argmax(maxNmi[p])]}")
                 print(
                     f"##################################################################################################")
             ##
@@ -191,8 +191,8 @@ def run_model(matImg, y, alpha_list, beta_list, k_knn_range, k_list, lambda_list
                 print(
                     f"##################################################################################################")
                 print(f" k1 = {k} : alpha, beta = {p} : k_knn = {knn}")
-                print(f" ACC : {meanacc_final[p][0]}, with lambda = {lambda_list[np.argmax(meanAcc[p])]}")
-                print(f" NMI : {meannmi_final[p][0]}, with lambda = {lambda_list[np.argmax(meanNmi[p])]}")
+                print(f" Avg ACC : {meanacc_final[p][0]}, with lambda = {lambda_list[np.argmax(meanAcc[p])]}")
+                print(f" Avg NMI : {meannmi_final[p][0]}, with lambda = {lambda_list[np.argmax(meanNmi[p])]}")
                 print(
                     f"##################################################################################################")
         ##**

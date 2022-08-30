@@ -1,426 +1,426 @@
 Model : OGNMF
-Dataset : jaffe.mat
+Dataset : warpAR10P.mat
 max iterations : 100
 myeps_1 : 1e-12
 myeps_2 : 1e-10
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 10 : best max_acc = 87.32394366197182 , with parameters = (10.0, 0.1), k_knn = 3
-k = 10 : best max_nmi = 86.14043733575659 , with parameters = (10.0, 1), k_knn = 3
+k = 10 : best max_acc = 36.92307692307693 , with parameters = (0.001, 0.1), k_knn = 3
+k = 10 : best max_nmi = 37.13180612330548 , with parameters = (0.001, 1), k_knn = 3
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 10 : best avg_acc = 83.98813936249074 , with parameters = (10.0, 1), k_knn = 3
-k = 10 : best avg_nmi = 83.24731554571414 , with parameters = (10.0, 1), k_knn = 3
+k = 10 : best avg_acc = 31.29554655870445 , with parameters = (0.001, 0.01), k_knn = 3
+k = 10 : best avg_nmi = 32.64621826833014 , with parameters = (0.001, 0.01), k_knn = 3
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 20 : best max_acc = 93.42723004694837 , with parameters = (10.0, 0.01), k_knn = 3
-k = 20 : best max_nmi = 91.92647192260232 , with parameters = (10.0, 0.01), k_knn = 3
+k = 20 : best max_acc = 41.53846153846154 , with parameters = (0.1, 0.1), k_knn = 3
+k = 20 : best max_nmi = 45.78980902710936 , with parameters = (0.01, 1), k_knn = 3
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 20 : best avg_acc = 84.30936496170003 , with parameters = (10.0, 1), k_knn = 3
-k = 20 : best avg_nmi = 89.12713419431732 , with parameters = (10.0, 1), k_knn = 3
+k = 20 : best avg_acc = 35.78947368421053 , with parameters = (10.0, 0.01), k_knn = 3
+k = 20 : best avg_nmi = 37.90245572402618 , with parameters = (10.0, 0.01), k_knn = 3
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 30 : best max_acc = 96.71361502347418 , with parameters = (10.0, 1), k_knn = 3
-k = 30 : best max_nmi = 96.40764313050238 , with parameters = (10.0, 1), k_knn = 3
+k = 30 : best max_acc = 41.53846153846154 , with parameters = (10.0, 0.01), k_knn = 3
+k = 30 : best max_nmi = 44.339076882667555 , with parameters = (10.0, 0.01), k_knn = 3
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 30 : best avg_acc = 94.71213244378552 , with parameters = (10.0, 1), k_knn = 3
-k = 30 : best avg_nmi = 93.88592366017345 , with parameters = (10.0, 1), k_knn = 3
+k = 30 : best avg_acc = 34.493927125506076 , with parameters = (10.0, 0.01), k_knn = 3
+k = 30 : best avg_nmi = 35.53564739030256 , with parameters = (10.0, 0.01), k_knn = 3
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 40 : best max_acc = 98.12206572769952 , with parameters = (10.0, 1), k_knn = 3
-k = 40 : best max_nmi = 97.36331532392157 , with parameters = (10.0, 1), k_knn = 3
+k = 40 : best max_acc = 47.69230769230769 , with parameters = (0.1, 1), k_knn = 3
+k = 40 : best max_nmi = 47.735739877088754 , with parameters = (0.1, 1), k_knn = 3
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 40 : best avg_acc = 92.83419817148506 , with parameters = (10.0, 0.1), k_knn = 3
-k = 40 : best avg_nmi = 93.11930772425836 , with parameters = (10.0, 0.1), k_knn = 3
+k = 40 : best avg_acc = 36.43724696356276 , with parameters = (10.0, 0.01), k_knn = 3
+k = 40 : best avg_nmi = 38.119145672496245 , with parameters = (10.0, 0.01), k_knn = 3
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 50 : best max_acc = 96.71361502347418 , with parameters = (0.1, 0.01), k_knn = 3
-k = 50 : best max_nmi = 96.4076431305024 , with parameters = (10.0, 0.01), k_knn = 3
+k = 50 : best max_acc = 37.69230769230769 , with parameters = (0.01, 1), k_knn = 3
+k = 50 : best max_nmi = 43.68918458657716 , with parameters = (10.0, 0.01), k_knn = 3
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 50 : best avg_acc = 90.68445762293057 , with parameters = (10.0, 0.01), k_knn = 3
-k = 50 : best avg_nmi = 91.79260937849492 , with parameters = (10.0, 0.01), k_knn = 3
+k = 50 : best avg_acc = 31.09311740890688 , with parameters = (10.0, 0.01), k_knn = 3
+k = 50 : best avg_nmi = 31.146834165590757 , with parameters = (10.0, 0.01), k_knn = 3
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 60 : best max_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 3
-k = 60 : best max_nmi = 97.36456690602598 , with parameters = (10.0, 0.01), k_knn = 3
+k = 60 : best max_acc = 40.0 , with parameters = (0.1, 1), k_knn = 3
+k = 60 : best max_nmi = 42.92775064666552 , with parameters = (0.01, 1), k_knn = 3
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 60 : best avg_acc = 94.31677786014332 , with parameters = (10.0, 1), k_knn = 3
-k = 60 : best avg_nmi = 93.77509070278361 , with parameters = (10.0, 1), k_knn = 3
+k = 60 : best avg_acc = 32.26720647773279 , with parameters = (0.01, 0.1), k_knn = 3
+k = 60 : best avg_nmi = 33.19346252005519 , with parameters = (0.01, 0.1), k_knn = 3
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 70 : best max_acc = 98.12206572769952 , with parameters = (10.0, 0.1), k_knn = 3
-k = 70 : best max_nmi = 97.36331532392158 , with parameters = (10.0, 0.1), k_knn = 3
+k = 70 : best max_acc = 40.0 , with parameters = (0.01, 0.1), k_knn = 3
+k = 70 : best max_nmi = 40.46995369090989 , with parameters = (0.1, 1), k_knn = 3
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 70 : best avg_acc = 96.34297010130962 , with parameters = (10.0, 1), k_knn = 3
-k = 70 : best avg_nmi = 95.16918667457227 , with parameters = (10.0, 1), k_knn = 3
+k = 70 : best avg_acc = 31.012145748987855 , with parameters = (0.01, 1), k_knn = 3
+k = 70 : best avg_nmi = 30.84337766136309 , with parameters = (0.01, 1), k_knn = 3
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 10 : best max_acc = 90.61032863849765 , with parameters = (10.0, 1), k_knn = 5
-k = 10 : best max_nmi = 90.61210961076299 , with parameters = (10.0, 0.01), k_knn = 5
+k = 10 : best max_acc = 36.15384615384615 , with parameters = (0.1, 1), k_knn = 5
+k = 10 : best max_nmi = 37.23759132647063 , with parameters = (0.1, 0.01), k_knn = 5
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 10 : best avg_acc = 85.8660736347912 , with parameters = (10.0, 0.1), k_knn = 5
-k = 10 : best avg_nmi = 88.58885060932275 , with parameters = (10.0, 1), k_knn = 5
+k = 10 : best avg_acc = 31.29554655870445 , with parameters = (10.0, 1), k_knn = 5
+k = 10 : best avg_nmi = 32.31728555124873 , with parameters = (10.0, 1), k_knn = 5
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 20 : best max_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 5
-k = 20 : best max_nmi = 97.364566906026 , with parameters = (10.0, 0.1), k_knn = 5
+k = 20 : best max_acc = 41.53846153846154 , with parameters = (0.01, 0.1), k_knn = 5
+k = 20 : best max_nmi = 44.457741090798194 , with parameters = (0.01, 1), k_knn = 5
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 20 : best avg_acc = 98.02322708178897 , with parameters = (10.0, 1), k_knn = 5
-k = 20 : best avg_nmi = 97.24936726834025 , with parameters = (10.0, 1), k_knn = 5
+k = 20 : best avg_acc = 35.06072874493927 , with parameters = (10.0, 0.01), k_knn = 5
+k = 20 : best avg_nmi = 37.06620945372606 , with parameters = (10.0, 0.01), k_knn = 5
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 30 : best max_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 5
-k = 30 : best max_nmi = 97.364566906026 , with parameters = (10.0, 0.1), k_knn = 5
+k = 30 : best max_acc = 47.69230769230769 , with parameters = (0.01, 0.1), k_knn = 5
+k = 30 : best max_nmi = 50.2831979792621 , with parameters = (0.01, 0.1), k_knn = 5
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 30 : best avg_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 5
-k = 30 : best avg_nmi = 97.36456690602597 , with parameters = (10.0, 0.01), k_knn = 5
+k = 30 : best avg_acc = 35.9919028340081 , with parameters = (0.1, 0.1), k_knn = 5
+k = 30 : best avg_nmi = 36.68133187088152 , with parameters = (0.1, 0.01), k_knn = 5
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 40 : best max_acc = 98.12206572769952 , with parameters = (10.0, 0.1), k_knn = 5
-k = 40 : best max_nmi = 97.364566906026 , with parameters = (10.0, 1), k_knn = 5
+k = 40 : best max_acc = 43.84615384615385 , with parameters = (0.1, 0.1), k_knn = 5
+k = 40 : best max_nmi = 48.09869005703196 , with parameters = (0.1, 1), k_knn = 5
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 40 : best avg_acc = 97.9738077588337 , with parameters = (10.0, 1), k_knn = 5
-k = 40 : best avg_nmi = 97.24812908888644 , with parameters = (10.0, 1), k_knn = 5
+k = 40 : best avg_acc = 37.08502024291498 , with parameters = (0.1, 1), k_knn = 5
+k = 40 : best avg_nmi = 39.63517733891043 , with parameters = (0.1, 1), k_knn = 5
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 50 : best max_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 5
-k = 50 : best max_nmi = 97.364566906026 , with parameters = (10.0, 0.1), k_knn = 5
+k = 50 : best max_acc = 43.84615384615385 , with parameters = (0.01, 1), k_knn = 5
+k = 50 : best max_nmi = 49.71338437529266 , with parameters = (0.01, 1), k_knn = 5
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 50 : best avg_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 5
-k = 50 : best avg_nmi = 97.36456690602598 , with parameters = (10.0, 0.01), k_knn = 5
+k = 50 : best avg_acc = 35.10121457489878 , with parameters = (0.1, 0.1), k_knn = 5
+k = 50 : best avg_nmi = 38.36419135707195 , with parameters = (0.1, 0.1), k_knn = 5
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 60 : best max_acc = 98.59154929577466 , with parameters = (0.1, 0.01), k_knn = 5
-k = 60 : best max_nmi = 97.80323161274589 , with parameters = (0.1, 0.01), k_knn = 5
+k = 60 : best max_acc = 40.0 , with parameters = (0.01, 0.1), k_knn = 5
+k = 60 : best max_nmi = 45.89074612611512 , with parameters = (10.0, 0.01), k_knn = 5
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 60 : best avg_acc = 98.12206572769952 , with parameters = (10.0, 0.1), k_knn = 5
-k = 60 : best avg_nmi = 97.36456690602598 , with parameters = (10.0, 0.1), k_knn = 5
+k = 60 : best avg_acc = 32.06477732793522 , with parameters = (10.0, 0.1), k_knn = 5
+k = 60 : best avg_nmi = 33.657267163253046 , with parameters = (0.1, 1), k_knn = 5
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 70 : best max_acc = 98.12206572769952 , with parameters = (0.1, 0.01), k_knn = 5
-k = 70 : best max_nmi = 97.364566906026 , with parameters = (10.0, 0.01), k_knn = 5
+k = 70 : best max_acc = 41.53846153846154 , with parameters = (0.01, 1), k_knn = 5
+k = 70 : best max_nmi = 45.93497654921052 , with parameters = (0.01, 1), k_knn = 5
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 70 : best avg_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 5
-k = 70 : best avg_nmi = 97.36456690602598 , with parameters = (10.0, 1), k_knn = 5
+k = 70 : best avg_acc = 32.30769230769231 , with parameters = (0.1, 1), k_knn = 5
+k = 70 : best avg_nmi = 32.87443723898067 , with parameters = (0.1, 1), k_knn = 5
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 10 : best max_acc = 95.77464788732394 , with parameters = (10.0, 1), k_knn = 6
-k = 10 : best max_nmi = 95.05833202470917 , with parameters = (10.0, 1), k_knn = 6
+k = 10 : best max_acc = 32.30769230769231 , with parameters = (0.01, 0.1), k_knn = 6
+k = 10 : best max_nmi = 31.72474972587869 , with parameters = (10.0, 0.1), k_knn = 6
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 10 : best avg_acc = 95.37929330368173 , with parameters = (10.0, 1), k_knn = 6
-k = 10 : best avg_nmi = 94.5738525630273 , with parameters = (10.0, 1), k_knn = 6
+k = 10 : best avg_acc = 27.97570850202429 , with parameters = (0.001, 1), k_knn = 6
+k = 10 : best avg_nmi = 27.8903801965846 , with parameters = (10.0, 1), k_knn = 6
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 20 : best max_acc = 97.65258215962442 , with parameters = (10.0, 1), k_knn = 6
-k = 20 : best max_nmi = 96.55426843557049 , with parameters = (10.0, 1), k_knn = 6
+k = 20 : best max_acc = 38.46153846153847 , with parameters = (0.1, 1), k_knn = 6
+k = 20 : best max_nmi = 43.85522403637977 , with parameters = (0.1, 1), k_knn = 6
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 20 : best avg_acc = 85.22362243637262 , with parameters = (10.0, 1), k_knn = 6
-k = 20 : best avg_nmi = 91.07022957561902 , with parameters = (10.0, 1), k_knn = 6
+k = 20 : best avg_acc = 30.931174089068826 , with parameters = (0.1, 1), k_knn = 6
+k = 20 : best avg_nmi = 31.81685086469048 , with parameters = (0.1, 1), k_knn = 6
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 30 : best max_acc = 98.59154929577466 , with parameters = (10.0, 0.1), k_knn = 6
-k = 30 : best max_nmi = 98.18507411938747 , with parameters = (10.0, 0.1), k_knn = 6
+k = 30 : best max_acc = 31.538461538461537 , with parameters = (10.0, 0.01), k_knn = 6
+k = 30 : best max_nmi = 34.63361500818725 , with parameters = (10.0, 0.01), k_knn = 6
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 30 : best avg_acc = 97.89967877440078 , with parameters = (10.0, 0.1), k_knn = 6
-k = 30 : best avg_nmi = 97.2926630396044 , with parameters = (10.0, 0.1), k_knn = 6
+k = 30 : best avg_acc = 27.004048582995953 , with parameters = (0.01, 0.01), k_knn = 6
+k = 30 : best avg_nmi = 28.694409098468313 , with parameters = (10.0, 0.01), k_knn = 6
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 40 : best max_acc = 98.59154929577466 , with parameters = (0.1, 0.01), k_knn = 6
-k = 40 : best max_nmi = 98.18507411938747 , with parameters = (0.1, 0.1), k_knn = 6
+k = 40 : best max_acc = 38.46153846153847 , with parameters = (0.01, 0.1), k_knn = 6
+k = 40 : best max_nmi = 42.684801309971625 , with parameters = (0.01, 0.1), k_knn = 6
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 40 : best avg_acc = 98.34445268099827 , with parameters = (10.0, 0.01), k_knn = 6
-k = 40 : best avg_nmi = 97.8123548918656 , with parameters = (10.0, 0.01), k_knn = 6
+k = 40 : best avg_acc = 30.48582995951417 , with parameters = (0.1, 1), k_knn = 6
+k = 40 : best avg_nmi = 31.78807920837635 , with parameters = (0.01, 0.1), k_knn = 6
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 50 : best max_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 6
-k = 50 : best max_nmi = 97.364566906026 , with parameters = (10.0, 0.01), k_knn = 6
+k = 50 : best max_acc = 46.15384615384615 , with parameters = (10.0, 0.01), k_knn = 6
+k = 50 : best max_nmi = 47.56362808440749 , with parameters = (0.01, 0.1), k_knn = 6
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 50 : best avg_acc = 98.12206572769952 , with parameters = (10.0, 1), k_knn = 6
-k = 50 : best avg_nmi = 97.36456690602598 , with parameters = (10.0, 1), k_knn = 6
+k = 50 : best avg_acc = 37.044534412955464 , with parameters = (0.1, 1), k_knn = 6
+k = 50 : best avg_nmi = 38.6739550009576 , with parameters = (0.1, 1), k_knn = 6
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 60 : best max_acc = 99.53051643192488 , with parameters = (0.1, 0.01), k_knn = 6
-k = 60 : best max_nmi = 99.17996196918816 , with parameters = (0.1, 0.01), k_knn = 6
+k = 60 : best max_acc = 44.61538461538462 , with parameters = (0.01, 1), k_knn = 6
+k = 60 : best max_nmi = 49.82417054881558 , with parameters = (0.01, 1), k_knn = 6
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 60 : best avg_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 6
-k = 60 : best avg_nmi = 97.36456690602598 , with parameters = (10.0, 0.01), k_knn = 6
+k = 60 : best avg_acc = 35.87044534412956 , with parameters = (0.01, 1), k_knn = 6
+k = 60 : best avg_nmi = 38.567517523223444 , with parameters = (0.01, 1), k_knn = 6
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 70 : best max_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 6
-k = 70 : best max_nmi = 97.364566906026 , with parameters = (10.0, 0.01), k_knn = 6
+k = 70 : best max_acc = 36.15384615384615 , with parameters = (0.1, 0.1), k_knn = 6
+k = 70 : best max_nmi = 42.57853290680633 , with parameters = (0.1, 0.1), k_knn = 6
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 70 : best avg_acc = 98.12206572769952 , with parameters = (10.0, 0.01), k_knn = 6
-k = 70 : best avg_nmi = 97.36456690602597 , with parameters = (10.0, 0.01), k_knn = 6
+k = 70 : best avg_acc = 29.02834008097166 , with parameters = (0.1, 0.1), k_knn = 6
+k = 70 : best avg_nmi = 30.029072621392316 , with parameters = (0.1, 0.1), k_knn = 6
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 10 : best max_acc = 95.30516431924883 , with parameters = (10.0, 1), k_knn = 11
-k = 10 : best max_nmi = 93.0149621363152 , with parameters = (10.0, 1), k_knn = 11
+k = 10 : best max_acc = 32.30769230769231 , with parameters = (0.001, 0.01), k_knn = 11
+k = 10 : best max_nmi = 30.21131260379602 , with parameters = (0.01, 0.1), k_knn = 11
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 10 : best avg_acc = 94.81097108969607 , with parameters = (10.0, 1), k_knn = 11
-k = 10 : best avg_nmi = 92.45217482633359 , with parameters = (10.0, 1), k_knn = 11
+k = 10 : best avg_acc = 28.13765182186235 , with parameters = (0.001, 0.01), k_knn = 11
+k = 10 : best avg_nmi = 25.24386681449761 , with parameters = (0.01, 0.1), k_knn = 11
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 20 : best max_acc = 96.71361502347418 , with parameters = (0.1, 0.1), k_knn = 11
-k = 20 : best max_nmi = 95.17238146896531 , with parameters = (0.1, 0.1), k_knn = 11
+k = 20 : best max_acc = 37.69230769230769 , with parameters = (0.01, 0.1), k_knn = 11
+k = 20 : best max_nmi = 39.87796578183158 , with parameters = (0.01, 1), k_knn = 11
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 20 : best avg_acc = 96.63948603904126 , with parameters = (10.0, 0.01), k_knn = 11
-k = 20 : best avg_nmi = 95.05258230384086 , with parameters = (10.0, 0.01), k_knn = 11
+k = 20 : best avg_acc = 33.19838056680162 , with parameters = (0.01, 0.1), k_knn = 11
+k = 20 : best avg_nmi = 33.44698714381169 , with parameters = (0.01, 1), k_knn = 11
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 30 : best max_acc = 97.65258215962442 , with parameters = (0.1, 0.01), k_knn = 11
-k = 30 : best max_nmi = 96.86552748799674 , with parameters = (0.1, 0.01), k_knn = 11
+k = 30 : best max_acc = 43.84615384615385 , with parameters = (0.1, 1), k_knn = 11
+k = 30 : best max_nmi = 46.14502109413964 , with parameters = (0.01, 1), k_knn = 11
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 30 : best avg_acc = 97.1830985915493 , with parameters = (10.0, 0.1), k_knn = 11
-k = 30 : best avg_nmi = 96.01740305967297 , with parameters = (10.0, 1), k_knn = 11
+k = 30 : best avg_acc = 34.73684210526316 , with parameters = (0.01, 1), k_knn = 11
+k = 30 : best avg_nmi = 36.277122269948485 , with parameters = (0.01, 1), k_knn = 11
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 40 : best max_acc = 96.24413145539906 , with parameters = (10.0, 0.01), k_knn = 11
-k = 40 : best max_nmi = 95.33173556311635 , with parameters = (10.0, 1), k_knn = 11
+k = 40 : best max_acc = 40.0 , with parameters = (0.01, 0.1), k_knn = 11
+k = 40 : best max_nmi = 39.747658780918975 , with parameters = (0.01, 0.1), k_knn = 11
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 40 : best avg_acc = 96.24413145539906 , with parameters = (10.0, 0.01), k_knn = 11
-k = 40 : best avg_nmi = 95.33173556311633 , with parameters = (10.0, 0.01), k_knn = 11
+k = 40 : best avg_acc = 31.09311740890688 , with parameters = (0.1, 0.01), k_knn = 11
+k = 40 : best avg_nmi = 31.827731960539 , with parameters = (0.1, 0.01), k_knn = 11
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 50 : best max_acc = 97.65258215962442 , with parameters = (0.1, 0.1), k_knn = 11
-k = 50 : best max_nmi = 96.17285983562266 , with parameters = (0.1, 0.1), k_knn = 11
+k = 50 : best max_acc = 37.69230769230769 , with parameters = (0.1, 1), k_knn = 11
+k = 50 : best max_nmi = 43.751077417004176 , with parameters = (0.01, 1), k_knn = 11
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 50 : best avg_acc = 96.2688411168767 , with parameters = (10.0, 1), k_knn = 11
-k = 50 : best avg_nmi = 95.42377111973042 , with parameters = (0.1, 0.01), k_knn = 11
+k = 50 : best avg_acc = 30.647773279352226 , with parameters = (0.1, 1), k_knn = 11
+k = 50 : best avg_nmi = 32.3930786512445 , with parameters = (0.1, 1), k_knn = 11
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 60 : best max_acc = 97.65258215962442 , with parameters = (0.1, 0.01), k_knn = 11
-k = 60 : best max_nmi = 96.55450424197275 , with parameters = (0.1, 0.01), k_knn = 11
+k = 60 : best max_acc = 39.23076923076923 , with parameters = (0.1, 0.1), k_knn = 11
+k = 60 : best max_nmi = 41.494093865182734 , with parameters = (0.01, 0.1), k_knn = 11
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 60 : best avg_acc = 97.1830985915493 , with parameters = (10.0, 0.1), k_knn = 11
-k = 60 : best avg_nmi = 96.01740305967296 , with parameters = (10.0, 0.1), k_knn = 11
+k = 60 : best avg_acc = 29.79757085020243 , with parameters = (0.01, 1), k_knn = 11
+k = 60 : best avg_nmi = 29.642989753015296 , with parameters = (0.01, 1), k_knn = 11
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 70 : best max_acc = 97.65258215962442 , with parameters = (10.0, 0.1), k_knn = 11
-k = 70 : best max_nmi = 96.82725785960751 , with parameters = (10.0, 0.1), k_knn = 11
+k = 70 : best max_acc = 37.69230769230769 , with parameters = (0.1, 0.1), k_knn = 11
+k = 70 : best max_nmi = 41.13120371417615 , with parameters = (0.01, 0.1), k_knn = 11
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 70 : best avg_acc = 97.20780825302694 , with parameters = (10.0, 0.1), k_knn = 11
-k = 70 : best avg_nmi = 96.04491155538427 , with parameters = (10.0, 0.1), k_knn = 11
+k = 70 : best avg_acc = 31.336032388663966 , with parameters = (0.01, 0.1), k_knn = 11
+k = 70 : best avg_nmi = 32.84056477592559 , with parameters = (0.01, 0.1), k_knn = 11
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 10 : best max_acc = 88.26291079812206 , with parameters = (0.1, 0.1), k_knn = 21
-k = 10 : best max_nmi = 85.5911700213603 , with parameters = (10.0, 0.01), k_knn = 21
+k = 10 : best max_acc = 30.0 , with parameters = (0.01, 0.1), k_knn = 21
+k = 10 : best max_nmi = 33.055826240754755 , with parameters = (0.01, 1), k_knn = 21
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 10 : best avg_acc = 85.10007412898443 , with parameters = (10.0, 1), k_knn = 21
-k = 10 : best avg_nmi = 84.56667180936299 , with parameters = (10.0, 1), k_knn = 21
+k = 10 : best avg_acc = 25.425101214574898 , with parameters = (0.01, 0.1), k_knn = 21
+k = 10 : best avg_nmi = 27.409172966369297 , with parameters = (0.01, 1), k_knn = 21
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 20 : best max_acc = 93.89671361502347 , with parameters = (10.0, 0.1), k_knn = 21
-k = 20 : best max_nmi = 91.01257588679445 , with parameters = (10.0, 0.1), k_knn = 21
+k = 20 : best max_acc = 38.46153846153847 , with parameters = (0.01, 1), k_knn = 21
+k = 20 : best max_nmi = 37.47427512893383 , with parameters = (0.01, 1), k_knn = 21
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 20 : best avg_acc = 92.51297257227576 , with parameters = (10.0, 1), k_knn = 21
-k = 20 : best avg_nmi = 89.18509482524819 , with parameters = (10.0, 0.01), k_knn = 21
+k = 20 : best avg_acc = 29.352226720647774 , with parameters = (0.01, 0.1), k_knn = 21
+k = 20 : best avg_nmi = 29.0661788908436 , with parameters = (0.1, 0.01), k_knn = 21
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 30 : best max_acc = 94.83568075117371 , with parameters = (0.1, 0.01), k_knn = 21
-k = 30 : best max_nmi = 92.54460341597937 , with parameters = (0.1, 0.01), k_knn = 21
+k = 30 : best max_acc = 32.30769230769231 , with parameters = (0.01, 1), k_knn = 21
+k = 30 : best max_nmi = 36.088352103018536 , with parameters = (0.1, 1), k_knn = 21
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 30 : best avg_acc = 90.78329626884111 , with parameters = (10.0, 0.01), k_knn = 21
-k = 30 : best avg_nmi = 87.00613497607092 , with parameters = (10.0, 0.01), k_knn = 21
+k = 30 : best avg_acc = 28.663967611336034 , with parameters = (0.01, 1), k_knn = 21
+k = 30 : best avg_nmi = 29.36471343357356 , with parameters = (0.01, 0.01), k_knn = 21
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 40 : best max_acc = 94.36619718309859 , with parameters = (0.1, 0.01), k_knn = 21
-k = 40 : best max_nmi = 91.82582850965859 , with parameters = (0.1, 0.01), k_knn = 21
+k = 40 : best max_acc = 40.76923076923077 , with parameters = (0.1, 0.01), k_knn = 21
+k = 40 : best max_nmi = 43.97287193096837 , with parameters = (0.1, 0.01), k_knn = 21
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 40 : best avg_acc = 93.92142327650112 , with parameters = (0.1, 0.01), k_knn = 21
-k = 40 : best avg_nmi = 91.18154593009746 , with parameters = (0.1, 0.1), k_knn = 21
+k = 40 : best avg_acc = 32.955465587044536 , with parameters = (0.01, 0.1), k_knn = 21
+k = 40 : best avg_nmi = 35.8782524656463 , with parameters = (0.01, 0.1), k_knn = 21
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 50 : best max_acc = 96.24413145539906 , with parameters = (0.1, 0.1), k_knn = 21
-k = 50 : best max_nmi = 94.68394802978727 , with parameters = (0.1, 0.1), k_knn = 21
+k = 50 : best max_acc = 39.23076923076923 , with parameters = (0.1, 0.01), k_knn = 21
+k = 50 : best max_nmi = 39.915481489696845 , with parameters = (0.01, 1), k_knn = 21
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 50 : best avg_acc = 93.40252038547072 , with parameters = (0.1, 1), k_knn = 21
-k = 50 : best avg_nmi = 91.05064986556965 , with parameters = (0.1, 1), k_knn = 21
+k = 50 : best avg_acc = 30.89068825910931 , with parameters = (0.1, 1), k_knn = 21
+k = 50 : best avg_nmi = 32.08586692675172 , with parameters = (0.01, 0.1), k_knn = 21
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 60 : best max_acc = 95.30516431924883 , with parameters = (0.1, 0.01), k_knn = 21
-k = 60 : best max_nmi = 93.0660827135658 , with parameters = (0.1, 1), k_knn = 21
+k = 60 : best max_acc = 42.30769230769231 , with parameters = (0.1, 0.1), k_knn = 21
+k = 60 : best max_nmi = 42.19974571829249 , with parameters = (0.1, 1), k_knn = 21
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 60 : best avg_acc = 94.53916481344206 , with parameters = (0.1, 1), k_knn = 21
-k = 60 : best avg_nmi = 92.18579410252168 , with parameters = (0.1, 1), k_knn = 21
+k = 60 : best avg_acc = 30.121457489878544 , with parameters = (0.01, 0.1), k_knn = 21
+k = 60 : best avg_nmi = 30.714368849553647 , with parameters = (0.01, 0.1), k_knn = 21
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 70 : best max_acc = 95.30516431924883 , with parameters = (0.1, 0.01), k_knn = 21
-k = 70 : best max_nmi = 93.06608271356582 , with parameters = (0.1, 1), k_knn = 21
+k = 70 : best max_acc = 36.15384615384615 , with parameters = (0.01, 1), k_knn = 21
+k = 70 : best max_nmi = 38.22025953054237 , with parameters = (0.1, 0.1), k_knn = 21
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 70 : best avg_acc = 94.9592290585619 , with parameters = (0.1, 1), k_knn = 21
-k = 70 : best avg_nmi = 92.62974338453144 , with parameters = (0.1, 1), k_knn = 21
+k = 70 : best avg_acc = 28.21862348178138 , with parameters = (0.01, 1), k_knn = 21
+k = 70 : best avg_nmi = 28.41378936051548 , with parameters = (0.01, 1), k_knn = 21
 **********************************************************************************************************
 done!

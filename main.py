@@ -105,8 +105,8 @@ def run_model(model, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_km
 
 
 if __name__ == '__main__':
-    dataset = "orl"
-    model = "ERWNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
+    dataset = "jaffe"
+    model = "DGONMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
     write_to_file = True
 
     if write_to_file:

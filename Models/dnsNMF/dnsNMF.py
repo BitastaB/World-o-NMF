@@ -282,8 +282,8 @@ def run_model(l, theta_list, matImg, y, k1_list, k2_list, maxiter, maxiter_inner
             maxrecon_final[k_2] = [max(maxRecon_reeor[k_2]), theta_list[np.argmax(maxRecon_reeor[k_2])]]
             print(f"##################################################################################################")
             print(f" k1 = {k1} : k2 = {k_2} ")
-            print(f" ACC : {maxacc_final[k_2][0]}, with theta = {theta_list[np.argmax(maxAcc[k_2])]}")
-            print(f" NMI : {maxnmi_final[k_2][0]}, with theta = {theta_list[np.argmax(maxNmi[k_2])]}")
+            print(f" Max ACC : {maxacc_final[k_2][0]}, with theta = {theta_list[np.argmax(maxAcc[k_2])]}")
+            print(f" Max NMI : {maxnmi_final[k_2][0]}, with theta = {theta_list[np.argmax(maxNmi[k_2])]}")
             print(f" Reconstruction Error : {maxrecon_final[k_2][0]}")
             print(f"##################################################################################################")
         ##
@@ -299,8 +299,8 @@ def run_model(l, theta_list, matImg, y, k1_list, k2_list, maxiter, maxiter_inner
             meanrecon_final[k_2] = [max(meanRecon_reeor[k_2]), theta_list[np.argmax(meanRecon_reeor[k_2])]]
             print(f"##################################################################################################")
             print(f" k1 = {k1} : k2 = {k_2}")
-            print(f" ACC : {meanacc_final[k_2][0]}, with theta = {theta_list[np.argmax(meanAcc[k_2])]}")
-            print(f" NMI : {meannmi_final[k_2][0]}, with theta = {theta_list[np.argmax(meanNmi[k_2])]}")
+            print(f" Avg ACC : {meanacc_final[k_2][0]}, with theta = {theta_list[np.argmax(meanAcc[k_2])]}")
+            print(f" Avg NMI : {meannmi_final[k_2][0]}, with theta = {theta_list[np.argmax(meanNmi[k_2])]}")
             print(f" Reconstruction Error : {meanrecon_final[k_2][0]}")
             print(f"##################################################################################################")
     ##**

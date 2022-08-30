@@ -6,90 +6,90 @@ myeps_2 : 1e-10
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 10 : best max_acc = 92.95774647887323 , with nu = 33554432
-k = 10 : best max_nmi = 89.59754868435157 , with nu = 33554432
+k = 10 : best max_acc = 94.36619718309859 , with nu = 8388608
+k = 10 : best max_nmi = 93.39457219471171 , with nu = 8388608
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 10 : best avg_acc = 89.49839387200394 , with nu = 33554432 
-k = 10 : best avg_nmi = 86.65917769224481 , with nu = 33554432 
+k = 10 : best avg_acc = 93.451939708426 , with nu = 8388608 
+k = 10 : best avg_nmi = 92.0154298648431 , with nu = 8388608 
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 20 : best max_acc = 98.59154929577466 , with nu = 4194304
-k = 20 : best max_nmi = 97.81343548701496 , with nu = 4194304
+k = 20 : best max_acc = 98.59154929577466 , with nu = 8388608
+k = 20 : best max_nmi = 97.54037213717822 , with nu = 8388608
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 20 : best avg_acc = 97.28193723745984 , with nu = 4194304 
-k = 20 : best avg_nmi = 96.07590858744469 , with nu = 4194304 
+k = 20 : best avg_acc = 97.28193723745984 , with nu = 8388608 
+k = 20 : best avg_nmi = 95.92044965997967 , with nu = 8388608 
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 30 : best max_acc = 99.06103286384976 , with nu = 8388608
-k = 30 : best max_nmi = 98.64279854417039 , with nu = 8388608
+k = 30 : best max_acc = 100.0 , with nu = 4194304
+k = 30 : best max_nmi = 99.99999999999997 , with nu = 4194304
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 30 : best avg_acc = 98.8139362490734 , with nu = 8388608 
-k = 30 : best avg_nmi = 98.07982573284077 , with nu = 8388608 
+k = 30 : best avg_acc = 99.11045218680503 , with nu = 4194304 
+k = 30 : best avg_nmi = 98.69580291291801 , with nu = 4194304 
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 40 : best max_acc = 100.0 , with nu = 33554432
-k = 40 : best max_nmi = 100.0 , with nu = 33554432
+k = 40 : best max_acc = 100.0 , with nu = 4194304
+k = 40 : best max_nmi = 100.0 , with nu = 4194304
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 40 : best avg_acc = 99.2092908327156 , with nu = 33554432 
-k = 40 : best avg_nmi = 98.69420708749432 , with nu = 33554432 
+k = 40 : best avg_acc = 99.33283914010379 , with nu = 67108864 
+k = 40 : best avg_nmi = 98.83194491718284 , with nu = 67108864 
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 50 : best max_acc = 100.0 , with nu = 16777216
-k = 50 : best max_nmi = 100.0 , with nu = 16777216
+k = 50 : best max_acc = 99.53051643192488 , with nu = 134217728
+k = 50 : best max_nmi = 99.17024529346068 , with nu = 134217728
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 50 : best avg_acc = 99.45638744749196 , with nu = 33554432 
-k = 50 : best avg_nmi = 99.12266828225533 , with nu = 33554432 
+k = 50 : best avg_acc = 98.44329132690882 , with nu = 2147483648 
+k = 50 : best avg_nmi = 98.00391915363785 , with nu = 2147483648 
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 60 : best max_acc = 99.53051643192488 , with nu = 67108864
-k = 60 : best max_nmi = 99.17996196918816 , with nu = 67108864
+k = 60 : best max_acc = 99.53051643192488 , with nu = 4194304
+k = 60 : best max_nmi = 99.18012342600558 , with nu = 4194304
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 60 : best avg_acc = 98.8880652335063 , with nu = 67108864 
-k = 60 : best avg_nmi = 98.16882927433413 , with nu = 67108864 
+k = 60 : best avg_acc = 99.43167778601433 , with nu = 16777216 
+k = 60 : best avg_nmi = 99.03478517292774 , with nu = 16777216 
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 70 : best max_acc = 100.0 , with nu = 8388608
-k = 70 : best max_nmi = 100.0 , with nu = 8388608
+k = 70 : best max_acc = 100.0 , with nu = 16777216
+k = 70 : best max_nmi = 100.0 , with nu = 16777216
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 70 : best avg_acc = 99.62935507783543 , with nu = 1073741824 
-k = 70 : best avg_nmi = 99.34873438404578 , with nu = 1073741824 
+k = 70 : best avg_acc = 98.71509760316283 , with nu = 268435456 
+k = 70 : best avg_nmi = 98.11280666755336 , with nu = 268435456 
 **********************************************************************************************************
 
 ....................................................
- best acc(avg) = 99.62935507783543 for k = 70
- best nmi(avg) = 99.34873438404578 for k = 70
+ best acc(avg) = 99.43167778601433 for k = 60
+ best nmi(avg) = 99.03478517292774 for k = 60
 ....................................................
 done!
