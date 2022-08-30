@@ -2,7 +2,6 @@
 
 from Utils.metrics_evaluation import *
 from sklearn.decomposition import NMF
-from sklearn.cluster import KMeans
 import warnings
 import statistics
 
@@ -149,7 +148,8 @@ def nsNMF(X, theta, p, n, r, m, maxiter, maxiter_inner):
     Z, H = pretrain(X, m, r)
     iter = 1
     E = {}
-    EE = {iter: (obj(X, Z, H, theta, r, m, p, n))[1]}
+    EE = {}
+    E[iter], EE[iter] = obj(X, Z, H, theta, r, m, p, n)
     err = 1
     while iter <= maxiter and err >= 1e-06:
         start = 2
@@ -181,7 +181,7 @@ def nsNMF(X, theta, p, n, r, m, maxiter, maxiter_inner):
     final = m
     ZSfinal = constructA(Z, theta, p, r, final)
     Hfinal = H[m]
-    return ZSfinal, Hfinal, E, EE
+    return ZSfinal, Hfinal, E, EE, iter - 1
 
 
 def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kmeans):
@@ -199,6 +199,9 @@ def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kme
     # Initialise Kmeans
     kmeans = init_kmeans(y)
 
+    ## For convergence comparison
+    iterations = []
+
     for k in k_list:
 
         max_lst_acc_k = []
@@ -211,7 +214,8 @@ def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kme
 
         r = {1: k}
         for theta in theta_list:
-            Z, H, _, _ = nsNMF(X, theta, m, n, r, l, maxiter, maxiter_inner)
+            Z, H, _, _, iter = nsNMF(X, theta, m, n, r, l, maxiter, maxiter_inner)
+            iterations.append(iter)
 
             ## Reconstructed matix
             X_reconstructed = Z @ H
@@ -251,5 +255,5 @@ def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kme
         print(f"k = {k} : best avg_nmi = {max(avg_lst_nmi_k)} , with nu = {theta_list[np.argmax(avg_lst_nmi_k)]} ")
         print(
             "**********************************************************************************************************")
-
+    print(f" Max iterations = {np.max(iterations)}, avg iterations = {statistics.mean(iterations)}")
     print("done")

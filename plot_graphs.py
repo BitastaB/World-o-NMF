@@ -1,6 +1,62 @@
 from matplotlib import pyplot as plt
 
 
+def RSCNMF_lists(dataset, rnd):
+    path = f"Results/{dataset}/output_RSCNMF_{dataset}.out"
+    with open(path) as f:
+        line_list = list(f)
+        acc_list = {}
+        nmi_list = {}
+        for line in line_list:
+            if "Avg ACC" in line:
+                n = line_list.index(line)
+                k = int((line_list[n - 1].split("k1 = ")[1]).split(" : alpha,")[0])
+                acc_val = round(float((line.split("Avg ACC : ")[1]).split(", with ")[0]), rnd)
+                nmi_val = round(float((line_list[n + 1].split("Avg NMI : ")[1]).split(", with ")[0]), rnd)
+
+                if k not in acc_list.keys():
+                    acc_list[k] = acc_val
+                else:
+                    if acc_val > acc_list[k]:
+                        acc_list[k] = acc_val
+
+                if k not in nmi_list.keys():
+                    nmi_list[k] = nmi_val
+                else:
+                    if nmi_val > nmi_list[k]:
+                        nmi_list[k] = nmi_val
+
+    return list(acc_list.values()), list(nmi_list.values())
+
+
+def GRSNFM_lists(dataset, rnd):
+    path = f"Results/{dataset}/output_GRSNMF_{dataset}.out"
+    with open(path) as f:
+        line_list = list(f)
+        acc_list = {}
+        nmi_list = {}
+        for line in line_list:
+            if "Avg ACC" in line:
+                n = line_list.index(line)
+                k = int((line_list[n - 1].split("k = ")[1]).split(" :  ")[0])
+                acc_val = round(float((line.split("Avg ACC : ")[1]).split(", with ")[0]), rnd)
+                nmi_val = round(float((line_list[n + 1].split("Avg NMI : ")[1]).split(", with ")[0]), rnd)
+
+                if k not in acc_list.keys():
+                    acc_list[k] = acc_val
+                else:
+                    if acc_val > acc_list[k]:
+                        acc_list[k] = acc_val
+
+                if k not in nmi_list.keys():
+                    nmi_list[k] = nmi_val
+                else:
+                    if nmi_val > nmi_list[k]:
+                        nmi_list[k] = nmi_val
+
+    return list(acc_list.values()), list(nmi_list.values())
+
+
 def OGNMF_lists(dataset, rnd):
     path = f"Results/{dataset}/output_OGNMF_{dataset}.out"
     with open(path) as f:
@@ -64,11 +120,11 @@ def dnsNMF_lists(dataset, rnd):
         acc_list = {}
         nmi_list = {}
         for line in line_list:
-            if "Avg ACC" in line:
+            if "Max ACC" in line:
                 n = line_list.index(line)
                 k = int(line_list[n - 1].split("k2 = ")[1])
-                acc_val = round((float((line.split(" Avg ACC : ")[1]).split(", with ")[0])), rnd)
-                nmi_val = round((float((line_list[n + 1].split(" Avg NMI : ")[1]).split(", with ")[0])), rnd)
+                acc_val = round((float((line.split("Max ACC : ")[1]).split(", with ")[0])), rnd)
+                nmi_val = round((float((line_list[n + 1].split("Max NMI : ")[1]).split(", with ")[0])), rnd)
                 if k not in acc_list.keys():
                     acc_list[k] = acc_val
                 else:
@@ -180,9 +236,8 @@ def gnmf_lists(dataset, rnd):
         return list(acc_list.values()), list(nmi_list.values())
 
 
-def plot_acc_nmi():
+def plot_acc_nmi(dataset):
     round_upto = 4
-    dataset = "warpAR10P"
     k_list = [10, 20, 30, 40, 50, 60, 70]
 
     # Get average accuracy and nmi values for models
@@ -193,6 +248,8 @@ def plot_acc_nmi():
     dnsNMF_acc_list, dnsNMF_nmi_list = dnsNMF_lists(dataset, round_upto)
     dsNMF_acc_list, dsNMF_nmi_list = dsnmf_lists(dataset, round_upto)
     ognmf_acc_list, ognmf_nmi_list = OGNMF_lists(dataset, round_upto)
+    grsnmf_acc_list, grsnmf_nmi_list = GRSNFM_lists(dataset, round_upto)
+    rscnmf_acc_list, rscnmf_nmi_list = RSCNMF_lists(dataset, round_upto)
 
     # Plotting average accuracy
     plt.plot(k_list, dgonmf_acc_list, label="DGONMF", marker='o')
@@ -202,6 +259,8 @@ def plot_acc_nmi():
     plt.plot(k_list, dnsNMF_acc_list, label="dnsNMF", marker='+')
     plt.plot(k_list, dsNMF_acc_list, label="dsnmf", marker='+')
     plt.plot(k_list, ognmf_acc_list, label="OGNMF", marker='+')
+    plt.plot(k_list, grsnmf_acc_list, label="GRSNMF", marker='+')
+    plt.plot(k_list, rscnmf_acc_list, label="RSCNMF", marker='+')
 
     plt.xlabel("k")
     plt.ylabel("accurancy in %")
@@ -218,6 +277,8 @@ def plot_acc_nmi():
     plt.plot(k_list, dnsNMF_nmi_list, label="dnsNMF", marker='+')
     plt.plot(k_list, dsNMF_nmi_list, label="dsnmf", marker='+')
     plt.plot(k_list, ognmf_nmi_list, label="OGNMF", marker='+')
+    plt.plot(k_list, grsnmf_nmi_list, label="GRSNMF", marker='+')
+    plt.plot(k_list, rscnmf_nmi_list, label="RSCNMF", marker='+')
 
     plt.xlabel("k")
     plt.ylabel("nmi in %")
@@ -266,5 +327,10 @@ def plot_model_performance(model):
 
 
 if __name__ == '__main__':
-    # plot_acc_nmi()
-    plot_model_performance("DGONMF")
+
+    # jaffe, orl, warpAR10P, umist, yale, yaleB
+    dataset = "umist"
+    plot_acc_nmi(dataset)
+
+    # plot_model_performance("DGONMF")
+

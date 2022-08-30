@@ -1,9 +1,12 @@
 import warnings
 
+from ClustersFeatures import ClustersCharacteristics
+
 warnings.filterwarnings('ignore')
 import numpy as np
 import sklearn
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, silhouette_score
+import pandas as pd
 
 
 def linear_assignment(X):
@@ -300,13 +303,20 @@ def accuracy(true_row_labels, predicted_row_labels):
 """Calculate ACC and NMI"""
 
 
-## Calculate NMI
+# Calculate NMI
 def evaluate_nmi(y, pred):
     score = sklearn.metrics.normalized_mutual_info_score(y, pred)
     return score
 
 
-## Calculate ACC
+# Calculate ACC
 def evaluate_accuracy(y, pred):
     acc = accuracy(y, pred)
     return acc
+
+
+def calculate_silhouette_score(X, labels):
+
+    score = silhouette_score(X, labels, metric='euclidean')
+    return score
+

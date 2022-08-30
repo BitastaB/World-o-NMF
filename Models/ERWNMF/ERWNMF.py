@@ -2,7 +2,7 @@ import statistics
 
 import numpy as np
 
-from Utils.metrics_evaluation import evaluate_nmi, accuracy
+from Utils.metrics_evaluation import evaluate_nmi, accuracy, calculate_silhouette_score
 from Utils.utils import init_kmeans
 
 
@@ -46,12 +46,14 @@ def ERWNMF(X, nu, k, m, n, maxiter):
     return W, S, H
 
 
-def run_model(matImg, y, k_list, maxiter, maxiter_kmeans):
+def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
 
     best_nmi = 0
     best_acc = 0
+    best_sil_score = 0
     best_k_acc = 0
     best_k_nmi = 0
+    best_k_sil_Score = 0
 
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
@@ -72,11 +74,11 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans):
     for k in k_list:
         max_lst_acc_k = []
         max_lst_nmi_k = []
-        max_lst_recon_err_k = []
+        max_lst_sil_score_k = []
 
         avg_lst_acc_k = []
         avg_lst_nmi_k = []
-        avg_lst_recon_err_k = []
+        avg_lst_sil_score_k = []
 
         for nu in nu_list:
 
@@ -85,27 +87,34 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans):
             ## Kmeans task
             lst_acc = []
             lst_nmi = []
+            lst_sil_score = []
 
             for i in range(1, maxiter_kmeans):
                 pred = kmeans.fit_predict(H.T)
 
-                ## NMI
+                # NMI
                 nmi = 100 * evaluate_nmi(y, pred)
 
-                ## ACC
+                # ACC
                 acc = 100 * accuracy(y, pred)
+
+                #Silhoutte score
+                silhouette_score = calculate_silhouette_score(H.T, pred)
 
                 lst_acc.append(acc)
                 lst_nmi.append(nmi)
+                lst_sil_score.append(silhouette_score)
                 # End for
 
             # Add max values to list for one theta
             max_lst_acc_k.append(max(lst_acc))
             max_lst_nmi_k.append(max(lst_nmi))
+            max_lst_sil_score_k.append(max(lst_sil_score))
 
             # Add avg values to list for one theta
             avg_lst_acc_k.append(statistics.mean(lst_acc))
             avg_lst_nmi_k.append(statistics.mean(lst_nmi))
+            avg_lst_sil_score_k.append(statistics.mean(lst_sil_score))
 
         if max(avg_lst_acc_k) > best_acc:
             best_acc = max(avg_lst_acc_k)
@@ -113,16 +122,22 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans):
         if max(avg_lst_nmi_k) > best_nmi:
             best_nmi = max(avg_lst_nmi_k)
             best_k_nmi = k
+        if max(avg_lst_sil_score_k) > best_sil_score:
+            best_sil_score = max(avg_lst_sil_score_k)
+            best_k_sil_Score = k
 
 
         print(
             "**********************************************************************************************************")
         print("The results of running the Kmeans method 20 times and the report of maximum of 20 runs\n")
         print(f"k = {k} : best max_acc = {max(max_lst_acc_k)} , with nu = {nu_list[np.argmax(max_lst_acc_k)]}")
-        print(f"k = {k} : best max_nmi = {max(max_lst_nmi_k)} , with nu = {nu_list[np.argmax(max_lst_acc_k)]}")
+        print(f"k = {k} : best max_nmi = {max(max_lst_nmi_k)} , with nu = {nu_list[np.argmax(max_lst_nmi_k)]}")
+        print(f"k = {k} : best max_silhoutte score = {max(max_lst_sil_score_k)} , with nu = {nu_list[np.argmax(max_lst_sil_score_k)]}")
+
         print("\n\nThe results of running the Kmeans method 20 times and the report of average of 20 runs\n")
         print(f"k = {k} : best avg_acc = {max(avg_lst_acc_k)} , with nu = {nu_list[np.argmax(avg_lst_acc_k)]} ")
         print(f"k = {k} : best avg_nmi = {max(avg_lst_nmi_k)} , with nu = {nu_list[np.argmax(avg_lst_nmi_k)]} ")
+        print(f"k = {k} : best avg_silhoutte score = {max(avg_lst_sil_score_k)} , with nu = {nu_list[np.argmax(avg_lst_sil_score_k)]} ")
         print(
             "**********************************************************************************************************")
 
