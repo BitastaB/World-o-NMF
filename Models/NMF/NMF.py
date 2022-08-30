@@ -10,11 +10,12 @@ def run_model(matImg, y, k_list, maxiter_kmeans):
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
     norma += 1e-10
     normal_img = matImg / norma
+    # normal_img = matImg / 255.0
 
     # Initialise Kmeans
     kmeans = init_kmeans(y)
 
-    ## Defeniton of matX
+    ## Definiton of matX
     matX = normal_img.T
 
     for k in k_list:

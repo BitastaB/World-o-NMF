@@ -66,7 +66,6 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans):
     # Initialise Kmeans
     kmeans = init_kmeans(y)
 
-    ## Setting params and hyper params
     a = list(range(22, 33))
     nu_list = np.power(2, a)
 

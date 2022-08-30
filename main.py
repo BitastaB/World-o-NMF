@@ -3,6 +3,7 @@ import sys
 from Models.DGONMF import deepgonmf
 from Models.ERWNMF import ERWNMF
 from Models.GNMF import GNMF
+from Models.GRDSNMF import GRDeepSNMF
 from Models.GRSNMF import GRSNMF
 from Models.NMF import NMF
 from Models.OGNMF import OGNMF
@@ -103,11 +104,14 @@ def run_model(model, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_km
     elif model == "nsNMF":
         nsNMF.run_model(alphas, matImg, y, k2_list, maxiter, maxiter_inner, maxiter_kmeans)
 
+    elif model == "GRDSNMF":
+        GRDeepSNMF.run_model(matImg, y, k_knn_list, k1_list, k2_list, alphas, l, maxiter_kmeans, maxiter, maxiter_inner)
+
 
 if __name__ == '__main__':
     dataset = "jaffe"
-    model = "DGONMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
-    write_to_file = True
+    model = "GRDSNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, GRDSNMF
+    write_to_file = False
 
     if write_to_file:
         path = f"Results/{dataset}/output_{model}_{dataset}.out"
@@ -118,14 +122,14 @@ if __name__ == '__main__':
 
     # Setting parameters and hyper-parameters
     l = 2  # The number of layers
-    k1_list = [80, 100, 120, 200]  # The size of the first layer
-    k2_list = [10, 20, 30, 40, 50, 60, 70]
+    k1_list = [80]#[80, 100, 120, 200]  # The size of the first layer
+    k2_list = [10]#[10, 20, 30, 40, 50, 60, 70]
     alpha_range = [1e-03, 1e-02, 1e-01, 1e01]
     beta_range = [1e-02, 1e-01, 1]
     pos_alpha_range = [1e03, 1e04, 1e05, 1e06]
     pos_beta_range = [10, 100, 1000]
     lambda_range = [1, 10, 100]
-    k_knn_list = [3, 5, 6, 11, 21]
+    k_knn_list = [5]#[3, 5, 6, 11, 21]
     max_iter = 100  # Maximum Number of Iterations
     maxiter_inner = 100
     maxiter_kmeans = 20
