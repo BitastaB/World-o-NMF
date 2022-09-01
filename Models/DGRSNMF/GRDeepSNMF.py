@@ -30,7 +30,7 @@ def computeZ1(Q, B, p, n, r, maxiter_inner):
         GradHY = (AA @ Y[iter - 1]) - (A.T @ X)
         H[iter] = Y[iter - 1] - GradHY / L
         H[iter][H[iter] < 0] = 0
-        alpha[iter] = (1 + np.sqrt((4 * alpha[iter - 1]) ** 2) + 1) / 2
+        alpha[iter] = (1 + np.sqrt((4 * alpha[iter - 1] ** 2)) + 1) / 2
         Y[iter] = H[iter] + ((alpha[iter - 1] / alpha[iter]) * (H[iter] - H[iter - 1]))
         E[iter] = ((np.linalg.norm(X - (A @ H[iter]), 'fro')) ** 2) / n
         err = (E[iter - 1] - E[iter]) / max(1, E[iter - 1])
@@ -56,9 +56,9 @@ def computeZi(X, A, B, n, g, f, maxiter_inner):
     while iter <= maxiter_inner and err >= 1e-06:
         iter += 1
         GradHY = (AA @ Z[iter - 1] @ BB) - (A.T @ X @ B.T)
-        Z[iter] = Y[iter - 1] - GradHY / L
+        Z[iter] = Y[iter - 1] - (GradHY / L)
         Z[iter][Z[iter] < 0] = 0
-        alpha[iter] = (1 + np.sqrt((4 * alpha[iter - 1]) ** 2) + 1) / 2
+        alpha[iter] = (1 + np.sqrt((4 * alpha[iter - 1] ** 2)) + 1) / 2
         Y[iter] = Z[iter] + ((alpha[iter - 1] / alpha[iter]) * (Z[iter] - Z[iter - 1]))
         E[iter] = ((np.linalg.norm(X - (A @ Z[iter] @ B), 'fro')) ** 2) / n
         err = (E[iter - 1] - E[iter]) / max(1, E[iter - 1])
@@ -120,7 +120,7 @@ def GRDSNMF(X, L, D, W, _lambda, m, n, r, l, maxiter, maxiter_inner):
             ## Update Z
             if i == 1:
                 B = Z[l]
-                for q in range(l - 1, 2, -1):
+                for q in range(l - 1, 3, -1):
                     B = Z[q] @ B
 
                 B = B @ H[l]
