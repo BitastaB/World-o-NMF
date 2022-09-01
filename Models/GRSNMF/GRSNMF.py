@@ -22,13 +22,15 @@ def GRSemiNMF(X, W, D, _lambda, k, m, n, maxiter):
         numH = Z.T @ X + _lambda * H @ W
         denH = Z.T @ Z @ H + _lambda * H @ D
         denH[denH < 1e-10] = 1e-10
-        H = np.multiply(numH, denH)
+        res1 = np.divide(numH, denH)
+        H = np.multiply(H, res1)
 
         # Update Z
         numZ = X @ H.T
         denZ = Z @ H @ H.T
         denZ[denZ < 1e-10] = 1e-10
-        Z = np.multiply(numZ, denZ)
+        res2 = np.divide(numZ, denZ)
+        Z = np.multiply(Z, res2)
 
         iter += 1
         E[iter] = ((np.linalg.norm(X - (Z @ H), 'fro')) ** 2) / n
