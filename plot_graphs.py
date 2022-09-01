@@ -1,6 +1,26 @@
 from matplotlib import pyplot as plt
 
 
+def nsNMF_lists(dataset, rnd):
+
+    path = f"Results/{dataset}/output_nsNMF_{dataset}.out"
+    with open(path) as f:
+        line_list = list(f)
+        acc_list = []
+        nmi_list = []
+
+        for line in line_list:
+            if "avg_acc" in line:
+                acc_val = round(float((line.split("avg_acc = ")[1]).split(" , with ")[0]), rnd)
+                acc_list.append(acc_val)
+
+            if "avg_nmi" in line:
+                nmi_val = round(float((line.split("avg_nmi = ")[1]).split(" , with ")[0]), rnd)
+                nmi_list.append(nmi_val)
+
+    return acc_list, nmi_list
+
+
 def RSCNMF_lists(dataset, rnd):
     path = f"Results/{dataset}/output_RSCNMF_{dataset}.out"
     with open(path) as f:
@@ -250,39 +270,43 @@ def plot_acc_nmi(dataset):
     ognmf_acc_list, ognmf_nmi_list = OGNMF_lists(dataset, round_upto)
     grsnmf_acc_list, grsnmf_nmi_list = GRSNFM_lists(dataset, round_upto)
     rscnmf_acc_list, rscnmf_nmi_list = RSCNMF_lists(dataset, round_upto)
+    nsnmf_acc_list, nsnmf_nmi_list = nsNMF_lists(dataset, round_upto)
+
 
     # Plotting average accuracy
-    plt.plot(k_list, dgonmf_acc_list, label="DGONMF", marker='o')
-    plt.plot(k_list, erwnmf_acc_list, label="ERWNMF", marker='o')
-    plt.plot(k_list, nmf_acc_list, label="NMF", marker='v')
-    plt.plot(k_list, gnmf_acc_list, label="GNMF", marker='+')
-    plt.plot(k_list, dnsNMF_acc_list, label="dnsNMF", marker='+')
-    plt.plot(k_list, dsNMF_acc_list, label="dsnmf", marker='+')
-    plt.plot(k_list, ognmf_acc_list, label="OGNMF", marker='+')
-    plt.plot(k_list, grsnmf_acc_list, label="GRSNMF", marker='+')
-    plt.plot(k_list, rscnmf_acc_list, label="RSCNMF", marker='+')
+    plt.plot(k_list, dgonmf_acc_list, label="DGONMF", marker='.')
+    plt.plot(k_list, erwnmf_acc_list, label="ERWNMF", marker='.')
+    plt.plot(k_list, nmf_acc_list, label="NMF", marker='.')
+    plt.plot(k_list, gnmf_acc_list, label="GNMF", marker='.')
+    plt.plot(k_list, dnsNMF_acc_list, label="dnsNMF", marker='.')
+    plt.plot(k_list, dsNMF_acc_list, label="dsnmf", marker='.')
+    plt.plot(k_list, ognmf_acc_list, label="OGNMF", marker='.')
+    plt.plot(k_list, grsnmf_acc_list, label="GRSNMF", marker='.')
+    plt.plot(k_list, rscnmf_acc_list, label="RSCNMF", marker='.')
+    plt.plot(k_list, nsnmf_acc_list, label="nsNMF", marker='.')
 
     plt.xlabel("k")
     plt.ylabel("accurancy in %")
-    plt.legend()
+    plt.legend(loc="right")
     plt.title(f"Average accuracy for : {dataset}")
     plt.savefig(f'Results/plots/{dataset}_acc.png', dpi=150)
     plt.show()
 
     # Plotting average nmi
-    plt.plot(k_list, dgonmf_nmi_list, label="DGONMF", marker='o')
-    plt.plot(k_list, erwnmf_nmi_list, label="ERWNMF", marker='o')
-    plt.plot(k_list, nmf_nmi_list, label="NMF", marker='v')
-    plt.plot(k_list, gnmf_nmi_list, label="GNMF", marker='+')
-    plt.plot(k_list, dnsNMF_nmi_list, label="dnsNMF", marker='+')
-    plt.plot(k_list, dsNMF_nmi_list, label="dsnmf", marker='+')
-    plt.plot(k_list, ognmf_nmi_list, label="OGNMF", marker='+')
-    plt.plot(k_list, grsnmf_nmi_list, label="GRSNMF", marker='+')
-    plt.plot(k_list, rscnmf_nmi_list, label="RSCNMF", marker='+')
+    plt.plot(k_list, dgonmf_nmi_list, label="DGONMF", marker='*')
+    plt.plot(k_list, erwnmf_nmi_list, label="ERWNMF", marker='*')
+    plt.plot(k_list, nmf_nmi_list, label="NMF", marker='*')
+    plt.plot(k_list, gnmf_nmi_list, label="GNMF", marker='*')
+    plt.plot(k_list, dnsNMF_nmi_list, label="dnsNMF", marker='*')
+    plt.plot(k_list, dsNMF_nmi_list, label="dsnmf", marker='*')
+    plt.plot(k_list, ognmf_nmi_list, label="OGNMF", marker='*')
+    plt.plot(k_list, grsnmf_nmi_list, label="GRSNMF", marker='*')
+    plt.plot(k_list, rscnmf_nmi_list, label="RSCNMF", marker='*')
+    plt.plot(k_list, nsnmf_nmi_list, label="nsNMF", marker='*')
 
     plt.xlabel("k")
     plt.ylabel("nmi in %")
-    plt.legend()
+    plt.legend(loc="right")
     plt.title(f"Average nmi for : {dataset}")
     plt.savefig(f'Results/plots/{dataset}_nmi.png', dpi=150)
     plt.show()
@@ -329,7 +353,7 @@ def plot_model_performance(model):
 if __name__ == '__main__':
 
     # jaffe, orl, warpAR10P, umist, yale, yaleB
-    dataset = "umist"
+    dataset = "yale"
     plot_acc_nmi(dataset)
 
     # plot_model_performance("DGONMF")

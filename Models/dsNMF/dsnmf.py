@@ -11,7 +11,8 @@ import theano.tensor as T
 from scipy.sparse.linalg import svds
 import statistics
 
-from Utils.metrics_evaluation import evaluate_nmi, accuracy
+from Utils.metrics_evaluation import evaluate_nmi, accuracy, calculate_silhouette_score, calculate_davies_bouldin_score, \
+    calculate_dunn_index
 from Utils.utils import init_kmeans
 
 relu = lambda x: 0.5 * (x + abs(x))
@@ -272,6 +273,9 @@ def run_model(matImg, y, k1_list, k2_list, maxiter_kmeans):
             # Kmeans task
             lst_acc = []
             lst_nmi = []
+            lst_sil_score = []
+            lst_davis_score = []
+            lst_dunn_score = []
 
             for i in range(1, maxiter_kmeans):
                 pred = kmeans.fit_predict(fea)
@@ -282,8 +286,21 @@ def run_model(matImg, y, k1_list, k2_list, maxiter_kmeans):
                 ## ACC
                 acc = 100 * accuracy(y, pred)
 
+                # Silhoutte score
+                silhouette_score = calculate_silhouette_score(fea, pred)
+
+                # Davis-bouldin score
+                davis_score = calculate_davies_bouldin_score(fea, pred)
+
+                # dunn's index
+                dunn_score = calculate_dunn_index(fea, y)
+
                 lst_acc.append(acc)
                 lst_nmi.append(nmi)
+                lst_sil_score.append(silhouette_score)
+                lst_davis_score.append(davis_score)
+                lst_dunn_score.append(dunn_score)
+
                 ## End for
 
             print(
@@ -291,9 +308,17 @@ def run_model(matImg, y, k1_list, k2_list, maxiter_kmeans):
             print("The results of running the Kmeans method 20 times and the report of maximum of 20 runs\n")
             print(f"k1 = {k1} : k2 = {k2} : best max_acc = {max(lst_acc)} ")
             print(f"k1 = {k1} : k2 = {k2} : best max_nmi = {max(lst_nmi)} ")
+            print(f"k1 = {k1} : k2 = {k2} : best max_Silhoutte score = {max(lst_sil_score)} ")
+            print(f"k1 = {k1} : k2 = {k2} : best max_Dunn'd index score = {max(lst_davis_score)} ")
+            print(f"k1 = {k1} : k2 = {k2} : best max_Davies bouldin score = {min(lst_dunn_score)} ")
+
             print("\n\nThe results of running the Kmeans method 20 times and the report of average of 20 runs\n")
             print(f"k1 = {k1} :  k2 = {k2} : avg_acc = {statistics.mean(lst_acc)} ")
             print(f"k1 = {k1} :  k2 = {k2} : avg_nmi = {statistics.mean(lst_nmi)}  ")
+            print(f"k1 = {k1} :  k2 = {k2} : avg_Silhoutte score = {statistics.mean(lst_sil_score)}  ")
+            print(f"k1 = {k1} :  k2 = {k2} : avg_Dunn'd index score = {statistics.mean(lst_davis_score)}  ")
+            print(f"k1 = {k1} :  k2 = {k2} : avg_Davies bouldin score = {statistics.mean(lst_dunn_score)}  ")
+
             print(
                 "**********************************************************************************************************")
 

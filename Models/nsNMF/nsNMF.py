@@ -206,11 +206,15 @@ def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kme
 
         max_lst_acc_k = []
         max_lst_nmi_k = []
-        max_lst_recon_err_k = []
+        max_lst_sil_score_k = []
+        max_lst_dunn_score_k = []
+        min_lst_davis_score_k = []
 
         avg_lst_acc_k = []
         avg_lst_nmi_k = []
-        avg_lst_recon_err_k = []
+        avg_lst_sil_score_k = []
+        avg_lst_dunn_score_k = []
+        avg_lst_davis_score_k = []
 
         r = {1: k}
         for theta in theta_list:
@@ -223,6 +227,9 @@ def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kme
             ## Kmeans task
             lst_acc = []
             lst_nmi = []
+            lst_sil_score = []
+            lst_dunn_score = []
+            lst_davis_score = []
 
             for i in range(1, maxiter_kmeans):
                 pred = kmeans.fit_predict(H.T)
@@ -233,26 +240,56 @@ def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kme
                 ## ACC
                 acc = 100 * accuracy(y, pred)
 
+                # Silhoutte score
+                silhouette_score = calculate_silhouette_score(H.T, pred)
+
+                # Davis-bouldin score
+                davis_score = calculate_davies_bouldin_score(H.T, pred)
+
+                # dunn's index
+                dunn_score = calculate_dunn_index(H.T, y)
+
                 lst_acc.append(acc)
                 lst_nmi.append(nmi)
+                lst_sil_score.append(silhouette_score)
+                lst_davis_score.append(davis_score)
+                lst_dunn_score.append(dunn_score)
+
                 ## End for
 
             ## Add max values to list for one theta
             max_lst_acc_k.append(max(lst_acc))
             max_lst_nmi_k.append(max(lst_nmi))
+            max_lst_sil_score_k.append(max(lst_sil_score))
+            max_lst_dunn_score_k.append((max(lst_dunn_score)))
+            min_lst_davis_score_k.append(min(lst_davis_score))
 
             ## Add avg values to list for one theta
             avg_lst_acc_k.append(statistics.mean(lst_acc))
             avg_lst_nmi_k.append(statistics.mean(lst_nmi))
+            avg_lst_sil_score_k.append(statistics.mean(lst_sil_score))
+            avg_lst_davis_score_k.append(statistics.mean(lst_davis_score))
+            avg_lst_dunn_score_k.append(statistics.mean(lst_dunn_score))
 
         print(
             "**********************************************************************************************************")
         print("The results of running the Kmeans method 20 times and the report of maximum of 20 runs\n")
-        print(f"k = {k} : best max_acc = {max(max_lst_acc_k)} , with nu = {theta_list[np.argmax(max_lst_acc_k)]}")
-        print(f"k = {k} : best max_nmi = {max(max_lst_nmi_k)} , with nu = {theta_list[np.argmax(max_lst_acc_k)]}")
+        print(f"k = {k} : best max acc = {max(max_lst_acc_k)} , with nu = {theta_list[np.argmax(max_lst_acc_k)]}")
+        print(f"k = {k} : best max nmi = {max(max_lst_nmi_k)} , with nu = {theta_list[np.argmax(max_lst_acc_k)]}")
+        print(f"k = {k} : best max Silhoutte score = {max(max_lst_sil_score_k)} , with nu = "
+              f"{theta_list[np.argmax(max_lst_sil_score_k)]}")
+        print(f"k = {k} : best max Dunn's Index score = {max(max_lst_dunn_score_k)} , with nu = "
+              f"{theta_list[np.argmax(max_lst_dunn_score_k)]}")
+        print(f"k = {k} : best min Davies Bouldin score = {min(min_lst_davis_score_k)} , with nu = "
+              f"{theta_list[np.argmax(min_lst_davis_score_k)]}")
+
         print("\n\nThe results of running the Kmeans method 20 times and the report of average of 20 runs\n")
-        print(f"k = {k} : best avg_acc = {max(avg_lst_acc_k)} , with nu = {theta_list[np.argmax(avg_lst_acc_k)]} ")
-        print(f"k = {k} : best avg_nmi = {max(avg_lst_nmi_k)} , with nu = {theta_list[np.argmax(avg_lst_nmi_k)]} ")
+        print(f"k = {k} : best avg acc = {max(avg_lst_acc_k)} , with nu = {theta_list[np.argmax(avg_lst_acc_k)]} ")
+        print(f"k = {k} : best avg nmi = {max(avg_lst_nmi_k)} , with nu = {theta_list[np.argmax(avg_lst_nmi_k)]} ")
+        print(f"k = {k} : best avg Silhoutte score = {max(avg_lst_sil_score_k)} , with nu = {theta_list[np.argmax(avg_lst_sil_score_k)]} ")
+        print(f"k = {k} : best avg nmi = {max(avg_lst_dunn_score_k)} , with nu = {theta_list[np.argmax(avg_lst_dunn_score_k)]} ")
+        print(f"k = {k} : best avg nmi = {min(avg_lst_davis_score_k)} , with nu = {theta_list[np.argmin(avg_lst_davis_score_k)]} ")
+
         print(
             "**********************************************************************************************************")
     print(f" Max iterations = {np.max(iterations)}, avg iterations = {statistics.mean(iterations)}")

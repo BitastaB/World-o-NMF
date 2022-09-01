@@ -74,43 +74,43 @@ def run_model(model, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_km
               maxiter_inner, pos_alpha_range, pos_beta_range, lambda_range, k_knn_list, plot_graphs):
     if model == "DGONMF":
         deepgonmf.run_model(alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1,
-                            eps_2, y, plot_graphs)
+                            eps_2, y)
 
     elif model == "dnsNMF":
-        dnsNMF.run_model(l, alphas, matImg, y, k1_list, k2_list, maxiter, maxiter_inner, maxiter_kmeans, plot_graphs)
+        dnsNMF.run_model(l, alphas, matImg, y, k1_list, k2_list, maxiter, maxiter_inner, maxiter_kmeans)
 
     elif model == "dsnmf":
-        dsnmf.run_model(matImg, y, k1_list, k2_list, maxiter_kmeans, plot_graphs)
+        dsnmf.run_model(matImg, y, k1_list, k2_list, maxiter_kmeans)
 
     elif model == "ERWNMF":
         ERWNMF.run_model(matImg, y, k2_list, maxiter, maxiter_kmeans, plot_graphs)
 
     elif model == "RSCNMF":
         RSCNMF.run_model(matImg, y, pos_alpha_range, pos_beta_range, k_knn_list, k2_list, lambda_range,
-                         maxiter_kmeans, maxiter, plot_graphs)
+                         maxiter_kmeans, maxiter)
 
     elif model == "OGNMF":
-        OGNMF.run_model(matImg, y, alphas, betas, k_knn_list, k2_list, maxiter_kmeans, eps_1, eps_2, max_iter, plot_graphs)
+        OGNMF.run_model(matImg, y, alphas, betas, k_knn_list, k2_list, maxiter_kmeans, eps_1, eps_2, max_iter)
 
     elif model == "GRSNMF":
-        GRSNMF.run_model(matImg, y, k_knn_list, k2_list, alpha_range, maxiter, maxiter_kmeans, plot_graphs)
+        GRSNMF.run_model(matImg, y, k_knn_list, k2_list, alpha_range, maxiter, maxiter_kmeans)
 
     elif model == "GNMF":
-        GNMF.run_model(matImg, y, k_knn_list, k2_list, alpha_range, maxiter, maxiter_kmeans, plot_graphs)
+        GNMF.run_model(matImg, y, k_knn_list, k2_list, alpha_range, maxiter, maxiter_kmeans)
 
     elif model == "NMF":
-        NMF.run_model(matImg, y, k2_list, maxiter_kmeans, plot_graphs)
+        NMF.run_model(matImg, y, k2_list, maxiter_kmeans)
 
     elif model == "nsNMF":
-        nsNMF.run_model(alphas, matImg, y, k2_list, maxiter, maxiter_inner, maxiter_kmeans, plot_graphs)
+        nsNMF.run_model(alphas, matImg, y, k2_list, maxiter, maxiter_inner, maxiter_kmeans)
 
     elif model == "GRDSNMF":
-        GRDeepSNMF.run_model(matImg, y, k_knn_list, k1_list, k2_list, alphas, l, maxiter_kmeans, maxiter, maxiter_inner, plot_graphs)
+        GRDeepSNMF.run_model(matImg, y, k_knn_list, k1_list, k2_list, alphas, l, maxiter_kmeans, maxiter, maxiter_inner)
 
 
 if __name__ == '__main__':
     dataset = "jaffe"
-    model = "ERWNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, GRDSNMF
+    model = "RSCNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, GRDSNMF
     write_to_file = False
     plot_graphs = True
 
@@ -123,12 +123,12 @@ if __name__ == '__main__':
 
     # Setting parameters and hyper-parameters
     l = 2  # The number of layers
-    k1_list = [80, 100, 120, 200]  # The size of the first layer
-    k2_list = [10, 20, 30, 40, 50, 60, 70]
-    alpha_range = [1e-03, 1e-02, 1e-01, 1e01]
-    beta_range = [1e-02, 1e-01, 1]
-    pos_alpha_range = [1e03, 1e04, 1e05, 1e06]
-    pos_beta_range = [10, 100, 1000]
+    k1_list = [80]#[80, 100, 120, 200]  # The size of the first layer
+    k2_list = [10, 20]#[10, 20, 30, 40, 50, 60, 70]
+    alpha_range = [1e-01] #[1e-03, 1e-02, 1e-01, 1e01]
+    beta_range = [1e-01]#[1e-02, 1e-01, 1]
+    pos_alpha_range = [1e03]#[1e03, 1e04, 1e05, 1e06]
+    pos_beta_range = [10] #[10, 100, 1000]
     lambda_range = [1, 10, 100]
     k_knn_list = [5]#[3, 5, 6, 11, 21]
     max_iter = 100  # Maximum Number of Iterations

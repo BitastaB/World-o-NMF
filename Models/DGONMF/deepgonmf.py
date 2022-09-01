@@ -1,7 +1,8 @@
 import numpy as np
 from sklearn.decomposition import NMF
 import statistics
-from Utils.metrics_evaluation import accuracy, evaluate_nmi
+from Utils.metrics_evaluation import accuracy, evaluate_nmi, calculate_silhouette_score, calculate_davies_bouldin_score, \
+    calculate_dunn_index
 from Utils.utils import init_kmeans, construct_similarity_matrix
 
 
@@ -142,11 +143,15 @@ def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2
         matH = matH @ dictH[q]
     # Calculate final V'
     matV = dictV[l]
-    return matH, matV
+    return matH, matV, t - 1
 
 
 def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxiter_kmeans, l, max_iter,
               myeps_1, myeps_2, y):
+
+    # For convergence comparison
+    iterations = []
+    iterations_k2 = {}
 
     # Initialise Kmeans
     kmeans = init_kmeans(y)
@@ -177,25 +182,40 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
         maxAcc = {}
         maxNmi = {}
         maxRecon_reeor = {}
+        maxSilScore = {}
+        maxDunnScore = {}
+        minDavisScore = {}
         ##
         meanAcc = {}
         meanNmi = {}
         meanRecon_reeor = {}
+        meanSilScore = {}
+        meanDunnScore = {}
+        meanDavisScore = {}
 
         for k_2 in k_2_list:  # range(sk, ek, 10):
             maxlst_acc = []
             maxlst_nmi = []
             maxlst_recon_err = []
+            maxlst_sil_score = []
+            maxlst_dunn_score = []
+            minlst_davis_score = []
             ##
             meanlst_acc = []
             meanlst_nmi = []
             meanlst_recon_err = []
+            meanlst_sil_score = []
+            meanlst_dunn_score = []
+            meanlst_davis_score = []
+
             for p in range(len(parameters)):
                 alpha = parameters[p][0]
                 beta = parameters[p][1]
 
                 # run deep gonmf for max_iter times
-                matH, matV = DGONMF(matX, matS, matD, m, n, l, [k_1, k_2], alpha, beta, max_iter, myeps_1, myeps_2)
+                matH, matV, n_iteration = DGONMF(matX, matS, matD, m, n, l, [k_1, k_2], alpha, beta, max_iter, myeps_1, myeps_2)
+
+                iterations.append(n_iteration)
 
                 # Reconstructed matrix
                 matX_reconstructed = matH @ matV
@@ -204,9 +224,12 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
                 lst_acc = []
                 lst_nmi = []
                 lst_recon_err = []
+                lst_sil_score = []
+                lst_dunn_score = []
+                lst_davis_score = []
 
                 for i in range(1, maxiter_kmeans):
-                    pred = []
+
                     pred = kmeans.fit_predict(matV.T)
 
                     # NMI
@@ -215,6 +238,15 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
                     # ACC
                     acc = 100 * accuracy(y, pred)
 
+                    # Silhoutte score
+                    silhouette_score = calculate_silhouette_score(matV.T, pred)
+
+                    # Davis-bouldin score
+                    davis_score = calculate_davies_bouldin_score(matV.T, pred)
+
+                    # dunn's index
+                    dunn_score = calculate_dunn_index(matV.T, y)
+
                     # Reconstruction Error
                     a = np.linalg.norm(matX - matX_reconstructed, 'fro')
                     recon_reeor = (a)  # /n
@@ -222,60 +254,118 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
                     lst_acc.append(acc)
                     lst_nmi.append(nmi)
                     lst_recon_err.append(recon_reeor)
+                    lst_sil_score.append(silhouette_score)
+                    lst_davis_score.append(davis_score)
+                    lst_dunn_score.append(dunn_score)
                     # End for
 
                 ##
                 maxlst_acc.append(max(lst_acc))
                 maxlst_nmi.append(max(lst_nmi))
                 maxlst_recon_err.append(max(lst_recon_err))
+                maxlst_sil_score.append(max(lst_sil_score))
+                maxlst_dunn_score.append((max(lst_dunn_score)))
+                minlst_davis_score.append(min(lst_davis_score))
 
                 ##
                 meanlst_acc.append(statistics.mean(lst_acc))
                 meanlst_nmi.append(statistics.mean(lst_nmi))
                 meanlst_recon_err.append(statistics.mean(lst_recon_err))
+                meanlst_sil_score.append(statistics.mean(lst_sil_score))
+                meanlst_davis_score.append(statistics.mean(lst_davis_score))
+                meanlst_dunn_score.append(statistics.mean(lst_dunn_score))
+
+
             # End for
 
             maxAcc[k_2] = maxlst_acc
             maxNmi[k_2] = maxlst_nmi
             maxRecon_reeor[k_2] = maxlst_recon_err
+            maxSilScore[k_2] = maxlst_sil_score
+            maxDunnScore[k_2] = maxlst_dunn_score
+            minDavisScore[k_2] = minlst_davis_score
+
 
             ##
             meanAcc[k_2] = meanlst_acc
             meanNmi[k_2] = meanlst_nmi
             meanRecon_reeor[k_2] = meanlst_recon_err
+            meanSilScore[k_2] = meanlst_sil_score
+            meanDavisScore[k_2] = meanlst_davis_score
+            meanDunnScore[k_2] = meanlst_dunn_score
+
+            if k_2 not in iterations_k2.keys():
+                iterations_k2[k_2] = [n_iteration]
+            else:
+                iterations_k2[k_2] = iterations_k2[k_2].append(n_iteration)
+
         # ENd for k2
+
+
 
         maxacc_final = {}
         maxnmi_final = {}
         maxrecon_final = {}
+        maxSilScore_final = {}
+        maxDunnScore_final = {}
+        minDavisScore_final = {}
 
         print("The results of running the Kmeans method 20 times and the report of maximum of 20 runs")
         for k_2 in k_2_list:
             maxacc_final[k_2] = [max(maxAcc[k_2]), parameters[np.argmax(maxAcc[k_2])]]
             maxnmi_final[k_2] = [max(maxNmi[k_2]), parameters[np.argmax(maxNmi[k_2])]]
             maxrecon_final[k_2] = [max(maxRecon_reeor[k_2]), parameters[np.argmax(maxRecon_reeor[k_2])]]
+            maxSilScore_final[k_2] = [max(maxSilScore[k_2]), parameters[np.argmax(maxSilScore[k_2])]]
+            maxDunnScore_final[k_2] = [max(maxDunnScore[k_2]), parameters[np.argmax(maxDunnScore[k_2])]]
+            minDavisScore_final[k_2] = [min(minDavisScore[k_2]), parameters[np.argmin(minDavisScore[k_2])]]
+
             print(f"##################################################################################################")
             print(f" k1 = {k_1} : k2 = {k_2} ")
             print(f" Max ACC : {maxacc_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(maxAcc[k_2])]}")
             print(f" Max NMI : {maxnmi_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(maxNmi[k_2])]}")
             print(f" Reconstruction Error : {maxrecon_final[k_2][0]}")
+            print(f" Max Silhoutter score : {maxSilScore_final[k_2][0]}, with (alpha, beta) = "
+                  f"{parameters[np.argmax(maxSilScore[k_2])]}")
+            print(f" Max Dunn's Index score : {maxDunnScore_final[k_2][0]}, with (alpha, beta) = "
+                  f"{parameters[np.argmax(maxDunnScore[k_2])]}")
+            print(f" Min David Bouldin score : {minDavisScore[k_2][0]}, with (alpha, beta) = "
+                  f"{parameters[np.argmin(minDavisScore[k_2])]}")
             print(f"##################################################################################################")
         ##
 
         meanacc_final = {}
         meannmi_final = {}
         meanrecon_final = {}
+        meanSilScore_final = {}
+        meanDunnScore_final = {}
+        meanDavidScore_final = {}
 
         print("The results of running the Kmeans method 20 times and the average of 20 runs")
         for k_2 in k_2_list:
             meanacc_final[k_2] = [max(meanAcc[k_2]), parameters[np.argmax(meanAcc[k_2])]]
             meannmi_final[k_2] = [max(meanNmi[k_2]), parameters[np.argmax(meanNmi[k_2])]]
             meanrecon_final[k_2] = [max(meanRecon_reeor[k_2]), parameters[np.argmax(meanRecon_reeor[k_2])]]
+            meanSilScore_final[k_2] = [max(meanSilScore[k_2]), parameters[np.argmax(meanSilScore[k_2])]]
+            meanDunnScore_final[k_2] = [max(meanDunnScore[k_2]), parameters[np.argmax(meanDunnScore[k_2])]]
+            meanDavidScore_final[k_2] = [max(meanDavisScore[k_2]), parameters[np.argmin(meanDavisScore[k_2])]]
+
+
             print(f"##################################################################################################")
             print(f" k1 = {k_1} : k2 = {k_2}")
             print(f" Avg ACC : {meanacc_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(meanAcc[k_2])]}")
             print(f" Avg NMI : {meannmi_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(meanNmi[k_2])]}")
             print(f" Reconstruction Error : {meanrecon_final[k_2][0]}")
+            print(f" Avg Silhoutte score : {meanSilScore_final[k_2][0]}, with (alpha, beta) = "
+                  f"{parameters[np.argmax(meanSilScore[k_2])]}")
+            print(f" Avg Dunn's Index score : {meanDunnScore_final[k_2][0]}, with (alpha, beta) = "
+                  f"{parameters[np.argmax(meanDunnScore[k_2])]}")
+            print(f" Avg David Bouldin score : {meanDavidScore_final[k_2][0]}, with (alpha, beta) = "
+                  f"{parameters[np.argmin(meanDavisScore[k_2])]}")
             print(f"##################################################################################################")
 
+
+    ## print for convergence comparison
+    for k_2 in k_2_list:
+        print(f"Average no. of iterations for k2 = {k_2} : {statistics.mean(iterations_k2[k_2])}")
+    print(f"Overall average no. of iterations : {statistics.mean(iterations)}")
     print("#Done!")

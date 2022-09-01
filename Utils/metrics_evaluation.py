@@ -5,7 +5,7 @@ from ClustersFeatures import ClustersCharacteristics
 warnings.filterwarnings('ignore')
 import numpy as np
 import sklearn
-from sklearn.metrics import confusion_matrix, silhouette_score
+from sklearn.metrics import confusion_matrix, silhouette_score, davies_bouldin_score
 import pandas as pd
 
 
@@ -316,7 +316,17 @@ def evaluate_accuracy(y, pred):
 
 
 def calculate_silhouette_score(X, labels):
-
     score = silhouette_score(X, labels, metric='euclidean')
     return score
 
+
+def calculate_davies_bouldin_score(X, labels):
+    score = davies_bouldin_score(X, labels)
+    return score
+
+def calculate_dunn_index(data, target):
+    pd_df = pd.DataFrame(data)
+    pd_df['target'] = target
+    CC = ClustersCharacteristics(pd_df, label_target="target")
+    score = CC.IndexCore_generate_output_by_info_type('general', 'max', 'G-Max-04')
+    return score

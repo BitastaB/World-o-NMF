@@ -2,7 +2,8 @@ import statistics
 
 import numpy as np
 
-from Utils.metrics_evaluation import evaluate_nmi, accuracy, calculate_silhouette_score
+from Utils.metrics_evaluation import evaluate_nmi, accuracy, calculate_silhouette_score, calculate_davies_bouldin_score, \
+    calculate_dunn_index
 from Utils.utils import init_kmeans
 
 
@@ -17,7 +18,6 @@ def computeW(X, S, H, nu):
 
 
 def ERWNMF(X, nu, k, m, n, maxiter):
-
     # Initialisation
     S = np.random.rand(m, k)
     H = np.random.rand(k, n)
@@ -47,7 +47,6 @@ def ERWNMF(X, nu, k, m, n, maxiter):
 
 
 def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
-
     best_nmi = 0
     best_acc = 0
     best_sil_score = 0
@@ -75,10 +74,14 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
         max_lst_acc_k = []
         max_lst_nmi_k = []
         max_lst_sil_score_k = []
+        min_lst_davis_score_k = []
+        max_lst_dunn_score_k = []
 
         avg_lst_acc_k = []
         avg_lst_nmi_k = []
         avg_lst_sil_score_k = []
+        avg_lst_davis_score_k = []
+        avg_lst_dunn_score_k = []
 
         for nu in nu_list:
 
@@ -88,6 +91,8 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
             lst_acc = []
             lst_nmi = []
             lst_sil_score = []
+            lst_davis_score = []
+            lst_dunn_score = []
 
             for i in range(1, maxiter_kmeans):
                 pred = kmeans.fit_predict(H.T)
@@ -98,23 +103,36 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
                 # ACC
                 acc = 100 * accuracy(y, pred)
 
-                #Silhoutte score
+                # Silhoutte score
                 silhouette_score = calculate_silhouette_score(H.T, pred)
+
+                # Davis-bouldin score
+                davis_score = calculate_davies_bouldin_score(H.T, pred)
+
+                # dunn's index
+                dunn_score = calculate_dunn_index(H.T, y)
 
                 lst_acc.append(acc)
                 lst_nmi.append(nmi)
                 lst_sil_score.append(silhouette_score)
+                lst_davis_score.append(davis_score)
+                lst_dunn_score.append(dunn_score)
                 # End for
 
             # Add max values to list for one theta
             max_lst_acc_k.append(max(lst_acc))
             max_lst_nmi_k.append(max(lst_nmi))
             max_lst_sil_score_k.append(max(lst_sil_score))
+            min_lst_davis_score_k.append(min(lst_davis_score))
+            max_lst_dunn_score_k.append(max(lst_dunn_score))
 
             # Add avg values to list for one theta
             avg_lst_acc_k.append(statistics.mean(lst_acc))
             avg_lst_nmi_k.append(statistics.mean(lst_nmi))
             avg_lst_sil_score_k.append(statistics.mean(lst_sil_score))
+            avg_lst_davis_score_k.append(statistics.mean(lst_davis_score))
+            avg_lst_dunn_score_k.append(statistics.mean(lst_dunn_score))
+
 
         if max(avg_lst_acc_k) > best_acc:
             best_acc = max(avg_lst_acc_k)
@@ -126,24 +144,32 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
             best_sil_score = max(avg_lst_sil_score_k)
             best_k_sil_Score = k
 
-
         print(
             "**********************************************************************************************************")
         print("The results of running the Kmeans method 20 times and the report of maximum of 20 runs\n")
         print(f"k = {k} : best max_acc = {max(max_lst_acc_k)} , with nu = {nu_list[np.argmax(max_lst_acc_k)]}")
         print(f"k = {k} : best max_nmi = {max(max_lst_nmi_k)} , with nu = {nu_list[np.argmax(max_lst_nmi_k)]}")
-        print(f"k = {k} : best max_silhoutte score = {max(max_lst_sil_score_k)} , with nu = {nu_list[np.argmax(max_lst_sil_score_k)]}")
+        print(
+            f"k = {k} : best max_silhoutte score = {max(max_lst_sil_score_k)} , with nu = {nu_list[np.argmax(max_lst_sil_score_k)]}")
+        print(f"k = {k} : lowest min_davis bouldin score = {min(min_lst_davis_score_k)} , with nu = {nu_list[np.argmin(min_lst_davis_score_k)]}")
+        print(f"k = {k} : best max_dunn's index score = {max(max_lst_dunn_score_k)} , with nu = {nu_list[np.argmax(max_lst_dunn_score_k)]}")
+
 
         print("\n\nThe results of running the Kmeans method 20 times and the report of average of 20 runs\n")
         print(f"k = {k} : best avg_acc = {max(avg_lst_acc_k)} , with nu = {nu_list[np.argmax(avg_lst_acc_k)]} ")
         print(f"k = {k} : best avg_nmi = {max(avg_lst_nmi_k)} , with nu = {nu_list[np.argmax(avg_lst_nmi_k)]} ")
-        print(f"k = {k} : best avg_silhoutte score = {max(avg_lst_sil_score_k)} , with nu = {nu_list[np.argmax(avg_lst_sil_score_k)]} ")
+        print(
+            f"k = {k} : best avg_silhoutte score = {max(avg_lst_sil_score_k)} , with nu = {nu_list[np.argmax(avg_lst_sil_score_k)]} ")
+        print(f"k = {k} : lowest avg_davis bouldin score = {min(avg_lst_davis_score_k)} , with nu = {nu_list[np.argmin(avg_lst_davis_score_k)]}")
+        print(f"k = {k} : best avg_dunn's index score = {max(avg_lst_dunn_score_k)} , with nu = {nu_list[np.argmax(avg_lst_dunn_score_k)]}")
+
         print(
             "**********************************************************************************************************")
 
     print("\n....................................................")
     print(f" best acc(avg) = {best_acc} for k = {best_k_acc}")
     print(f" best nmi(avg) = {best_nmi} for k = {best_k_nmi}")
+    print(f" best silhoutte score (avg) = {best_sil_score} for k {best_k_sil_Score}")
     print("....................................................")
 
     print(f"done!")
