@@ -1,3 +1,4 @@
+import numpy as np
 from matplotlib import pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.manifold import TSNE
@@ -47,11 +48,11 @@ pallet = {0: '#090119',
           39: '#FFBF00'}
 
 
-def plot_clusters_tsne(data, title, kmeans_cluster):
-    perp_list = [15]
+def plot_clusters_tsne(data, model, dataset, kmeans_cluster):
+    perp_list = [10]# [5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 50]
 
     for perp in perp_list:
-        _title = title + f" tsne perpexlity = {perp}"
+        _title = f"dataset = {dataset}, model = {model}, with tsne perpexlity = {perp}"
 
         tsne = TSNE(n_components=3, verbose=1, perplexity=perp, n_iter=5000, learning_rate=250)
         tsne_scale_results = tsne.fit_transform(data)
@@ -59,11 +60,6 @@ def plot_clusters_tsne(data, title, kmeans_cluster):
 
         kmeans_tsne_scale = KMeans(n_clusters=kmeans_cluster, n_init=100, max_iter=400, init='k-means++',
                                    random_state=42).fit(tsne_df_scale)
-        # kmeans_tsne_scale = pred
-        print('KMeans tSNE Scaled Silhouette Score: {}'.format(
-            silhouette_score(tsne_df_scale, kmeans_tsne_scale.labels_, metric='euclidean')))
-        print(
-            'KMeans tSNE Scaled davies bouldin Score: {}'.format(davies_bouldin_score(data, kmeans_tsne_scale.labels_)))
 
         labels_tsne_scale = kmeans_tsne_scale.labels_
         clusters_tsne_scale = pd.concat([tsne_df_scale, pd.DataFrame({'tsne_clusters': labels_tsne_scale})], axis=1)
@@ -72,5 +68,8 @@ def plot_clusters_tsne(data, title, kmeans_cluster):
         sns.scatterplot(clusters_tsne_scale.iloc[:, 0], clusters_tsne_scale.iloc[:, 1], hue=labels_tsne_scale,
                         palette=pallet, s=50, alpha=0.75).set_title(_title)  # , fontsize=15)
         plt.legend()
+        plt.savefig(f'Results/plots/{dataset}/cluster_{dataset}_{model}.png', dpi=150)
         plt.show()
+
+
 

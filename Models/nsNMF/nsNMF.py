@@ -307,3 +307,6 @@ def run_model(model, dataset, theta_list, matImg, y, k_list, maxiter, maxiter_in
     store_kmeans(data, pred, model, dataset)
 
     print("done")
+
+
+

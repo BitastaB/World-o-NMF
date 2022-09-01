@@ -161,7 +161,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                     lst_davis_score = []
 
                     for i in range(1, maxiter_kmeans):
-                        pred = []
+
                         pred = kmeans.fit_predict(H.T)
 
                         # NMI

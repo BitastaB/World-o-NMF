@@ -1,4 +1,7 @@
+import numpy as np
 from matplotlib import pyplot as plt
+
+from Utils.plot_metrics import plot_clusters_tsne
 
 
 def nsNMF_lists(dataset, rnd):
@@ -289,7 +292,7 @@ def plot_acc_nmi(dataset):
     plt.ylabel("accurancy in %")
     plt.legend(loc="right")
     plt.title(f"Average accuracy for : {dataset}")
-    plt.savefig(f'Results/plots/{dataset}_acc.png', dpi=150)
+    plt.savefig(f'Results/plots/{dataset}/{dataset}_acc.png', dpi=150)
     plt.show()
 
     # Plotting average nmi
@@ -308,7 +311,7 @@ def plot_acc_nmi(dataset):
     plt.ylabel("nmi in %")
     plt.legend(loc="right")
     plt.title(f"Average nmi for : {dataset}")
-    plt.savefig(f'Results/plots/{dataset}_nmi.png', dpi=150)
+    plt.savefig(f'Results/plots/{dataset}/{dataset}_nmi.png', dpi=150)
     plt.show()
 
 
@@ -350,11 +353,22 @@ def plot_model_performance(model):
     plt.show()
 
 
+def plot_clusters():
+
+    path = f'./Results/{dataset}/kmeans_{model}_{dataset}.npz'
+    file = np.load(path)
+    data = file['data']
+    pred = file['kmneans_pred']
+    n_cluster = np.unique(pred).shape[0]
+    plot_clusters_tsne(data.T, model, dataset, kmeans_cluster=n_cluster)
+
+
 if __name__ == '__main__':
 
     # jaffe, orl, warpAR10P, umist, yale, yaleB
-    dataset = "yale"
-    plot_acc_nmi(dataset)
+    dataset = "jaffe"  # [jaffe, orl, warpAR10P, umist, yale, yaleB]
+    model = "DGONMF"
 
-    # plot_model_performance("DGONMF")
-
+    #plot_acc_nmi(dataset)
+    #plot_model_performance("DGONMF")
+    plot_clusters()
