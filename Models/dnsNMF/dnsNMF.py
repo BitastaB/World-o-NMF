@@ -6,7 +6,7 @@ from sklearn.cluster import KMeans
 import warnings
 import statistics
 
-from Utils.utils import init_kmeans
+from Utils.utils import init_kmeans, store_kmeans
 
 warnings.filterwarnings('ignore')
 
@@ -182,7 +182,7 @@ def dnsNMF(X, theta, p, n, r, m, maxiter, maxiter_inner):
     return ZSfinal, Hfinal, E, EE
 
 
-def run_model(l, theta_list, matImg, y, k1_list, k2_list, maxiter, maxiter_inner, maxiter_kmeans):
+def run_model(model, dataset, l, theta_list, matImg, y, k1_list, k2_list, maxiter, maxiter_inner, maxiter_kmeans):
 
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
@@ -196,6 +196,9 @@ def run_model(l, theta_list, matImg, y, k1_list, k2_list, maxiter, maxiter_inner
 
     # Initialise Kmeans
     kmeans = init_kmeans(y)
+
+    # Util for plotting best cluster produced
+    best_cluster_acc = {'acc': 0}
 
     for k1 in k1_list:
         maxAcc = {}
@@ -257,6 +260,11 @@ def run_model(l, theta_list, matImg, y, k1_list, k2_list, maxiter, maxiter_inner
 
                     ## ACC
                     acc = 100 * accuracy(y, pred)
+                    if acc > best_cluster_acc['acc']:
+                        best_cluster_acc['acc'] = acc
+                        best_cluster_acc['data'] = H
+                        best_cluster_acc['pred'] = pred
+
 
                     ## Reconstruction Error
                     a = np.linalg.norm(X - X_reconstructed, 'fro')
@@ -374,4 +382,10 @@ def run_model(l, theta_list, matImg, y, k1_list, k2_list, maxiter, maxiter_inner
                   f"{theta_list[np.argmin(meanDavisScore[k_2])]}")
             print(f"##################################################################################################")
     ##**
+
+    # Storing details of best cluster
+    data = best_cluster_acc['data']
+    pred = best_cluster_acc['pred']
+    store_kmeans(data, pred, model, dataset)
+
     print("done")

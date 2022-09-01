@@ -28,6 +28,7 @@ def construct_similarity_matrix(gnd):
 
     return S
 
+
 def KNN(X, k=6):
     neigh = NearestNeighbors(n_neighbors=k)
     neigh.fit(X)
@@ -42,4 +43,10 @@ def KNN(X, k=6):
     Q = np.identity(n)
     z -= Q
     return z, x, indices
+
+
+# Store best predicted cluster in file for later plotting
+def store_kmeans(data, pred, model, dataset):
+    path = f"Results/{dataset}/kmeans_{model}_{dataset}"
+    np.savez(path, data=data, kmneans_pred=pred)
 

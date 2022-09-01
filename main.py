@@ -3,7 +3,7 @@ import sys
 from Models.DGONMF import deepgonmf
 from Models.ERWNMF import ERWNMF
 from Models.GNMF import GNMF
-from Models.GRDSNMF import GRDeepSNMF
+from Models.DGRSNMF import GRDeepSNMF
 from Models.GRSNMF import GRSNMF
 from Models.NMF import NMF
 from Models.OGNMF import OGNMF
@@ -22,42 +22,36 @@ def load_dataset(dataset):
         matImg = imgData['fea'].astype('float32')
         matGnd = imgData['gnd']
         y = matGnd.ravel()
-        dataset = "CSTR.mat"
 
     if dataset == "jaffe":
         imgData = scipy.io.loadmat('./Image_Data/jaffe.mat')
         matImg = imgData['fea'].astype('float32')
         matGnd = imgData['gnd']
         y = matGnd.ravel()
-        dataset = "jaffe.mat"
 
     if dataset == "orl":
         imgData = scipy.io.loadmat('./Image_Data/ORL.mat')
         matImg = imgData['X'].astype('float32')
         matGnd = imgData['Y']
         y = matGnd.ravel()
-        dataset = "ORL.mat"
 
     if dataset == "warpAR10P":
         imgData = scipy.io.loadmat('./Image_Data/warpAR10P.mat')
         matImg = imgData['X'].astype('float32')
         matGnd = imgData['Y']
         y = matGnd.ravel()
-        dataset = "warpAR10P.mat"
 
     if dataset == "umist":
         imgData = scipy.io.loadmat('./Image_Data/Umist.mat')
         matImg = imgData['X'].astype('float32')
         matGnd = imgData['Y']
         y = matGnd.ravel()
-        dataset = "Umist.mat"
 
     if dataset == "yale":
         imgData = scipy.io.loadmat('./Image_Data/Yale_32x32.mat')
         matImg = imgData['fea'].astype('float32')
         matGnd = imgData['gnd']
         y = matGnd.ravel()
-        dataset = "Yale_32x32.mat"
 
     if dataset == "yaleB":
         # imgData = scipy.io.loadmat('/home/bitasta/Desktop/NMF_Stuff/Image_Data/Yale_32x32.mat')
@@ -65,52 +59,51 @@ def load_dataset(dataset):
         matImg = imgData['fea'].astype('float32')
         matGnd = imgData['gnd']
         y = matGnd.ravel()
-        dataset = "YaleB_32x32.mat"
 
-    return imgData, matImg, matGnd, y, dataset
+    return imgData, matImg, matGnd, y
 
 
-def run_model(model, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1, eps_2, y,
+def run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1, eps_2, y,
               maxiter_inner, pos_alpha_range, pos_beta_range, lambda_range, k_knn_list, plot_graphs):
     if model == "DGONMF":
-        deepgonmf.run_model(alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1,
+        deepgonmf.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1,
                             eps_2, y)
 
     elif model == "dnsNMF":
-        dnsNMF.run_model(l, alphas, matImg, y, k1_list, k2_list, maxiter, maxiter_inner, maxiter_kmeans)
+        dnsNMF.run_model(model, dataset, l, alphas, matImg, y, k1_list, k2_list, maxiter, maxiter_inner, maxiter_kmeans)
 
     elif model == "dsnmf":
-        dsnmf.run_model(matImg, y, k1_list, k2_list, maxiter_kmeans)
+        dsnmf.run_model(model, dataset, matImg, y, k1_list, k2_list, maxiter_kmeans)
 
     elif model == "ERWNMF":
-        ERWNMF.run_model(matImg, y, k2_list, maxiter, maxiter_kmeans, plot_graphs)
+        ERWNMF.run_model(model, dataset, matImg, y, k2_list, maxiter, maxiter_kmeans, plot_graphs)
 
     elif model == "RSCNMF":
-        RSCNMF.run_model(matImg, y, pos_alpha_range, pos_beta_range, k_knn_list, k2_list, lambda_range,
+        RSCNMF.run_model(model, dataset, matImg, y, pos_alpha_range, pos_beta_range, k_knn_list, k2_list, lambda_range,
                          maxiter_kmeans, maxiter)
 
     elif model == "OGNMF":
-        OGNMF.run_model(matImg, y, alphas, betas, k_knn_list, k2_list, maxiter_kmeans, eps_1, eps_2, max_iter)
+        OGNMF.run_model(model, dataset, matImg, y, alphas, betas, k_knn_list, k2_list, maxiter_kmeans, eps_1, eps_2, max_iter)
 
     elif model == "GRSNMF":
-        GRSNMF.run_model(matImg, y, k_knn_list, k2_list, alpha_range, maxiter, maxiter_kmeans)
+        GRSNMF.run_model(model, dataset, matImg, y, k_knn_list, k2_list, alpha_range, maxiter, maxiter_kmeans)
 
     elif model == "GNMF":
-        GNMF.run_model(matImg, y, k_knn_list, k2_list, alpha_range, maxiter, maxiter_kmeans)
+        GNMF.run_model(model, dataset, matImg, y, k_knn_list, k2_list, alpha_range, maxiter, maxiter_kmeans)
 
     elif model == "NMF":
-        NMF.run_model(matImg, y, k2_list, maxiter_kmeans)
+        NMF.run_model(model, dataset, matImg, y, k2_list, maxiter_kmeans)
 
     elif model == "nsNMF":
-        nsNMF.run_model(alphas, matImg, y, k2_list, maxiter, maxiter_inner, maxiter_kmeans)
+        nsNMF.run_model(model, dataset, alphas, matImg, y, k2_list, maxiter, maxiter_inner, maxiter_kmeans)
 
-    elif model == "GRDSNMF":
-        GRDeepSNMF.run_model(matImg, y, k_knn_list, k1_list, k2_list, alphas, l, maxiter_kmeans, maxiter, maxiter_inner)
+    elif model == "DGRSNMF":
+        GRDeepSNMF.run_model(model, dataset, matImg, y, k_knn_list, k1_list, k2_list, alphas, l, maxiter_kmeans, maxiter, maxiter_inner)
 
 
 if __name__ == '__main__':
     dataset = "jaffe"
-    model = "RSCNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, GRDSNMF
+    model = "RSCNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, DGRSNMF
     write_to_file = False
     plot_graphs = True
 
@@ -119,7 +112,7 @@ if __name__ == '__main__':
         sys.stdout = open(path, 'w')
 
     # Load dataset
-    imgData, matImg, matGnd, y, dataset = load_dataset(dataset)
+    imgData, matImg, matGnd, y = load_dataset(dataset)
 
     # Setting parameters and hyper-parameters
     l = 2  # The number of layers
@@ -141,5 +134,5 @@ if __name__ == '__main__':
     print_static(model, dataset, max_iter, eps_1, eps_2)
 
     # Run model
-    run_model(model, alpha_range, beta_range, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, max_iter, eps_1,
+    run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, max_iter, eps_1,
               eps_2, y, maxiter_inner, pos_alpha_range, pos_beta_range, lambda_range, k_knn_list, plot_graphs)

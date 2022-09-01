@@ -7,7 +7,7 @@ import statistics
 
 from Utils.metrics_evaluation import evaluate_nmi, accuracy, calculate_silhouette_score, calculate_davies_bouldin_score, \
     calculate_dunn_index
-from Utils.utils import KNN, init_kmeans
+from Utils.utils import KNN, init_kmeans, store_kmeans
 
 warnings.filterwarnings('ignore')
 
@@ -145,7 +145,7 @@ def GRDSNMF(X, L, D, W, _lambda, m, n, r, l, maxiter, maxiter_inner):
     return Zfinal, Hfinal
 
 
-def run_model(matImg, y, k_knn_list, k1_list, k2_list, lambda_list, l, maxiter_kmeans, maxiter, maxiter_inner):
+def run_model(model, dataset, matImg, y, k_knn_list, k1_list, k2_list, lambda_list, l, maxiter_kmeans, maxiter, maxiter_inner):
 
     ## Normalization
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
@@ -160,6 +160,9 @@ def run_model(matImg, y, k_knn_list, k1_list, k2_list, lambda_list, l, maxiter_k
 
     # Initialise Kmeans
     kmeans = init_kmeans(y)
+
+    # Util for plotting best cluster produced
+    best_cluster_acc = {'acc': 0}
 
     for k in k_knn_list:  ## grid search for k
         W, _, _ = KNN(normal_img, k)
@@ -225,6 +228,10 @@ def run_model(matImg, y, k_knn_list, k1_list, k2_list, lambda_list, l, maxiter_k
 
                         ## ACC
                         acc = 100 * accuracy(y, pred)
+                        if acc > best_cluster_acc['acc']:
+                            best_cluster_acc['acc'] = acc
+                            best_cluster_acc['data'] = H
+                            best_cluster_acc['pred'] = pred
 
                         ## Reconstruction Error
                         a = np.linalg.norm(X - X_reconstructed, 'fro')
@@ -344,5 +351,10 @@ def run_model(matImg, y, k_knn_list, k1_list, k2_list, lambda_list, l, maxiter_k
 
                 print(f"##################################################################################################")
         ##**
+
+        # Storing details of best cluster
+        data = best_cluster_acc['data']
+        pred = best_cluster_acc['pred']
+        store_kmeans(data, pred, model, dataset)
 
     print("Done")

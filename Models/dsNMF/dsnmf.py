@@ -13,7 +13,7 @@ import statistics
 
 from Utils.metrics_evaluation import evaluate_nmi, accuracy, calculate_silhouette_score, calculate_davies_bouldin_score, \
     calculate_dunn_index
-from Utils.utils import init_kmeans
+from Utils.utils import init_kmeans, store_kmeans
 
 relu = lambda x: 0.5 * (x + abs(x))
 
@@ -234,7 +234,7 @@ class DSNMF(object):
         return h
 
 
-def run_model(matImg, y, k1_list, k2_list, maxiter_kmeans):
+def run_model(model, dataset, matImg, y, k1_list, k2_list, maxiter_kmeans):
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
     norma += 1e-10
@@ -243,6 +243,9 @@ def run_model(matImg, y, k1_list, k2_list, maxiter_kmeans):
 
     # Initialise Kmeans
     kmeans = init_kmeans(y)
+
+    # Util for plotting best cluster produced
+    best_cluster_acc = {'acc': 0}
 
     for k1 in k1_list:
 
@@ -285,6 +288,10 @@ def run_model(matImg, y, k1_list, k2_list, maxiter_kmeans):
 
                 ## ACC
                 acc = 100 * accuracy(y, pred)
+                if acc > best_cluster_acc['acc']:
+                    best_cluster_acc['acc'] = acc
+                    best_cluster_acc['data'] = fea.T
+                    best_cluster_acc['pred'] = pred
 
                 # Silhoutte score
                 silhouette_score = calculate_silhouette_score(fea, pred)
@@ -321,5 +328,10 @@ def run_model(matImg, y, k1_list, k2_list, maxiter_kmeans):
 
             print(
                 "**********************************************************************************************************")
+
+        # Storing details of best cluster
+    data = best_cluster_acc['data']
+    pred = best_cluster_acc['pred']
+    store_kmeans(data, pred, model, dataset)
 
     print(f"done!")

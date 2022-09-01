@@ -7,7 +7,7 @@ from sklearn.cluster import KMeans
 import statistics
 import warnings
 
-from Utils.utils import KNN, init_kmeans
+from Utils.utils import KNN, init_kmeans, store_kmeans
 
 warnings.filterwarnings('ignore')
 
@@ -80,7 +80,7 @@ def RSCNMF(X, XX, e, S, D, alpha, beta, _lambda, l, n, maxiter):
     return W, H, t - 1
 
 
-def run_model(matImg, y, alpha_list, beta_list, k_knn_range, k_list, lambda_list, maxiter_kmeans, maxiter):
+def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_list, lambda_list, maxiter_kmeans, maxiter):
 
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
@@ -99,6 +99,9 @@ def run_model(matImg, y, alpha_list, beta_list, k_knn_range, k_list, lambda_list
 
     # Initialise Kmeans
     kmeans = init_kmeans(y)
+
+    # Util for plotting best cluster produced
+    best_cluster_acc = {'acc': 0}
 
     # For convergence comparison
     iterations = []
@@ -166,6 +169,10 @@ def run_model(matImg, y, alpha_list, beta_list, k_knn_range, k_list, lambda_list
 
                         # ACC
                         acc = 100 * accuracy(y, pred)
+                        if acc > best_cluster_acc['acc']:
+                            best_cluster_acc['acc'] = acc
+                            best_cluster_acc['data'] = H
+                            best_cluster_acc['pred'] = pred
 
                         # Silhoutte score
                         silhouette_score = calculate_silhouette_score(H.T, pred)
@@ -283,5 +290,10 @@ def run_model(matImg, y, alpha_list, beta_list, k_knn_range, k_list, lambda_list
         for k in k_list:
             print(f"Average no. of iterations for k = {k} : {statistics.mean(iterations_k2[k])}")
         print(f"Overall average no. of iterations : {statistics.mean(iterations)}")
+
+        # Storing details of best cluster
+        data = best_cluster_acc['data']
+        pred = best_cluster_acc['pred']
+        store_kmeans(data, pred, model, dataset)
 
         print("Done")

@@ -5,7 +5,7 @@ from sklearn.decomposition import NMF
 import warnings
 import statistics
 
-from Utils.utils import init_kmeans
+from Utils.utils import init_kmeans, store_kmeans
 
 warnings.filterwarnings('ignore')
 
@@ -184,7 +184,7 @@ def nsNMF(X, theta, p, n, r, m, maxiter, maxiter_inner):
     return ZSfinal, Hfinal, E, EE, iter - 1
 
 
-def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kmeans):
+def run_model(model, dataset, theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kmeans):
     l = 1
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
@@ -201,6 +201,9 @@ def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kme
 
     ## For convergence comparison
     iterations = []
+
+    # Util for plotting best cluster produced
+    best_cluster_acc = {'acc': 0}
 
     for k in k_list:
 
@@ -239,6 +242,10 @@ def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kme
 
                 ## ACC
                 acc = 100 * accuracy(y, pred)
+                if acc > best_cluster_acc['acc']:
+                    best_cluster_acc['acc'] = acc
+                    best_cluster_acc['data'] = H
+                    best_cluster_acc['pred'] = pred
 
                 # Silhoutte score
                 silhouette_score = calculate_silhouette_score(H.T, pred)
@@ -293,4 +300,10 @@ def run_model(theta_list, matImg, y, k_list, maxiter, maxiter_inner, maxiter_kme
         print(
             "**********************************************************************************************************")
     print(f" Max iterations = {np.max(iterations)}, avg iterations = {statistics.mean(iterations)}")
+
+    # Storing details of best cluster
+    data = best_cluster_acc['data']
+    pred = best_cluster_acc['pred']
+    store_kmeans(data, pred, model, dataset)
+
     print("done")

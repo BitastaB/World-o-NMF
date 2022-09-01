@@ -3,8 +3,7 @@ from sklearn.decomposition import NMF
 import statistics
 from Utils.metrics_evaluation import accuracy, evaluate_nmi, calculate_silhouette_score, calculate_davies_bouldin_score, \
     calculate_dunn_index
-from Utils.utils import init_kmeans, construct_similarity_matrix
-
+from Utils.utils import init_kmeans, construct_similarity_matrix, store_kmeans
 
 """Upadte H_i and V_i for i=1,2,...,l"""
 
@@ -146,15 +145,8 @@ def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2
     return matH, matV, t - 1
 
 
-def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxiter_kmeans, l, max_iter,
+def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxiter_kmeans, l, max_iter,
               myeps_1, myeps_2, y):
-
-    # For convergence comparison
-    iterations = []
-    iterations_k2 = {}
-
-    # Initialise Kmeans
-    kmeans = init_kmeans(y)
 
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
@@ -174,9 +166,21 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
     # Create similarity matrix
     matS = construct_similarity_matrix(matGnd)
 
+
     # Initialization
     diag = np.sum(matS, axis=1)
     matD = np.diag(diag)
+
+
+    # Util for for convergence comparison
+    iterations = []
+    iterations_k2 = {}
+
+    # Util for initialise Kmeans
+    kmeans = init_kmeans(y)
+
+    # Util for plotting best cluster produced
+    best_cluster_acc = {'acc': 0}
 
     for k_1 in k_1_list:
         maxAcc = {}
@@ -237,6 +241,10 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
 
                     # ACC
                     acc = 100 * accuracy(y, pred)
+                    if acc > best_cluster_acc['acc']:
+                        best_cluster_acc['acc'] = acc
+                        best_cluster_acc['data'] = matV
+                        best_cluster_acc['pred'] = pred
 
                     # Silhoutte score
                     silhouette_score = calculate_silhouette_score(matV.T, pred)
@@ -294,6 +302,7 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
             meanDavisScore[k_2] = meanlst_davis_score
             meanDunnScore[k_2] = meanlst_dunn_score
 
+            # Dictionary for each k2 required iterations for convergence
             if k_2 not in iterations_k2.keys():
                 iterations_k2[k_2] = [n_iteration]
             else:
@@ -347,7 +356,7 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
             meanrecon_final[k_2] = [max(meanRecon_reeor[k_2]), parameters[np.argmax(meanRecon_reeor[k_2])]]
             meanSilScore_final[k_2] = [max(meanSilScore[k_2]), parameters[np.argmax(meanSilScore[k_2])]]
             meanDunnScore_final[k_2] = [max(meanDunnScore[k_2]), parameters[np.argmax(meanDunnScore[k_2])]]
-            meanDavidScore_final[k_2] = [max(meanDavisScore[k_2]), parameters[np.argmin(meanDavisScore[k_2])]]
+            meanDavidScore_final[k_2] = [min(meanDavisScore[k_2]), parameters[np.argmin(meanDavisScore[k_2])]]
 
 
             print(f"##################################################################################################")
@@ -368,4 +377,9 @@ def run_model(alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxit
     for k_2 in k_2_list:
         print(f"Average no. of iterations for k2 = {k_2} : {statistics.mean(iterations_k2[k_2])}")
     print(f"Overall average no. of iterations : {statistics.mean(iterations)}")
+
+    # Storing details of best cluster
+    data = best_cluster_acc['data']
+    pred = best_cluster_acc['pred']
+    store_kmeans(data, pred, model, dataset)
     print("#Done!")

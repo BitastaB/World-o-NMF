@@ -3,10 +3,10 @@ import statistics
 from sklearn.decomposition import NMF
 from Utils.metrics_evaluation import evaluate_nmi, accuracy, calculate_silhouette_score, calculate_davies_bouldin_score, \
     calculate_dunn_index
-from Utils.utils import init_kmeans
+from Utils.utils import init_kmeans, store_kmeans
 
 
-def run_model(matImg, y, k_list, maxiter_kmeans):
+def run_model(model, dataset, matImg, y, k_list, maxiter_kmeans):
 
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
     norma += 1e-10
@@ -19,10 +19,13 @@ def run_model(matImg, y, k_list, maxiter_kmeans):
     ## Definiton of matX
     matX = normal_img.T
 
+    # Util for plotting best cluster produced
+    best_cluster_acc = {'acc': 0}
+
     for k in k_list:
-        model = NMF(n_components=k, init='random')
-        W = model.fit_transform(matX)
-        H = model.components_
+        model_nmf = NMF(n_components=k, init='random')
+        W = model_nmf.fit_transform(matX)
+        H = model_nmf.components_
 
         lst_acc = []
         lst_nmi = []
@@ -33,8 +36,12 @@ def run_model(matImg, y, k_list, maxiter_kmeans):
         for i in range(1, maxiter_kmeans):
             pred = []
             pred = kmeans.fit_predict(H.T)
-            nm = 100 * evaluate_nmi(y, pred)
-            ac = 100 * accuracy(y, pred)
+            nmi = 100 * evaluate_nmi(y, pred)
+            acc = 100 * accuracy(y, pred)
+            if acc > best_cluster_acc['acc']:
+                best_cluster_acc['acc'] = acc
+                best_cluster_acc['data'] = H
+                best_cluster_acc['pred'] = pred
 
             # Silhoutte score
             silhouette_score = calculate_silhouette_score(H.T, pred)
@@ -45,8 +52,8 @@ def run_model(matImg, y, k_list, maxiter_kmeans):
             # dunn's index
             dunn_score = calculate_dunn_index(H.T, y)
 
-            lst_acc.append(ac)
-            lst_nmi.append(nm)
+            lst_acc.append(acc)
+            lst_nmi.append(nmi)
             lst_sil_score.append(silhouette_score)
             lst_davis_score.append(davis_score)
             lst_dunn_score.append(dunn_score)
@@ -82,5 +89,11 @@ def run_model(matImg, y, k_list, maxiter_kmeans):
         print(f" k = {k} : mean Davies bouldin Score = {meanDaviesScore}")
 
         print("\n")
+
+
+    # Storing details of best cluster
+    data = best_cluster_acc['data']
+    pred = best_cluster_acc['pred']
+    store_kmeans(data, pred, model, dataset)
 
     print("#Done!")

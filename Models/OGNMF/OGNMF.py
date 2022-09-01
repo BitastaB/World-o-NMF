@@ -7,7 +7,7 @@ from sklearn.cluster import KMeans
 
 from Utils.metrics_evaluation import evaluate_nmi, accuracy, calculate_silhouette_score, calculate_davies_bouldin_score, \
     calculate_dunn_index
-from Utils.utils import KNN, init_kmeans
+from Utils.utils import KNN, init_kmeans, store_kmeans
 
 
 def init_params(matS, m, n, k):
@@ -60,7 +60,7 @@ def GONMF(matX, matS, matH, matV, alpha, beta, eps_1, eps_2, max_iter, matD, n, 
     return matH, matV, recon_reeor, i - 1
 
 
-def run_model(matImg, y, alpha_range, beta_range, knn_neigh_list, k_list, maxiter_kmeans, eps_1, eps_2, max_iter):
+def run_model(model, dataset, matImg, y, alpha_range, beta_range, knn_neigh_list, k_list, maxiter_kmeans, eps_1, eps_2, max_iter):
 
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
@@ -79,6 +79,9 @@ def run_model(matImg, y, alpha_range, beta_range, knn_neigh_list, k_list, maxite
     # For convergence comparison
     iterations = []
     iterations_k2 = {}
+
+    # Util for plotting best cluster produced
+    best_cluster_acc = {'acc': 0}
 
     parameters = []
     for a in alpha_range:
@@ -130,6 +133,11 @@ def run_model(matImg, y, alpha_range, beta_range, knn_neigh_list, k_list, maxite
 
                     # ACC
                     acc = 100 * accuracy(y, pred)
+                    if acc > best_cluster_acc['acc']:
+                        best_cluster_acc['acc'] = acc
+                        best_cluster_acc['data'] = matV
+                        best_cluster_acc['pred'] = pred
+
 
                     # Silhoutte score
                     silhouette_score = calculate_silhouette_score(matV.T, pred)
@@ -204,4 +212,10 @@ def run_model(matImg, y, alpha_range, beta_range, knn_neigh_list, k_list, maxite
     for k in k_list:
         print(f"Average no. of iterations for k = {k} : {statistics.mean(iterations_k2[k])}")
     print(f"Overall average no. of iterations : {statistics.mean(iterations)}")
+
+    # Storing details of best cluster
+    data = best_cluster_acc['data']
+    pred = best_cluster_acc['pred']
+    store_kmeans(data, pred, model, dataset)
+
     print(f"done!")

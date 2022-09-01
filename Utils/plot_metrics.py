@@ -47,7 +47,7 @@ pallet = {0: '#090119',
           39: '#FFBF00'}
 
 
-def plot_clusters(data, title, kmeans_cluster):
+def plot_clusters_tsne(data, title, kmeans_cluster):
     perp_list = [15]
 
     for perp in perp_list:

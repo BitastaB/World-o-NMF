@@ -4,7 +4,7 @@ import numpy as np
 
 from Utils.metrics_evaluation import evaluate_nmi, accuracy, calculate_silhouette_score, calculate_davies_bouldin_score, \
     calculate_dunn_index
-from Utils.utils import init_kmeans
+from Utils.utils import init_kmeans, store_kmeans
 
 
 def computeW(X, S, H, nu):
@@ -46,7 +46,7 @@ def ERWNMF(X, nu, k, m, n, maxiter):
     return W, S, H
 
 
-def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
+def run_model(model, dataset, matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
     best_nmi = 0
     best_acc = 0
     best_sil_score = 0
@@ -66,6 +66,9 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
 
     # Initialise Kmeans
     kmeans = init_kmeans(y)
+
+    # Util for plotting best cluster produced
+    best_cluster_acc = {'acc': 0}
 
     a = list(range(22, 33))
     nu_list = np.power(2, a)
@@ -102,6 +105,10 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
 
                 # ACC
                 acc = 100 * accuracy(y, pred)
+                if acc > best_cluster_acc['acc']:
+                    best_cluster_acc['acc'] = acc
+                    best_cluster_acc['data'] = H
+                    best_cluster_acc['pred'] = pred
 
                 # Silhoutte score
                 silhouette_score = calculate_silhouette_score(H.T, pred)
@@ -171,5 +178,10 @@ def run_model(matImg, y, k_list, maxiter, maxiter_kmeans, plot_graphs):
     print(f" best nmi(avg) = {best_nmi} for k = {best_k_nmi}")
     print(f" best silhoutte score (avg) = {best_sil_score} for k {best_k_sil_Score}")
     print("....................................................")
+
+    # Storing details of best cluster
+    data = best_cluster_acc['data']
+    pred = best_cluster_acc['pred']
+    store_kmeans(data, pred, model, dataset)
 
     print(f"done!")
