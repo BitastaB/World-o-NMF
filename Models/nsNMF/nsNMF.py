@@ -199,8 +199,9 @@ def run_model(model, dataset, theta_list, matImg, y, k_list, maxiter, maxiter_in
     # Initialise Kmeans
     kmeans = init_kmeans(y)
 
-    ## For convergence comparison
+    # Util for convergence comparison
     iterations = []
+    iterations_k2 = {}
 
     # Util for plotting best cluster produced
     best_cluster_acc = {'acc': 0}
@@ -221,8 +222,8 @@ def run_model(model, dataset, theta_list, matImg, y, k_list, maxiter, maxiter_in
 
         r = {1: k}
         for theta in theta_list:
-            Z, H, _, _, iter = nsNMF(X, theta, m, n, r, l, maxiter, maxiter_inner)
-            iterations.append(iter)
+            Z, H, _, _, n_iteration = nsNMF(X, theta, m, n, r, l, maxiter, maxiter_inner)
+            iterations.append(n_iteration)
 
             ## Reconstructed matix
             X_reconstructed = Z @ H
@@ -278,6 +279,14 @@ def run_model(model, dataset, theta_list, matImg, y, k_list, maxiter, maxiter_in
             avg_lst_davis_score_k.append(statistics.mean(lst_davis_score))
             avg_lst_dunn_score_k.append(statistics.mean(lst_dunn_score))
 
+        # Dictionary for each k2 required iterations for convergence
+        if k not in iterations_k2.keys():
+            iterations_k2[k] = [n_iteration]
+        else:
+            iterations_k2[k].append(n_iteration)
+
+    # ENd for k
+
         print(
             "**********************************************************************************************************")
         print("The results of running the Kmeans method 20 times and the report of maximum of 20 runs\n")
@@ -299,12 +308,17 @@ def run_model(model, dataset, theta_list, matImg, y, k_list, maxiter, maxiter_in
 
         print(
             "**********************************************************************************************************")
-    print(f" Max iterations = {np.max(iterations)}, avg iterations = {statistics.mean(iterations)}")
+
 
     # Storing details of best cluster
     data = best_cluster_acc['data']
     pred = best_cluster_acc['pred']
     store_kmeans(data, pred, model, dataset)
+
+    ## print for convergence comparison
+    for k in k_list:
+        print(f"Average no. of iterations for k2 = {k} : {statistics.mean(iterations_k2[k])}")
+    print(f"Overall average no. of iterations : {statistics.mean(iterations)}")
 
     print("done")
 

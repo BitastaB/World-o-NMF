@@ -151,6 +151,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                 for _lambda in lambda_list:
                     W, H, n_iteration = RSCNMF(X, XX, E, S, D, p[0], p[1], _lambda, k, n, maxiter)
 
+
                     iterations.append(n_iteration)
 
                     ## Kmeans task
@@ -224,7 +225,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
             if k not in iterations_k2.keys():
                 iterations_k2[k] = [n_iteration]
             else:
-                iterations_k2[k] = iterations_k2[k].append(n_iteration)
+                iterations_k2[k].append(n_iteration)
 
 
                 ## ENd for k2

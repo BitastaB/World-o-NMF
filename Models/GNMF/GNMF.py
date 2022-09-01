@@ -174,7 +174,7 @@ def run_model(model, dataset, matImg, y, k_knn_list, k_list, lambda_list, maxite
                 if k not in iterations_k2.keys():
                     iterations_k2[k] = [n_iteration]
                 else:
-                    iterations_k2[k] = iterations_k2[k].append(n_iteration)
+                    iterations_k2[k].append(n_iteration)
 
                 ## End for
 

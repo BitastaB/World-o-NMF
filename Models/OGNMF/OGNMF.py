@@ -176,7 +176,7 @@ def run_model(model, dataset, matImg, y, alpha_range, beta_range, knn_neigh_list
             if k not in iterations_k2.keys():
                 iterations_k2[k] = [n_iteration]
             else:
-                iterations_k2[k] = iterations_k2[k].append(n_iteration)
+                iterations_k2[k].append(n_iteration)
 
             print(
                 "**********************************************************************************************************")

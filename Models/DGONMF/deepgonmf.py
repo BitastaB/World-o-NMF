@@ -172,7 +172,7 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
     matD = np.diag(diag)
 
 
-    # Util for for convergence comparison
+    # Util for convergence comparison
     iterations = []
     iterations_k2 = {}
 
@@ -302,11 +302,12 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
             meanDavisScore[k_2] = meanlst_davis_score
             meanDunnScore[k_2] = meanlst_dunn_score
 
+
             # Dictionary for each k2 required iterations for convergence
             if k_2 not in iterations_k2.keys():
                 iterations_k2[k_2] = [n_iteration]
             else:
-                iterations_k2[k_2] = iterations_k2[k_2].append(n_iteration)
+                iterations_k2[k_2].append(n_iteration)
 
         # ENd for k2
 
