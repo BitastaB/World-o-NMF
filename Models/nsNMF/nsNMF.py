@@ -303,8 +303,8 @@ def run_model(model, dataset, theta_list, matImg, y, k_list, maxiter, maxiter_in
         print(f"k = {k} : best avg acc = {max(avg_lst_acc_k)} , with nu = {theta_list[np.argmax(avg_lst_acc_k)]} ")
         print(f"k = {k} : best avg nmi = {max(avg_lst_nmi_k)} , with nu = {theta_list[np.argmax(avg_lst_nmi_k)]} ")
         print(f"k = {k} : best avg Silhoutte score = {max(avg_lst_sil_score_k)} , with nu = {theta_list[np.argmax(avg_lst_sil_score_k)]} ")
-        print(f"k = {k} : best avg nmi = {max(avg_lst_dunn_score_k)} , with nu = {theta_list[np.argmax(avg_lst_dunn_score_k)]} ")
-        print(f"k = {k} : best avg nmi = {min(avg_lst_davis_score_k)} , with nu = {theta_list[np.argmin(avg_lst_davis_score_k)]} ")
+        print(f"k = {k} : best avg Dunn's Index score = {max(avg_lst_dunn_score_k)} , with nu = {theta_list[np.argmax(avg_lst_dunn_score_k)]} ")
+        print(f"k = {k} : best avg Davies Bouldin score = {min(avg_lst_davis_score_k)} , with nu = {theta_list[np.argmin(avg_lst_davis_score_k)]} ")
 
         print(
             "**********************************************************************************************************")

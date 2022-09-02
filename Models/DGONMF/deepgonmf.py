@@ -308,6 +308,7 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
                 iterations_k2[k_2] = [n_iteration]
             else:
                 iterations_k2[k_2].append(n_iteration)
+            print(f"k1 = {k_1} k2 = {k_2}:\n{iterations_k2}")
 
         # ENd for k2
 

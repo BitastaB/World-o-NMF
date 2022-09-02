@@ -1,10 +1,13 @@
 import numpy as np
+from bokeh.palettes import Category10, Category20b
 from matplotlib import pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.manifold import TSNE
 from sklearn.metrics import silhouette_score, davies_bouldin_score
 import seaborn as sns
 import pandas as pd
+
+from Utils.plot_utils import DGONMF_lists
 
 pallet = {0: '#090119',
           1: '#1A7184',
@@ -72,4 +75,145 @@ def plot_clusters_tsne(data, model, dataset, kmeans_cluster):
         plt.show()
 
 
+def plot_model_performance(model):
+    round_upto = 4
+    k_list = [10, 20, 30, 40, 50, 60, 70]
+    jaffe_acc_list, jaffe_nmi_list = DGONMF_lists("jaffe", round_upto)
+    orl_acc_list, orl_nmi_list = DGONMF_lists("orl", round_upto)
+    warp_acc_list, warp_nmi_list = DGONMF_lists("warpAR10P", round_upto)
+    umist_acc_list, umist_nmi_list = DGONMF_lists("umist", round_upto)
+    yale_acc_list, yale_nmi_list = DGONMF_lists("yale", round_upto)
+
+    # Plotting average accuracy
+    plt.plot(k_list, jaffe_acc_list, label="jaffe", marker='o')
+    plt.plot(k_list, orl_acc_list, label="orl", marker='o')
+    plt.plot(k_list, warp_acc_list, label="warpAR10P", marker='o')
+    plt.plot(k_list, umist_acc_list, label="umist", marker='o')
+    plt.plot(k_list, yale_acc_list, label="yale", marker='o')
+
+    plt.xlabel("k")
+    plt.ylabel("accurancy in %")
+    plt.legend()
+    plt.title(f"Average accuracy for : {model}")
+    plt.savefig(f'Results/plots/{model}_acc.png', dpi=150)
+    plt.show()
+
+    # Plotting average nmi
+    plt.plot(k_list, jaffe_nmi_list, label="jaffe", marker='o')
+    plt.plot(k_list, orl_nmi_list, label="orl", marker='o')
+    plt.plot(k_list, warp_nmi_list, label="warpAR10P", marker='o')
+    plt.plot(k_list, umist_nmi_list, label="umist", marker='o')
+    plt.plot(k_list, yale_nmi_list, label="yale", marker='o')
+
+    plt.xlabel("k")
+    plt.ylabel("NMI in %")
+    plt.legend()
+    plt.title(f"Average NMI for : {model}")
+    plt.savefig(f'Results/plots/{model}_nmi.png', dpi=150)
+    plt.show()
+
+
+# Plotting average accuracy
+def plot_acc(dataset, k_list, dgonmf_acc_list,erwnmf_acc_list, nmf_acc_list, gnmf_acc_list, dnsNMF_acc_list, dsNMF_acc_list, ognmf_acc_list, grsnmf_acc_list, rscnmf_acc_list, nsnmf_acc_list, dgrsnmf_acc_list):
+    # Plotting average accuracy
+    plt.plot(k_list, dgonmf_acc_list, label="DGONMF", marker='.', c=Category10[10][0])
+    plt.plot(k_list, erwnmf_acc_list, label="ERWNMF", marker='.', c=Category10[10][1])
+    plt.plot(k_list, nmf_acc_list, label="NMF", marker='.', c=Category10[10][2])
+    plt.plot(k_list, gnmf_acc_list, label="GNMF", marker='.', c=Category10[10][3])
+    plt.plot(k_list, dnsNMF_acc_list, label="dnsNMF", marker='.', c=Category10[10][4])
+    plt.plot(k_list, dsNMF_acc_list, label="dsnmf", marker='.', c=Category10[10][5])
+    plt.plot(k_list, ognmf_acc_list, label="OGNMF", marker='.', c=Category10[10][6])
+    plt.plot(k_list, grsnmf_acc_list, label="GRSNMF", marker='.', c=Category10[10][7])
+    plt.plot(k_list, rscnmf_acc_list, label="RSCNMF", marker='.', c=Category10[10][8])
+    plt.plot(k_list, nsnmf_acc_list, label="nsNMF", marker='.', c=Category10[10][9])
+    plt.plot(k_list, dgrsnmf_acc_list, label="DGRSNMF", marker='.', c=Category20b[12][0])
+
+    plt.xlabel("k")
+    plt.ylabel("accurancy in %")
+    plt.legend(loc="right")
+    plt.title(f"Average accuracy for : {dataset}")
+    plt.savefig(f'Results/plots/{dataset}/{dataset}_acc.png', dpi=150)
+    plt.show()
+
+def plot_nmi(dataset, k_list, dgonmf_nmi_list, erwnmf_nmi_list, nmf_nmi_list, gnmf_nmi_list, dnsNMF_nmi_list, dsNMF_nmi_list, ognmf_nmi_list, grsnmf_nmi_list, rscnmf_nmi_list, nsnmf_nmi_list, dgrsnmf_nmi_list):
+    plt.plot(k_list, dgonmf_nmi_list, label="DGONMF", marker='.', c=Category10[10][0])
+    plt.plot(k_list, erwnmf_nmi_list, label="ERWNMF", marker='.', c=Category10[10][1])
+    plt.plot(k_list, nmf_nmi_list, label="NMF", marker='.', c=Category10[10][2])
+    plt.plot(k_list, gnmf_nmi_list, label="GNMF", marker='.', c=Category10[10][3])
+    plt.plot(k_list, dnsNMF_nmi_list, label="dnsNMF", marker='.', c=Category10[10][4])
+    plt.plot(k_list, dsNMF_nmi_list, label="dsnmf", marker='.', c=Category10[10][5])
+    plt.plot(k_list, ognmf_nmi_list, label="OGNMF", marker='.', c=Category10[10][6])
+    plt.plot(k_list, grsnmf_nmi_list, label="GRSNMF", marker='.', c=Category10[10][7])
+    plt.plot(k_list, rscnmf_nmi_list, label="RSCNMF", marker='.', c=Category10[10][8])
+    plt.plot(k_list, nsnmf_nmi_list, label="nsNMF", marker='.', c=Category10[10][9])
+    plt.plot(k_list, dgrsnmf_nmi_list, label="DGRSNMF", marker='.', c=Category20b[12][0])
+
+    plt.xlabel("k")
+    plt.ylabel("nmi in %")
+    plt.legend(loc="right")
+    plt.title(f"Average nmi for : {dataset}")
+    plt.savefig(f'Results/plots/{dataset}/{dataset}_nmi.png', dpi=150)
+    plt.show()
+
+def plot_sil(dataset, k_list, dgonmf_sil_list, erwnmf_sil_list, nmf_sil_list, gnmf_sil_list, dnsNMF_sil_list, dsNMF_sil_list, ognmf_sil_list, grsnmf_sil_list, rscnmf_sil_list, nsnmf_sil_list, dgrsnmf_sil_list):
+    plt.plot(k_list, dgonmf_sil_list, label="DGONMF", marker='.', c=Category10[10][0])
+    plt.plot(k_list, erwnmf_sil_list, label="ERWNMF", marker='.', c=Category10[10][1])
+    plt.plot(k_list, nmf_sil_list, label="NMF", marker='.', c=Category10[10][2])
+    plt.plot(k_list, gnmf_sil_list, label="GNMF", marker='.', c=Category10[10][3])
+    plt.plot(k_list, dnsNMF_sil_list, label="dnsNMF", marker='.', c=Category10[10][4])
+    plt.plot(k_list, dsNMF_sil_list, label="dsnmf", marker='.', c=Category10[10][5])
+    plt.plot(k_list, ognmf_sil_list, label="OGNMF", marker='.', c=Category10[10][6])
+    plt.plot(k_list, grsnmf_sil_list, label="GRSNMF", marker='.', c=Category10[10][7])
+    plt.plot(k_list, rscnmf_sil_list, label="RSCNMF", marker='.', c=Category10[10][8])
+    plt.plot(k_list, nsnmf_sil_list, label="nsNMF", marker='.', c=Category10[10][9])
+    plt.plot(k_list, dgrsnmf_sil_list, label="DGRSNMF", marker='.', c=Category20b[12][0])
+
+    plt.xlabel("k")
+    plt.ylabel("sil in %")
+    plt.legend(loc="right")
+    plt.title(f"Average sil for : {dataset}")
+    plt.savefig(f'Results/plots/{dataset}/{dataset}_sil.png', dpi=150)
+    plt.show()
+
+
+def plot_dunn(dataset, k_list, dgonmf_dunn_list, erwnmf_dunn_list, nmf_dunn_list, gnmf_dunn_list, dnsNMF_dunn_list, dsNMF_dunn_list, ognmf_dunn_list, grsnmf_dunn_list, rscnmf_dunn_list, nsnmf_dunn_list, dgrsnmf_dunn_list):
+    plt.plot(k_list, dgonmf_dunn_list, label="DGONMF", marker='.', c=Category10[10][0])
+    plt.plot(k_list, erwnmf_dunn_list, label="ERWNMF", marker='.', c=Category10[10][1])
+    plt.plot(k_list, nmf_dunn_list, label="NMF", marker='.', c=Category10[10][2])
+    plt.plot(k_list, gnmf_dunn_list, label="GNMF", marker='.', c=Category10[10][3])
+    plt.plot(k_list, dnsNMF_dunn_list, label="dnsNMF", marker='.', c=Category10[10][4])
+    plt.plot(k_list, dsNMF_dunn_list, label="dsnmf", marker='.', c=Category10[10][5])
+    plt.plot(k_list, ognmf_dunn_list, label="OGNMF", marker='.', c=Category10[10][6])
+    plt.plot(k_list, grsnmf_dunn_list, label="GRSNMF", marker='.', c=Category10[10][7])
+    plt.plot(k_list, rscnmf_dunn_list, label="RSCNMF", marker='.', c=Category10[10][8])
+    plt.plot(k_list, nsnmf_dunn_list, label="nsNMF", marker='.', c=Category10[10][9])
+    plt.plot(k_list, dgrsnmf_dunn_list, label="DGRSNMF", marker='.', c=Category20b[12][0])
+
+    plt.xlabel("k")
+    plt.ylabel("dunn in %")
+    plt.legend(loc="right")
+    plt.title(f"Average dunn for : {dataset}")
+    plt.savefig(f'Results/plots/{dataset}/{dataset}_dunn.png', dpi=150)
+    plt.show()
+
+
+def plot_db(dataset, k_list, dgonmf_db_list, erwnmf_db_list, nmf_db_list, gnmf_db_list, dnsNMF_db_list, dsNMF_db_list, ognmf_db_list, grsnmf_db_list, rscnmf_db_list, nsnmf_db_list, dgrsnmf_db_list):
+    plt.plot(k_list, dgonmf_db_list, label="DGONMF", marker='.', c=Category10[10][0])
+    plt.plot(k_list, erwnmf_db_list, label="ERWNMF", marker='.', c=Category10[10][1])
+    plt.plot(k_list, nmf_db_list, label="NMF", marker='.', c=Category10[10][2])
+    plt.plot(k_list, gnmf_db_list, label="GNMF", marker='.', c=Category10[10][3])
+    plt.plot(k_list, dnsNMF_db_list, label="dnsNMF", marker='.', c=Category10[10][4])
+    plt.plot(k_list, dsNMF_db_list, label="dsnmf", marker='.', c=Category10[10][5])
+    plt.plot(k_list, ognmf_db_list, label="OGNMF", marker='.', c=Category10[10][6])
+    plt.plot(k_list, grsnmf_db_list, label="GRSNMF", marker='.', c=Category10[10][7])
+    plt.plot(k_list, rscnmf_db_list, label="RSCNMF", marker='.', c=Category10[10][8])
+    plt.plot(k_list, nsnmf_db_list, label="nsNMF", marker='.', c=Category10[10][9])
+    plt.plot(k_list, dgrsnmf_db_list, label="DGRSNMF", marker='.', c=Category20b[12][0])
+
+    plt.xlabel("k")
+    plt.ylabel("db in %")
+    plt.legend(loc="right")
+    plt.title(f"Average db for : {dataset}")
+    plt.savefig(f'Results/plots/{dataset}/{dataset}_db.png', dpi=150)
+    plt.show()
 
