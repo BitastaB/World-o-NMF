@@ -52,7 +52,7 @@ pallet = {0: '#090119',
 
 
 def plot_clusters_tsne(data, model, dataset, kmeans_cluster):
-    perp_list = [10]# [5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 50]
+    perp_list = [12]# [5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 50]
 
     for perp in perp_list:
         _title = f"dataset = {dataset}, model = {model}, with tsne perpexlity = {perp}"
@@ -70,7 +70,7 @@ def plot_clusters_tsne(data, model, dataset, kmeans_cluster):
         # plt.figure(figsize = (15,15))
         sns.scatterplot(clusters_tsne_scale.iloc[:, 0], clusters_tsne_scale.iloc[:, 1], hue=labels_tsne_scale,
                         palette=pallet, s=50, alpha=0.75).set_title(_title)  # , fontsize=15)
-        plt.legend()
+        plt.legend([], [], frameon=False)
         plt.savefig(f'Results/plots/{dataset}/cluster_{dataset}_{model}.png', dpi=150)
         plt.show()
 
@@ -171,7 +171,7 @@ def plot_sil(dataset, k_list, dgonmf_sil_list, erwnmf_sil_list, nmf_sil_list, gn
     plt.xlabel("k")
     plt.ylabel("sil in %")
     plt.legend(loc="right")
-    plt.title(f"Average sil for : {dataset}")
+    plt.title(f"Average Silhoutter Score for : {dataset}")
     plt.savefig(f'Results/plots/{dataset}/{dataset}_sil.png', dpi=150)
     plt.show()
 
@@ -192,7 +192,7 @@ def plot_dunn(dataset, k_list, dgonmf_dunn_list, erwnmf_dunn_list, nmf_dunn_list
     plt.xlabel("k")
     plt.ylabel("dunn in %")
     plt.legend(loc="right")
-    plt.title(f"Average dunn for : {dataset}")
+    plt.title(f"Average Dunn's Index for : {dataset}")
     plt.savefig(f'Results/plots/{dataset}/{dataset}_dunn.png', dpi=150)
     plt.show()
 
@@ -213,7 +213,7 @@ def plot_db(dataset, k_list, dgonmf_db_list, erwnmf_db_list, nmf_db_list, gnmf_d
     plt.xlabel("k")
     plt.ylabel("db in %")
     plt.legend(loc="right")
-    plt.title(f"Average db for : {dataset}")
+    plt.title(f"Average Davies Bouldin Index for : {dataset}")
     plt.savefig(f'Results/plots/{dataset}/{dataset}_db.png', dpi=150)
     plt.show()
 

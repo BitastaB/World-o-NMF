@@ -1,0 +1,645 @@
+Model : OGNMF
+Dataset : umist
+max iterations : 100
+myeps_1 : 1e-12
+myeps_2 : 1e-10
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 10 : best max acc = 41.21739130434783 , with parameters = (10.0, 1), k_knn = 3
+k = 10 : best max nmi = 57.07129813402491 , with parameters = (10.0, 0.01), k_knn = 3
+k = 10 : best max Silhoutte score = 0.2748603867373702 , with parameters = (10.0, 1), k_knn = 3
+k = 10 : best max Dunn's Index score = 0.10159932192985656 , with parameters = (0.001, 0.01), k_knn = 3
+k = 10 : best min Davies Bouldin score = 1.2067468989642676 , with parameters = (10.0, 1), k_knn = 3
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 10 : best avg acc = 36.265446224256294 , with parameters = (10.0, 1), k_knn = 3
+k = 10 : best avg nmi = 54.73791928799052 , with parameters = (10.0, 0.01), k_knn = 3
+k = 10 : best avg Silhoutte score = 0.25962789006099646 , with parameters = (10.0, 1), k_knn = 3
+k = 10 : best avg Dunn's Index score = 0.10159932192985656 , with parameters = (0.001, 0.01), k_knn = 3
+k = 10 : best avg Davies Bouldin score = 1.264314230636494 , with parameters = (10.0, 1), k_knn = 3
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 20 : best max acc = 40.869565217391305 , with parameters = (0.1, 0.1), k_knn = 3
+k = 20 : best max nmi = 60.91245591921054 , with parameters = (10.0, 1), k_knn = 3
+k = 20 : best max Silhoutte score = 0.2531173023359085 , with parameters = (10.0, 1), k_knn = 3
+k = 20 : best max Dunn's Index score = 0.23978961947425695 , with parameters = (0.001, 0.01), k_knn = 3
+k = 20 : best min Davies Bouldin score = 1.3056861247180507 , with parameters = (10.0, 1), k_knn = 3
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 20 : best avg acc = 37.97711670480549 , with parameters = (10.0, 1), k_knn = 3
+k = 20 : best avg nmi = 58.20438777814975 , with parameters = (10.0, 1), k_knn = 3
+k = 20 : best avg Silhoutte score = 0.24515404127804222 , with parameters = (10.0, 1), k_knn = 3
+k = 20 : best avg Dunn's Index score = 0.23978961947425695 , with parameters = (0.001, 0.01), k_knn = 3
+k = 20 : best avg Davies Bouldin score = 1.3547279002314514 , with parameters = (10.0, 1), k_knn = 3
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 30 : best max acc = 44.69565217391304 , with parameters = (10.0, 1), k_knn = 3
+k = 30 : best max nmi = 61.2186455427198 , with parameters = (10.0, 1), k_knn = 3
+k = 30 : best max Silhoutte score = 0.2257409280197622 , with parameters = (10.0, 1), k_knn = 3
+k = 30 : best max Dunn's Index score = 0.3097222028438838 , with parameters = (0.001, 0.01), k_knn = 3
+k = 30 : best min Davies Bouldin score = 1.454051584855164 , with parameters = (10.0, 1), k_knn = 3
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 30 : best avg acc = 39.18535469107552 , with parameters = (10.0, 1), k_knn = 3
+k = 30 : best avg nmi = 58.82751193166061 , with parameters = (10.0, 0.1), k_knn = 3
+k = 30 : best avg Silhoutte score = 0.21568898629109814 , with parameters = (10.0, 1), k_knn = 3
+k = 30 : best avg Dunn's Index score = 0.3097222028438838 , with parameters = (0.001, 0.01), k_knn = 3
+k = 30 : best avg Davies Bouldin score = 1.507557600527978 , with parameters = (10.0, 1), k_knn = 3
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 40 : best max acc = 45.565217391304344 , with parameters = (10.0, 1), k_knn = 3
+k = 40 : best max nmi = 62.57061080718812 , with parameters = (10.0, 1), k_knn = 3
+k = 40 : best max Silhoutte score = 0.2040163456548612 , with parameters = (10.0, 1), k_knn = 3
+k = 40 : best max Dunn's Index score = 0.38189237586731795 , with parameters = (0.001, 0.01), k_knn = 3
+k = 40 : best min Davies Bouldin score = 1.5307032076274316 , with parameters = (10.0, 1), k_knn = 3
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 40 : best avg acc = 40.61327231121282 , with parameters = (10.0, 1), k_knn = 3
+k = 40 : best avg nmi = 59.97431779052554 , with parameters = (10.0, 1), k_knn = 3
+k = 40 : best avg Silhoutte score = 0.19683791267086986 , with parameters = (10.0, 1), k_knn = 3
+k = 40 : best avg Dunn's Index score = 0.38189237586731795 , with parameters = (0.001, 0.01), k_knn = 3
+k = 40 : best avg Davies Bouldin score = 1.5894723920238485 , with parameters = (10.0, 1), k_knn = 3
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 50 : best max acc = 45.04347826086956 , with parameters = (0.1, 1), k_knn = 3
+k = 50 : best max nmi = 63.352522144010784 , with parameters = (10.0, 1), k_knn = 3
+k = 50 : best max Silhoutte score = 0.20376253997177077 , with parameters = (10.0, 1), k_knn = 3
+k = 50 : best max Dunn's Index score = 0.4564950256552078 , with parameters = (0.001, 0.01), k_knn = 3
+k = 50 : best min Davies Bouldin score = 1.5785106028095008 , with parameters = (10.0, 0.1), k_knn = 3
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 50 : best avg acc = 40.12814645308924 , with parameters = (0.1, 1), k_knn = 3
+k = 50 : best avg nmi = 58.971250101245296 , with parameters = (10.0, 1), k_knn = 3
+k = 50 : best avg Silhoutte score = 0.19155256736734444 , with parameters = (10.0, 1), k_knn = 3
+k = 50 : best avg Dunn's Index score = 0.4564950256552078 , with parameters = (0.001, 0.01), k_knn = 3
+k = 50 : best avg Davies Bouldin score = 1.6484590860452357 , with parameters = (10.0, 1), k_knn = 3
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 60 : best max acc = 44.69565217391304 , with parameters = (0.1, 0.1), k_knn = 3
+k = 60 : best max nmi = 62.991634294066436 , with parameters = (0.1, 1), k_knn = 3
+k = 60 : best max Silhoutte score = 0.17915316879157306 , with parameters = (10.0, 1), k_knn = 3
+k = 60 : best max Dunn's Index score = 0.4806712216622562 , with parameters = (0.001, 0.01), k_knn = 3
+k = 60 : best min Davies Bouldin score = 1.6407137456231453 , with parameters = (10.0, 1), k_knn = 3
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 60 : best avg acc = 39.92677345537757 , with parameters = (0.1, 0.1), k_knn = 3
+k = 60 : best avg nmi = 60.098121044611744 , with parameters = (0.1, 0.1), k_knn = 3
+k = 60 : best avg Silhoutte score = 0.16928768841604977 , with parameters = (10.0, 1), k_knn = 3
+k = 60 : best avg Dunn's Index score = 0.4806712216622562 , with parameters = (0.001, 0.01), k_knn = 3
+k = 60 : best avg Davies Bouldin score = 1.7327880952786563 , with parameters = (10.0, 1), k_knn = 3
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 70 : best max acc = 45.391304347826086 , with parameters = (10.0, 1), k_knn = 3
+k = 70 : best max nmi = 64.01865109870036 , with parameters = (10.0, 1), k_knn = 3
+k = 70 : best max Silhoutte score = 0.1833886241963866 , with parameters = (10.0, 1), k_knn = 3
+k = 70 : best max Dunn's Index score = 0.5044058475168168 , with parameters = (0.001, 0.01), k_knn = 3
+k = 70 : best min Davies Bouldin score = 1.6728689604285627 , with parameters = (10.0, 1), k_knn = 3
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 70 : best avg acc = 41.235697940503435 , with parameters = (10.0, 1), k_knn = 3
+k = 70 : best avg nmi = 60.70848733669463 , with parameters = (10.0, 0.1), k_knn = 3
+k = 70 : best avg Silhoutte score = 0.17516203694833038 , with parameters = (10.0, 1), k_knn = 3
+k = 70 : best avg Dunn's Index score = 0.5044058475168168 , with parameters = (0.001, 0.01), k_knn = 3
+k = 70 : best avg Davies Bouldin score = 1.7592808008835525 , with parameters = (10.0, 1), k_knn = 3
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 10 : best max acc = 40.869565217391305 , with parameters = (10.0, 0.1), k_knn = 5
+k = 10 : best max nmi = 60.61331345601363 , with parameters = (10.0, 1), k_knn = 5
+k = 10 : best max Silhoutte score = 0.31402026376143 , with parameters = (10.0, 1), k_knn = 5
+k = 10 : best max Dunn's Index score = 0.11665733315193347 , with parameters = (0.001, 0.01), k_knn = 5
+k = 10 : best min Davies Bouldin score = 1.0872563748802613 , with parameters = (10.0, 1), k_knn = 5
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 10 : best avg acc = 38.40732265446224 , with parameters = (10.0, 1), k_knn = 5
+k = 10 : best avg nmi = 57.978891047926496 , with parameters = (10.0, 1), k_knn = 5
+k = 10 : best avg Silhoutte score = 0.2986102028234323 , with parameters = (10.0, 1), k_knn = 5
+k = 10 : best avg Dunn's Index score = 0.11665733315193347 , with parameters = (0.001, 0.01), k_knn = 5
+k = 10 : best avg Davies Bouldin score = 1.1312719947003045 , with parameters = (10.0, 1), k_knn = 5
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 20 : best max acc = 44.34782608695652 , with parameters = (10.0, 1), k_knn = 5
+k = 20 : best max nmi = 61.56801988692035 , with parameters = (10.0, 1), k_knn = 5
+k = 20 : best max Silhoutte score = 0.26611590394805307 , with parameters = (10.0, 1), k_knn = 5
+k = 20 : best max Dunn's Index score = 0.2543347993887348 , with parameters = (0.001, 0.01), k_knn = 5
+k = 20 : best min Davies Bouldin score = 1.2586051648870509 , with parameters = (10.0, 1), k_knn = 5
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 20 : best avg acc = 40.36613272311213 , with parameters = (10.0, 0.1), k_knn = 5
+k = 20 : best avg nmi = 58.85032734050965 , with parameters = (10.0, 1), k_knn = 5
+k = 20 : best avg Silhoutte score = 0.24998500029191678 , with parameters = (10.0, 1), k_knn = 5
+k = 20 : best avg Dunn's Index score = 0.2543347993887348 , with parameters = (0.001, 0.01), k_knn = 5
+k = 20 : best avg Davies Bouldin score = 1.3427273650386151 , with parameters = (10.0, 1), k_knn = 5
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 30 : best max acc = 41.56521739130435 , with parameters = (0.1, 0.1), k_knn = 5
+k = 30 : best max nmi = 60.783002541578 , with parameters = (10.0, 0.1), k_knn = 5
+k = 30 : best max Silhoutte score = 0.23235628248006476 , with parameters = (10.0, 1), k_knn = 5
+k = 30 : best max Dunn's Index score = 0.34058778975213544 , with parameters = (0.001, 0.01), k_knn = 5
+k = 30 : best min Davies Bouldin score = 1.3932275805061392 , with parameters = (10.0, 0.1), k_knn = 5
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 30 : best avg acc = 38.09610983981693 , with parameters = (10.0, 0.1), k_knn = 5
+k = 30 : best avg nmi = 58.56471832844202 , with parameters = (10.0, 1), k_knn = 5
+k = 30 : best avg Silhoutte score = 0.22812761530572548 , with parameters = (10.0, 1), k_knn = 5
+k = 30 : best avg Dunn's Index score = 0.34058778975213544 , with parameters = (0.001, 0.01), k_knn = 5
+k = 30 : best avg Davies Bouldin score = 1.4387144143133705 , with parameters = (10.0, 1), k_knn = 5
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 40 : best max acc = 45.04347826086956 , with parameters = (10.0, 1), k_knn = 5
+k = 40 : best max nmi = 63.228927584493235 , with parameters = (10.0, 1), k_knn = 5
+k = 40 : best max Silhoutte score = 0.2214964944395404 , with parameters = (10.0, 1), k_knn = 5
+k = 40 : best max Dunn's Index score = 0.3833879806625132 , with parameters = (0.001, 0.01), k_knn = 5
+k = 40 : best min Davies Bouldin score = 1.4803719171328253 , with parameters = (10.0, 0.1), k_knn = 5
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 40 : best avg acc = 41.74828375286041 , with parameters = (10.0, 1), k_knn = 5
+k = 40 : best avg nmi = 61.60524734553737 , with parameters = (10.0, 1), k_knn = 5
+k = 40 : best avg Silhoutte score = 0.2144791261212037 , with parameters = (10.0, 1), k_knn = 5
+k = 40 : best avg Dunn's Index score = 0.3833879806625132 , with parameters = (0.001, 0.01), k_knn = 5
+k = 40 : best avg Davies Bouldin score = 1.5291157519605911 , with parameters = (10.0, 1), k_knn = 5
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 50 : best max acc = 43.30434782608696 , with parameters = (10.0, 1), k_knn = 5
+k = 50 : best max nmi = 62.22995062846732 , with parameters = (10.0, 0.1), k_knn = 5
+k = 50 : best max Silhoutte score = 0.21567229955099873 , with parameters = (10.0, 1), k_knn = 5
+k = 50 : best max Dunn's Index score = 0.43153742149371244 , with parameters = (0.001, 0.01), k_knn = 5
+k = 50 : best min Davies Bouldin score = 1.49056485653637 , with parameters = (10.0, 1), k_knn = 5
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 50 : best avg acc = 38.93821510297483 , with parameters = (10.0, 1), k_knn = 5
+k = 50 : best avg nmi = 59.615062611930064 , with parameters = (10.0, 1), k_knn = 5
+k = 50 : best avg Silhoutte score = 0.2077251509691463 , with parameters = (10.0, 1), k_knn = 5
+k = 50 : best avg Dunn's Index score = 0.43153742149371244 , with parameters = (0.001, 0.01), k_knn = 5
+k = 50 : best avg Davies Bouldin score = 1.5652913617942474 , with parameters = (10.0, 1), k_knn = 5
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 60 : best max acc = 46.26086956521739 , with parameters = (10.0, 1), k_knn = 5
+k = 60 : best max nmi = 64.39328557490532 , with parameters = (10.0, 1), k_knn = 5
+k = 60 : best max Silhoutte score = 0.2071646436743866 , with parameters = (10.0, 1), k_knn = 5
+k = 60 : best max Dunn's Index score = 0.495084059724753 , with parameters = (0.001, 0.01), k_knn = 5
+k = 60 : best min Davies Bouldin score = 1.5313496121082566 , with parameters = (10.0, 1), k_knn = 5
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 60 : best avg acc = 41.52860411899314 , with parameters = (10.0, 0.1), k_knn = 5
+k = 60 : best avg nmi = 61.048775133507036 , with parameters = (10.0, 1), k_knn = 5
+k = 60 : best avg Silhoutte score = 0.1988563194528774 , with parameters = (10.0, 1), k_knn = 5
+k = 60 : best avg Dunn's Index score = 0.495084059724753 , with parameters = (0.001, 0.01), k_knn = 5
+k = 60 : best avg Davies Bouldin score = 1.5795555787242899 , with parameters = (10.0, 1), k_knn = 5
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 70 : best max acc = 44.69565217391304 , with parameters = (0.1, 1), k_knn = 5
+k = 70 : best max nmi = 62.49435864236723 , with parameters = (10.0, 1), k_knn = 5
+k = 70 : best max Silhoutte score = 0.19359676076625126 , with parameters = (10.0, 1), k_knn = 5
+k = 70 : best max Dunn's Index score = 0.5187765585932005 , with parameters = (0.001, 0.01), k_knn = 5
+k = 70 : best min Davies Bouldin score = 1.615056275337924 , with parameters = (10.0, 1), k_knn = 5
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 70 : best avg acc = 40.20137299771167 , with parameters = (0.1, 1), k_knn = 5
+k = 70 : best avg nmi = 59.94953708589364 , with parameters = (10.0, 1), k_knn = 5
+k = 70 : best avg Silhoutte score = 0.18568247064864793 , with parameters = (10.0, 1), k_knn = 5
+k = 70 : best avg Dunn's Index score = 0.5187765585932005 , with parameters = (0.001, 0.01), k_knn = 5
+k = 70 : best avg Davies Bouldin score = 1.6831714784248537 , with parameters = (10.0, 1), k_knn = 5
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 10 : best max acc = 43.65217391304348 , with parameters = (10.0, 1), k_knn = 6
+k = 10 : best max nmi = 62.02589727013711 , with parameters = (10.0, 0.1), k_knn = 6
+k = 10 : best max Silhoutte score = 0.2980583829566289 , with parameters = (10.0, 1), k_knn = 6
+k = 10 : best max Dunn's Index score = 0.1093328526499499 , with parameters = (0.001, 0.01), k_knn = 6
+k = 10 : best min Davies Bouldin score = 1.1288810919671162 , with parameters = (10.0, 0.1), k_knn = 6
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 10 : best avg acc = 41.06178489702517 , with parameters = (10.0, 0.1), k_knn = 6
+k = 10 : best avg nmi = 59.83325328125306 , with parameters = (10.0, 0.1), k_knn = 6
+k = 10 : best avg Silhoutte score = 0.2920283756337316 , with parameters = (10.0, 1), k_knn = 6
+k = 10 : best avg Dunn's Index score = 0.1093328526499499 , with parameters = (0.001, 0.01), k_knn = 6
+k = 10 : best avg Davies Bouldin score = 1.1706151240784768 , with parameters = (10.0, 1), k_knn = 6
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 20 : best max acc = 44.34782608695652 , with parameters = (0.01, 1), k_knn = 6
+k = 20 : best max nmi = 60.727143154533756 , with parameters = (10.0, 1), k_knn = 6
+k = 20 : best max Silhoutte score = 0.25262288594424936 , with parameters = (10.0, 1), k_knn = 6
+k = 20 : best max Dunn's Index score = 0.24609972441280864 , with parameters = (0.001, 0.01), k_knn = 6
+k = 20 : best min Davies Bouldin score = 1.2884012781790202 , with parameters = (10.0, 1), k_knn = 6
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 20 : best avg acc = 40.47597254004577 , with parameters = (0.1, 0.01), k_knn = 6
+k = 20 : best avg nmi = 58.74899653478882 , with parameters = (10.0, 1), k_knn = 6
+k = 20 : best avg Silhoutte score = 0.24381764756143343 , with parameters = (10.0, 1), k_knn = 6
+k = 20 : best avg Dunn's Index score = 0.24609972441280864 , with parameters = (0.001, 0.01), k_knn = 6
+k = 20 : best avg Davies Bouldin score = 1.35403151613061 , with parameters = (10.0, 1), k_knn = 6
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 30 : best max acc = 45.391304347826086 , with parameters = (0.1, 0.1), k_knn = 6
+k = 30 : best max nmi = 63.581808322525745 , with parameters = (10.0, 1), k_knn = 6
+k = 30 : best max Silhoutte score = 0.247498032074418 , with parameters = (10.0, 1), k_knn = 6
+k = 30 : best max Dunn's Index score = 0.32107313872100596 , with parameters = (0.001, 0.01), k_knn = 6
+k = 30 : best min Davies Bouldin score = 1.3606793465960636 , with parameters = (10.0, 1), k_knn = 6
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 30 : best avg acc = 42.39816933638444 , with parameters = (10.0, 1), k_knn = 6
+k = 30 : best avg nmi = 61.146639797256654 , with parameters = (10.0, 0.1), k_knn = 6
+k = 30 : best avg Silhoutte score = 0.2350993789891565 , with parameters = (10.0, 1), k_knn = 6
+k = 30 : best avg Dunn's Index score = 0.32107313872100596 , with parameters = (0.001, 0.01), k_knn = 6
+k = 30 : best avg Davies Bouldin score = 1.4182647035959708 , with parameters = (10.0, 1), k_knn = 6
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 40 : best max acc = 44.52173913043478 , with parameters = (10.0, 1), k_knn = 6
+k = 40 : best max nmi = 63.875382117893274 , with parameters = (10.0, 1), k_knn = 6
+k = 40 : best max Silhoutte score = 0.23351156974992843 , with parameters = (10.0, 1), k_knn = 6
+k = 40 : best max Dunn's Index score = 0.4000396141101766 , with parameters = (0.001, 0.01), k_knn = 6
+k = 40 : best min Davies Bouldin score = 1.4309697644070227 , with parameters = (10.0, 1), k_knn = 6
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 40 : best avg acc = 41.556064073226544 , with parameters = (10.0, 1), k_knn = 6
+k = 40 : best avg nmi = 61.195779333511815 , with parameters = (10.0, 1), k_knn = 6
+k = 40 : best avg Silhoutte score = 0.22350772399705904 , with parameters = (10.0, 1), k_knn = 6
+k = 40 : best avg Dunn's Index score = 0.4000396141101766 , with parameters = (0.001, 0.01), k_knn = 6
+k = 40 : best avg Davies Bouldin score = 1.480814118202115 , with parameters = (10.0, 1), k_knn = 6
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 50 : best max acc = 43.65217391304348 , with parameters = (10.0, 1), k_knn = 6
+k = 50 : best max nmi = 61.87330224497756 , with parameters = (10.0, 1), k_knn = 6
+k = 50 : best max Silhoutte score = 0.22204542411893158 , with parameters = (10.0, 1), k_knn = 6
+k = 50 : best max Dunn's Index score = 0.4247755306336132 , with parameters = (0.001, 0.01), k_knn = 6
+k = 50 : best min Davies Bouldin score = 1.4660683627942046 , with parameters = (10.0, 1), k_knn = 6
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 50 : best avg acc = 39.807780320366135 , with parameters = (10.0, 1), k_knn = 6
+k = 50 : best avg nmi = 59.89694199911743 , with parameters = (10.0, 1), k_knn = 6
+k = 50 : best avg Silhoutte score = 0.21116106611833896 , with parameters = (10.0, 1), k_knn = 6
+k = 50 : best avg Dunn's Index score = 0.4247755306336132 , with parameters = (0.001, 0.01), k_knn = 6
+k = 50 : best avg Davies Bouldin score = 1.5551603016769417 , with parameters = (10.0, 1), k_knn = 6
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 60 : best max acc = 48.869565217391305 , with parameters = (10.0, 0.1), k_knn = 6
+k = 60 : best max nmi = 65.88953867874362 , with parameters = (10.0, 0.1), k_knn = 6
+k = 60 : best max Silhoutte score = 0.22396142033697436 , with parameters = (10.0, 1), k_knn = 6
+k = 60 : best max Dunn's Index score = 0.4811805149219041 , with parameters = (0.001, 0.01), k_knn = 6
+k = 60 : best min Davies Bouldin score = 1.5016374329578102 , with parameters = (10.0, 1), k_knn = 6
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 60 : best avg acc = 43.85354691075515 , with parameters = (10.0, 1), k_knn = 6
+k = 60 : best avg nmi = 62.85439606316789 , with parameters = (10.0, 0.1), k_knn = 6
+k = 60 : best avg Silhoutte score = 0.21386239708582483 , with parameters = (10.0, 1), k_knn = 6
+k = 60 : best avg Dunn's Index score = 0.4811805149219041 , with parameters = (0.001, 0.01), k_knn = 6
+k = 60 : best avg Davies Bouldin score = 1.5796177014768984 , with parameters = (10.0, 1), k_knn = 6
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 70 : best max acc = 49.391304347826086 , with parameters = (0.1, 1), k_knn = 6
+k = 70 : best max nmi = 66.16570655873137 , with parameters = (10.0, 1), k_knn = 6
+k = 70 : best max Silhoutte score = 0.21465469787406796 , with parameters = (10.0, 1), k_knn = 6
+k = 70 : best max Dunn's Index score = 0.5024164408732857 , with parameters = (0.001, 0.01), k_knn = 6
+k = 70 : best min Davies Bouldin score = 1.5401990406261497 , with parameters = (10.0, 1), k_knn = 6
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 70 : best avg acc = 44.36613272311213 , with parameters = (10.0, 1), k_knn = 6
+k = 70 : best avg nmi = 63.02931238104931 , with parameters = (10.0, 1), k_knn = 6
+k = 70 : best avg Silhoutte score = 0.20385611650670066 , with parameters = (10.0, 1), k_knn = 6
+k = 70 : best avg Dunn's Index score = 0.5024164408732857 , with parameters = (0.001, 0.01), k_knn = 6
+k = 70 : best avg Davies Bouldin score = 1.6046205074661775 , with parameters = (10.0, 1), k_knn = 6
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 10 : best max acc = 42.26086956521739 , with parameters = (10.0, 0.1), k_knn = 11
+k = 10 : best max nmi = 59.92379153037404 , with parameters = (0.1, 0.01), k_knn = 11
+k = 10 : best max Silhoutte score = 0.30283832708721015 , with parameters = (10.0, 1), k_knn = 11
+k = 10 : best max Dunn's Index score = 0.09943783730417871 , with parameters = (0.001, 0.01), k_knn = 11
+k = 10 : best min Davies Bouldin score = 1.0916023151894179 , with parameters = (10.0, 1), k_knn = 11
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 10 : best avg acc = 39.79862700228833 , with parameters = (0.01, 1), k_knn = 11
+k = 10 : best avg nmi = 57.48941424293519 , with parameters = (10.0, 1), k_knn = 11
+k = 10 : best avg Silhoutte score = 0.29538246080363023 , with parameters = (10.0, 1), k_knn = 11
+k = 10 : best avg Dunn's Index score = 0.09943783730417871 , with parameters = (0.001, 0.01), k_knn = 11
+k = 10 : best avg Davies Bouldin score = 1.1575162158472438 , with parameters = (10.0, 1), k_knn = 11
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 20 : best max acc = 41.21739130434783 , with parameters = (10.0, 1), k_knn = 11
+k = 20 : best max nmi = 59.69917704687258 , with parameters = (10.0, 1), k_knn = 11
+k = 20 : best max Silhoutte score = 0.2854670232985338 , with parameters = (10.0, 1), k_knn = 11
+k = 20 : best max Dunn's Index score = 0.24567579130219788 , with parameters = (0.001, 0.01), k_knn = 11
+k = 20 : best min Davies Bouldin score = 1.2063386695958935 , with parameters = (10.0, 1), k_knn = 11
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 20 : best avg acc = 38.81006864988559 , with parameters = (10.0, 0.1), k_knn = 11
+k = 20 : best avg nmi = 57.52593128135579 , with parameters = (10.0, 1), k_knn = 11
+k = 20 : best avg Silhoutte score = 0.2782044078786021 , with parameters = (10.0, 1), k_knn = 11
+k = 20 : best avg Dunn's Index score = 0.24567579130219788 , with parameters = (0.001, 0.01), k_knn = 11
+k = 20 : best avg Davies Bouldin score = 1.2380540636380644 , with parameters = (10.0, 1), k_knn = 11
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 30 : best max acc = 43.65217391304348 , with parameters = (0.1, 0.1), k_knn = 11
+k = 30 : best max nmi = 62.26281107322043 , with parameters = (10.0, 1), k_knn = 11
+k = 30 : best max Silhoutte score = 0.28067743091302183 , with parameters = (10.0, 1), k_knn = 11
+k = 30 : best max Dunn's Index score = 0.3690880482801585 , with parameters = (0.001, 0.01), k_knn = 11
+k = 30 : best min Davies Bouldin score = 1.2607302924463561 , with parameters = (10.0, 1), k_knn = 11
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 30 : best avg acc = 41.162471395881006 , with parameters = (10.0, 1), k_knn = 11
+k = 30 : best avg nmi = 60.14636160549477 , with parameters = (10.0, 1), k_knn = 11
+k = 30 : best avg Silhoutte score = 0.26370089937442964 , with parameters = (10.0, 1), k_knn = 11
+k = 30 : best avg Dunn's Index score = 0.3690880482801585 , with parameters = (0.001, 0.01), k_knn = 11
+k = 30 : best avg Davies Bouldin score = 1.3256839451077038 , with parameters = (10.0, 1), k_knn = 11
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 40 : best max acc = 45.04347826086956 , with parameters = (10.0, 0.1), k_knn = 11
+k = 40 : best max nmi = 63.89714974145158 , with parameters = (10.0, 0.1), k_knn = 11
+k = 40 : best max Silhoutte score = 0.26145015083049694 , with parameters = (10.0, 1), k_knn = 11
+k = 40 : best max Dunn's Index score = 0.409823854392166 , with parameters = (0.001, 0.01), k_knn = 11
+k = 40 : best min Davies Bouldin score = 1.2940138112504511 , with parameters = (10.0, 1), k_knn = 11
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 40 : best avg acc = 41.986270022883296 , with parameters = (10.0, 0.1), k_knn = 11
+k = 40 : best avg nmi = 60.95565697574436 , with parameters = (10.0, 0.1), k_knn = 11
+k = 40 : best avg Silhoutte score = 0.24492568170436096 , with parameters = (10.0, 1), k_knn = 11
+k = 40 : best avg Dunn's Index score = 0.409823854392166 , with parameters = (0.001, 0.01), k_knn = 11
+k = 40 : best avg Davies Bouldin score = 1.381296618996384 , with parameters = (10.0, 1), k_knn = 11
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 50 : best max acc = 46.43478260869565 , with parameters = (10.0, 0.01), k_knn = 11
+k = 50 : best max nmi = 64.70606028513546 , with parameters = (10.0, 0.1), k_knn = 11
+k = 50 : best max Silhoutte score = 0.25463922555886775 , with parameters = (10.0, 1), k_knn = 11
+k = 50 : best max Dunn's Index score = 0.4241519520441793 , with parameters = (0.001, 0.01), k_knn = 11
+k = 50 : best min Davies Bouldin score = 1.3762818330531694 , with parameters = (10.0, 1), k_knn = 11
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 50 : best avg acc = 43.121281464530895 , with parameters = (10.0, 0.1), k_knn = 11
+k = 50 : best avg nmi = 62.54211079897517 , with parameters = (10.0, 1), k_knn = 11
+k = 50 : best avg Silhoutte score = 0.2436967630483686 , with parameters = (10.0, 1), k_knn = 11
+k = 50 : best avg Dunn's Index score = 0.4241519520441793 , with parameters = (0.001, 0.01), k_knn = 11
+k = 50 : best avg Davies Bouldin score = 1.4254006636831713 , with parameters = (10.0, 1), k_knn = 11
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 60 : best max acc = 45.565217391304344 , with parameters = (10.0, 0.1), k_knn = 11
+k = 60 : best max nmi = 64.21036053483667 , with parameters = (10.0, 1), k_knn = 11
+k = 60 : best max Silhoutte score = 0.24014823824819054 , with parameters = (10.0, 1), k_knn = 11
+k = 60 : best max Dunn's Index score = 0.47177191893130926 , with parameters = (0.001, 0.01), k_knn = 11
+k = 60 : best min Davies Bouldin score = 1.4125532158649627 , with parameters = (10.0, 1), k_knn = 11
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 60 : best avg acc = 42.31578947368421 , with parameters = (10.0, 1), k_knn = 11
+k = 60 : best avg nmi = 61.34805596719655 , with parameters = (10.0, 1), k_knn = 11
+k = 60 : best avg Silhoutte score = 0.23391263133945348 , with parameters = (10.0, 1), k_knn = 11
+k = 60 : best avg Dunn's Index score = 0.47177191893130926 , with parameters = (0.001, 0.01), k_knn = 11
+k = 60 : best avg Davies Bouldin score = 1.442740881868717 , with parameters = (10.0, 1), k_knn = 11
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 70 : best max acc = 44.173913043478265 , with parameters = (0.1, 0.1), k_knn = 11
+k = 70 : best max nmi = 61.485561264562804 , with parameters = (10.0, 1), k_knn = 11
+k = 70 : best max Silhoutte score = 0.2354632569622421 , with parameters = (10.0, 1), k_knn = 11
+k = 70 : best max Dunn's Index score = 0.4929295625171402 , with parameters = (0.001, 0.01), k_knn = 11
+k = 70 : best min Davies Bouldin score = 1.4351367548559604 , with parameters = (10.0, 1), k_knn = 11
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 70 : best avg acc = 40.43020594965675 , with parameters = (10.0, 1), k_knn = 11
+k = 70 : best avg nmi = 59.3976171434806 , with parameters = (10.0, 1), k_knn = 11
+k = 70 : best avg Silhoutte score = 0.22721535529489942 , with parameters = (10.0, 1), k_knn = 11
+k = 70 : best avg Dunn's Index score = 0.4929295625171402 , with parameters = (0.001, 0.01), k_knn = 11
+k = 70 : best avg Davies Bouldin score = 1.4778918343641343 , with parameters = (10.0, 1), k_knn = 11
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 10 : best max acc = 40.0 , with parameters = (0.1, 1), k_knn = 21
+k = 10 : best max nmi = 58.24729022667481 , with parameters = (10.0, 0.1), k_knn = 21
+k = 10 : best max Silhoutte score = 0.3210201847714725 , with parameters = (10.0, 1), k_knn = 21
+k = 10 : best max Dunn's Index score = 0.09930784900553967 , with parameters = (0.001, 0.01), k_knn = 21
+k = 10 : best min Davies Bouldin score = 1.0470771644302332 , with parameters = (10.0, 1), k_knn = 21
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 10 : best avg acc = 38.224256292906176 , with parameters = (0.1, 0.01), k_knn = 21
+k = 10 : best avg nmi = 56.48585687908425 , with parameters = (10.0, 0.1), k_knn = 21
+k = 10 : best avg Silhoutte score = 0.31007392232608727 , with parameters = (10.0, 1), k_knn = 21
+k = 10 : best avg Dunn's Index score = 0.09930784900553967 , with parameters = (0.001, 0.01), k_knn = 21
+k = 10 : best avg Davies Bouldin score = 1.1132994375879055 , with parameters = (10.0, 1), k_knn = 21
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 20 : best max acc = 42.08695652173913 , with parameters = (0.1, 0.1), k_knn = 21
+k = 20 : best max nmi = 59.67383229212588 , with parameters = (0.1, 1), k_knn = 21
+k = 20 : best max Silhoutte score = 0.2859709061918975 , with parameters = (10.0, 1), k_knn = 21
+k = 20 : best max Dunn's Index score = 0.2670426520809783 , with parameters = (0.001, 0.01), k_knn = 21
+k = 20 : best min Davies Bouldin score = 1.1748493053752909 , with parameters = (10.0, 1), k_knn = 21
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 20 : best avg acc = 37.610983981693366 , with parameters = (0.01, 0.1), k_knn = 21
+k = 20 : best avg nmi = 57.436031292744204 , with parameters = (0.1, 0.01), k_knn = 21
+k = 20 : best avg Silhoutte score = 0.27852302210873525 , with parameters = (10.0, 1), k_knn = 21
+k = 20 : best avg Dunn's Index score = 0.2670426520809783 , with parameters = (0.001, 0.01), k_knn = 21
+k = 20 : best avg Davies Bouldin score = 1.1978758944944712 , with parameters = (10.0, 1), k_knn = 21
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 30 : best max acc = 44.173913043478265 , with parameters = (0.1, 1), k_knn = 21
+k = 30 : best max nmi = 62.19330800584504 , with parameters = (0.1, 1), k_knn = 21
+k = 30 : best max Silhoutte score = 0.2759523385509735 , with parameters = (10.0, 1), k_knn = 21
+k = 30 : best max Dunn's Index score = 0.32701285521932594 , with parameters = (0.001, 0.1), k_knn = 21
+k = 30 : best min Davies Bouldin score = 1.2338287842110287 , with parameters = (10.0, 1), k_knn = 21
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 30 : best avg acc = 38.517162471395885 , with parameters = (0.1, 1), k_knn = 21
+k = 30 : best avg nmi = 58.1608047808183 , with parameters = (0.1, 0.1), k_knn = 21
+k = 30 : best avg Silhoutte score = 0.26487533283274445 , with parameters = (10.0, 1), k_knn = 21
+k = 30 : best avg Dunn's Index score = 0.32701285521932594 , with parameters = (0.001, 0.1), k_knn = 21
+k = 30 : best avg Davies Bouldin score = 1.2699319294696085 , with parameters = (10.0, 1), k_knn = 21
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 40 : best max acc = 46.08695652173913 , with parameters = (0.01, 1), k_knn = 21
+k = 40 : best max nmi = 62.26983343318736 , with parameters = (0.1, 0.01), k_knn = 21
+k = 40 : best max Silhoutte score = 0.2699767041550387 , with parameters = (10.0, 1), k_knn = 21
+k = 40 : best max Dunn's Index score = 0.4101408246968859 , with parameters = (0.001, 0.01), k_knn = 21
+k = 40 : best min Davies Bouldin score = 1.245772882744364 , with parameters = (10.0, 1), k_knn = 21
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 40 : best avg acc = 41.839816933638446 , with parameters = (0.01, 1), k_knn = 21
+k = 40 : best avg nmi = 60.17429052984436 , with parameters = (0.1, 1), k_knn = 21
+k = 40 : best avg Silhoutte score = 0.25940385622586826 , with parameters = (10.0, 1), k_knn = 21
+k = 40 : best avg Dunn's Index score = 0.4101408246968859 , with parameters = (0.001, 0.01), k_knn = 21
+k = 40 : best avg Davies Bouldin score = 1.2951721254325792 , with parameters = (10.0, 1), k_knn = 21
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 50 : best max acc = 44.173913043478265 , with parameters = (0.01, 1), k_knn = 21
+k = 50 : best max nmi = 61.925173619483644 , with parameters = (0.1, 0.01), k_knn = 21
+k = 50 : best max Silhoutte score = 0.2662147183612178 , with parameters = (10.0, 1), k_knn = 21
+k = 50 : best max Dunn's Index score = 0.4149618115416378 , with parameters = (0.001, 0.01), k_knn = 21
+k = 50 : best min Davies Bouldin score = 1.2732576286349877 , with parameters = (10.0, 1), k_knn = 21
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 50 : best avg acc = 40.60411899313501 , with parameters = (0.01, 1), k_knn = 21
+k = 50 : best avg nmi = 59.389345783798355 , with parameters = (0.1, 0.01), k_knn = 21
+k = 50 : best avg Silhoutte score = 0.256723937402092 , with parameters = (10.0, 1), k_knn = 21
+k = 50 : best avg Dunn's Index score = 0.4149618115416378 , with parameters = (0.001, 0.01), k_knn = 21
+k = 50 : best avg Davies Bouldin score = 1.3042945058736102 , with parameters = (10.0, 1), k_knn = 21
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 60 : best max acc = 44.34782608695652 , with parameters = (0.01, 1), k_knn = 21
+k = 60 : best max nmi = 62.220234962033096 , with parameters = (10.0, 0.01), k_knn = 21
+k = 60 : best max Silhoutte score = 0.2541989922651437 , with parameters = (10.0, 1), k_knn = 21
+k = 60 : best max Dunn's Index score = 0.4837776345908433 , with parameters = (0.001, 0.01), k_knn = 21
+k = 60 : best min Davies Bouldin score = 1.3069202363305301 , with parameters = (10.0, 1), k_knn = 21
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 60 : best avg acc = 39.82608695652174 , with parameters = (10.0, 0.01), k_knn = 21
+k = 60 : best avg nmi = 59.43201147019057 , with parameters = (10.0, 0.01), k_knn = 21
+k = 60 : best avg Silhoutte score = 0.24538145828114605 , with parameters = (10.0, 1), k_knn = 21
+k = 60 : best avg Dunn's Index score = 0.4837776345908433 , with parameters = (0.001, 0.01), k_knn = 21
+k = 60 : best avg Davies Bouldin score = 1.3540533438585354 , with parameters = (10.0, 1), k_knn = 21
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k = 70 : best max acc = 47.47826086956522 , with parameters = (0.1, 0.01), k_knn = 21
+k = 70 : best max nmi = 64.01803222776371 , with parameters = (0.1, 0.1), k_knn = 21
+k = 70 : best max Silhoutte score = 0.25535891267057825 , with parameters = (10.0, 1), k_knn = 21
+k = 70 : best max Dunn's Index score = 0.45070242241282715 , with parameters = (0.001, 0.01), k_knn = 21
+k = 70 : best min Davies Bouldin score = 1.3315886483471053 , with parameters = (10.0, 1), k_knn = 21
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k = 70 : best avg acc = 41.473684210526315 , with parameters = (0.1, 1), k_knn = 21
+k = 70 : best avg nmi = 60.44494630005338 , with parameters = (10.0, 0.01), k_knn = 21
+k = 70 : best avg Silhoutte score = 0.24313303254627244 , with parameters = (10.0, 1), k_knn = 21
+k = 70 : best avg Dunn's Index score = 0.45070242241282715 , with parameters = (0.001, 0.01), k_knn = 21
+k = 70 : best avg Davies Bouldin score = 1.3702198989803789 , with parameters = (10.0, 1), k_knn = 21
+**********************************************************************************************************
+
+Average no. of iterations for k = 10 : 1
+Average no. of iterations for k = 20 : 1
+Average no. of iterations for k = 30 : 1
+Average no. of iterations for k = 40 : 1
+Average no. of iterations for k = 50 : 1
+Average no. of iterations for k = 60 : 1
+Average no. of iterations for k = 70 : 1
+Overall average no. of iterations : 18.085714285714285
+done!

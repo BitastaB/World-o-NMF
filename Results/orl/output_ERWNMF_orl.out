@@ -1,95 +1,138 @@
 Model : ERWNMF
-Dataset : ORL.mat
+Dataset : orl
 max iterations : 100
 myeps_1 : 1e-12
 myeps_2 : 1e-10
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 10 : best max_acc = 47.0 , with nu = 1073741824
-k = 10 : best max_nmi = 68.02612396660439 , with nu = 1073741824
+k = 10 : best max_acc = 50.0 , with nu = 67108864
+k = 10 : best max_nmi = 68.70747588376462 , with nu = 134217728
+k = 10 : best max_silhoutte score = 0.19753319445412068 , with nu = 268435456
+k = 10 : lowest min_davis bouldin score = 1.3158456063562016 , with nu = 8388608
+k = 10 : best max_dunn's index score = 0.10349564709854084 , with nu = 4294967296
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 10 : best avg_acc = 43.3421052631579 , with nu = 134217728 
-k = 10 : best avg_nmi = 66.11987669913233 , with nu = 2147483648 
+k = 10 : best avg_acc = 44.44736842105263 , with nu = 268435456 
+k = 10 : best avg_nmi = 66.86243470219247 , with nu = 8388608 
+k = 10 : best avg_silhoutte score = 0.18515237277285987 , with nu = 268435456 
+k = 10 : lowest avg_davis bouldin score = 1.3762358694454921 , with nu = 8388608
+k = 10 : best avg_dunn's index score = 0.10349564709854084 , with nu = 4294967296
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 20 : best max_acc = 53.75 , with nu = 1073741824
-k = 20 : best max_nmi = 71.90765820871732 , with nu = 1073741824
+k = 20 : best max_acc = 54.75 , with nu = 2147483648
+k = 20 : best max_nmi = 73.23179618056625 , with nu = 4194304
+k = 20 : best max_silhoutte score = 0.15780949851138593 , with nu = 2147483648
+k = 20 : lowest min_davis bouldin score = 1.4998840283925436 , with nu = 268435456
+k = 20 : best max_dunn's index score = 0.20901917910986423 , with nu = 2147483648
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 20 : best avg_acc = 49.38157894736842 , with nu = 1073741824 
-k = 20 : best avg_nmi = 70.49637447792033 , with nu = 1073741824 
+k = 20 : best avg_acc = 50.828947368421055 , with nu = 2147483648 
+k = 20 : best avg_nmi = 70.20841969533818 , with nu = 2147483648 
+k = 20 : best avg_silhoutte score = 0.15080493814671136 , with nu = 268435456 
+k = 20 : lowest avg_davis bouldin score = 1.5728204386894096 , with nu = 268435456
+k = 20 : best avg_dunn's index score = 0.20901917910986423 , with nu = 2147483648
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 30 : best max_acc = 57.75 , with nu = 67108864
-k = 30 : best max_nmi = 75.37410744804922 , with nu = 67108864
+k = 30 : best max_acc = 56.49999999999999 , with nu = 4294967296
+k = 30 : best max_nmi = 74.1989435585252 , with nu = 4194304
+k = 30 : best max_silhoutte score = 0.15118041411398941 , with nu = 16777216
+k = 30 : lowest min_davis bouldin score = 1.5943629684609097 , with nu = 536870912
+k = 30 : best max_dunn's index score = 0.2623385683030655 , with nu = 16777216
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 30 : best avg_acc = 52.71052631578947 , with nu = 67108864 
-k = 30 : best avg_nmi = 72.64205060499435 , with nu = 1073741824 
+k = 30 : best avg_acc = 52.25 , with nu = 8388608 
+k = 30 : best avg_nmi = 72.31520405760217 , with nu = 67108864 
+k = 30 : best avg_silhoutte score = 0.1407475443529245 , with nu = 134217728 
+k = 30 : lowest avg_davis bouldin score = 1.6614873175535654 , with nu = 134217728
+k = 30 : best avg_dunn's index score = 0.2623385683030655 , with nu = 16777216
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 40 : best max_acc = 59.75 , with nu = 67108864
-k = 40 : best max_nmi = 76.00032858887661 , with nu = 67108864
+k = 40 : best max_acc = 60.5 , with nu = 2147483648
+k = 40 : best max_nmi = 75.37065085298867 , with nu = 2147483648
+k = 40 : best max_silhoutte score = 0.14441084241277052 , with nu = 33554432
+k = 40 : lowest min_davis bouldin score = 1.6668013536419952 , with nu = 536870912
+k = 40 : best max_dunn's index score = 0.277025818057202 , with nu = 134217728
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 40 : best avg_acc = 54.526315789473685 , with nu = 67108864 
-k = 40 : best avg_nmi = 73.61995681013512 , with nu = 268435456 
+k = 40 : best avg_acc = 53.30263157894737 , with nu = 2147483648 
+k = 40 : best avg_nmi = 73.13366624538668 , with nu = 8388608 
+k = 40 : best avg_silhoutte score = 0.13755265731311855 , with nu = 268435456 
+k = 40 : lowest avg_davis bouldin score = 1.7313544765418765 , with nu = 536870912
+k = 40 : best avg_dunn's index score = 0.277025818057202 , with nu = 134217728
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 50 : best max_acc = 60.5 , with nu = 1073741824
-k = 50 : best max_nmi = 77.14497105859441 , with nu = 1073741824
+k = 50 : best max_acc = 60.5 , with nu = 16777216
+k = 50 : best max_nmi = 76.8383837060429 , with nu = 16777216
+k = 50 : best max_silhoutte score = 0.13887002850905916 , with nu = 2147483648
+k = 50 : lowest min_davis bouldin score = 1.6932045942610572 , with nu = 16777216
+k = 50 : best max_dunn's index score = 0.2967203200483098 , with nu = 268435456
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 50 : best avg_acc = 55.118421052631575 , with nu = 1073741824 
-k = 50 : best avg_nmi = 74.71980397418888 , with nu = 1073741824 
+k = 50 : best avg_acc = 54.223684210526315 , with nu = 8388608 
+k = 50 : best avg_nmi = 73.88965522842071 , with nu = 16777216 
+k = 50 : best avg_silhoutte score = 0.12802898797402346 , with nu = 2147483648 
+k = 50 : lowest avg_davis bouldin score = 1.7969005893194105 , with nu = 67108864
+k = 50 : best avg_dunn's index score = 0.2967203200483098 , with nu = 268435456
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 60 : best max_acc = 60.0 , with nu = 536870912
-k = 60 : best max_nmi = 77.04484427430901 , with nu = 536870912
+k = 60 : best max_acc = 60.0 , with nu = 1073741824
+k = 60 : best max_nmi = 77.23900970488174 , with nu = 8388608
+k = 60 : best max_silhoutte score = 0.13535738341986303 , with nu = 1073741824
+k = 60 : lowest min_davis bouldin score = 1.730135915209703 , with nu = 2147483648
+k = 60 : best max_dunn's index score = 0.3370268644183267 , with nu = 1073741824
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 60 : best avg_acc = 55.223684210526315 , with nu = 536870912 
-k = 60 : best avg_nmi = 75.08735092081241 , with nu = 536870912 
+k = 60 : best avg_acc = 56.06578947368421 , with nu = 1073741824 
+k = 60 : best avg_nmi = 74.80744876325305 , with nu = 1073741824 
+k = 60 : best avg_silhoutte score = 0.1263350747013192 , with nu = 4194304 
+k = 60 : lowest avg_davis bouldin score = 1.8116711530381193 , with nu = 4194304
+k = 60 : best avg_dunn's index score = 0.3370268644183267 , with nu = 1073741824
 **********************************************************************************************************
 **********************************************************************************************************
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 
-k = 70 : best max_acc = 60.25 , with nu = 536870912
-k = 70 : best max_nmi = 77.229905387433 , with nu = 536870912
+k = 70 : best max_acc = 60.0 , with nu = 33554432
+k = 70 : best max_nmi = 78.43741055868072 , with nu = 2147483648
+k = 70 : best max_silhoutte score = 0.13362418145398433 , with nu = 8388608
+k = 70 : lowest min_davis bouldin score = 1.7721641210617896 , with nu = 8388608
+k = 70 : best max_dunn's index score = 0.33698061735128154 , with nu = 134217728
 
 
 The results of running the Kmeans method 20 times and the report of average of 20 runs
 
-k = 70 : best avg_acc = 56.01315789473684 , with nu = 1073741824 
-k = 70 : best avg_nmi = 74.68884312454607 , with nu = 1073741824 
+k = 70 : best avg_acc = 54.73684210526316 , with nu = 67108864 
+k = 70 : best avg_nmi = 74.52083522108197 , with nu = 2147483648 
+k = 70 : best avg_silhoutte score = 0.12040285752396748 , with nu = 8388608 
+k = 70 : lowest avg_davis bouldin score = 1.8485087926406327 , with nu = 8388608
+k = 70 : best avg_dunn's index score = 0.33698061735128154 , with nu = 134217728
 **********************************************************************************************************
 
 ....................................................
- best acc(avg) = 56.01315789473684 for k = 70
- best nmi(avg) = 75.08735092081241 for k = 60
+ best acc(avg) = 56.06578947368421 for k = 60
+ best nmi(avg) = 74.80744876325305 for k = 60
+ best silhoutte score (avg) = 0.18515237277285987 for k 10
 ....................................................
 done!

@@ -1,436 +1,655 @@
 Model : GRSNMF
-Dataset : ORL.mat
+Dataset : orl
 max iterations : 100
 myeps_1 : 1e-12
 myeps_2 : 1e-10
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 ##################################################################################################
  k = 10 :  k_knn = 3  
- Max ACC : 21.75, with theta = 10.0
- Max NMI : 44.3485248000556, with theta = 10.0
- Reconstruction Error : 3.656772587572292e+26
+ Max ACC : 52.75, with theta = 10.0
+ Max NMI : 74.7147932888091, with theta = 10.0
+ Reconstruction Error : 3.3596863125159255
+ Max Silhoutter score : 0.2866226996420423, with theta = 10.0
+ Max Dunn's Index score : 0.0828511728269053, with theta = 0.01
+ Min David Bouldin score : 1.3111267086390872, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 20 :  k_knn = 3  
- Max ACC : 20.75, with theta = 10.0
- Max NMI : 43.16561860929752, with theta = 10.0
- Reconstruction Error : 2.351100155561445e+28
+ Max ACC : 59.0, with theta = 10.0
+ Max NMI : 78.68054401497999, with theta = 10.0
+ Reconstruction Error : 3.0666951525349444
+ Max Silhoutter score : 0.2707343028632377, with theta = 10.0
+ Max Dunn's Index score : 0.15999621208708412, with theta = 0.1
+ Min David Bouldin score : 1.544427558153529, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 30 :  k_knn = 3  
- Max ACC : 21.5, with theta = 10.0
- Max NMI : 43.87379217745549, with theta = 10.0
- Reconstruction Error : 2.359055233723514e+29
+ Max ACC : 63.74999999999999, with theta = 10.0
+ Max NMI : 79.8386261152392, with theta = 10.0
+ Reconstruction Error : 2.922494097869441
+ Max Silhoutter score : 0.2666262276574095, with theta = 10.0
+ Max Dunn's Index score : 0.23334333774109003, with theta = 0.01
+ Min David Bouldin score : 1.626606246109347, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 40 :  k_knn = 3  
- Max ACC : 21.75, with theta = 10.0
- Max NMI : 43.59710896840105, with theta = 10.0
- Reconstruction Error : 1.2337392645331872e+30
+ Max ACC : 62.0, with theta = 10.0
+ Max NMI : 78.86861856606724, with theta = 10.0
+ Reconstruction Error : 2.825441363832765
+ Max Silhoutter score : 0.24957984337999606, with theta = 10.0
+ Max Dunn's Index score : 0.2788088467776422, with theta = 0.001
+ Min David Bouldin score : 1.7641819786555346, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 50 :  k_knn = 3  
- Max ACC : 21.25, with theta = 10.0
- Max NMI : 42.44290198800483, with theta = 10.0
- Reconstruction Error : 5.009142659700253e+30
+ Max ACC : 65.5, with theta = 10.0
+ Max NMI : 80.06948163994063, with theta = 10.0
+ Reconstruction Error : 2.7237106135219724
+ Max Silhoutter score : 0.23084703131530115, with theta = 10.0
+ Max Dunn's Index score : 0.28882590745348435, with theta = 0.01
+ Min David Bouldin score : 1.711474094476884, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 60 :  k_knn = 3  
- Max ACC : 22.0, with theta = 10.0
- Max NMI : 43.520665668802664, with theta = 10.0
- Reconstruction Error : 1.4868402358926893e+31
+ Max ACC : 63.74999999999999, with theta = 10.0
+ Max NMI : 80.36200235192081, with theta = 10.0
+ Reconstruction Error : 2.6689901171336783
+ Max Silhoutter score : 0.2220471730938584, with theta = 10.0
+ Max Dunn's Index score : 0.3244398495468025, with theta = 0.001
+ Min David Bouldin score : 1.7700643804133545, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 70 :  k_knn = 3  
- Max ACC : 21.5, with theta = 10.0
- Max NMI : 42.541747870823535, with theta = 10.0
- Reconstruction Error : 3.88536020080486e+31
+ Max ACC : 61.5, with theta = 10.0
+ Max NMI : 79.13295183647384, with theta = 10.0
+ Reconstruction Error : 2.6093270182820176
+ Max Silhoutter score : 0.21555291959993628, with theta = 10.0
+ Max Dunn's Index score : 0.3409306295018607, with theta = 0.01
+ Min David Bouldin score : 1.7872404628089196, with theta = 10.0
 ##################################################################################################
 The results of running the Kmeans method 20 times and the average of 20 runs
 ##################################################################################################
 k = 10 :  k_knn = 3 
- Avg ACC : 20.81578947368421, with lambda = 10.0
- Avg NMI : 43.09057370677959, with lambda = 10.0
- Reconstruction Error : 3.656772587572292e+26
+ Avg ACC : 49.94736842105263, with theta = 10.0
+ Avg NMI : 73.2631156071988, with theta = 10.0
+ Reconstruction Error : 3.3596863125159255
+ Avg Silhoutte score : 0.27201837950568825, with theta = 10.0
+ Avg Dunn's Index score : 0.0828511728269053, with theta = 0.01
+ Avg David Bouldin score : 1.1237823005654721, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 20 :  k_knn = 3 
- Avg ACC : 19.736842105263158, with lambda = 10.0
- Avg NMI : 41.95154301390856, with lambda = 10.0
- Reconstruction Error : 2.351100155561445e+28
+ Avg ACC : 56.868421052631575, with theta = 10.0
+ Avg NMI : 76.99864057040686, with theta = 10.0
+ Reconstruction Error : 3.0666951525349444
+ Avg Silhoutte score : 0.26203690624584014, with theta = 10.0
+ Avg Dunn's Index score : 0.15999621208708412, with theta = 0.1
+ Avg David Bouldin score : 1.239591202538896, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 30 :  k_knn = 3 
- Avg ACC : 19.68421052631579, with lambda = 10.0
- Avg NMI : 41.479514376332595, with lambda = 10.0
- Reconstruction Error : 2.359055233723514e+29
+ Avg ACC : 58.89473684210526, with theta = 10.0
+ Avg NMI : 77.80236685529871, with theta = 10.0
+ Reconstruction Error : 2.922494097869441
+ Avg Silhoutte score : 0.2566280896150912, with theta = 10.0
+ Avg Dunn's Index score : 0.23334333774109003, with theta = 0.01
+ Avg David Bouldin score : 1.302662685972042, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 40 :  k_knn = 3 
- Avg ACC : 20.605263157894736, with lambda = 10.0
- Avg NMI : 41.448658040759014, with lambda = 10.0
- Reconstruction Error : 1.2337392645331872e+30
+ Avg ACC : 59.131578947368425, with theta = 10.0
+ Avg NMI : 77.54191274174414, with theta = 10.0
+ Reconstruction Error : 2.825441363832765
+ Avg Silhoutte score : 0.23737992467814303, with theta = 10.0
+ Avg Dunn's Index score : 0.2788088467776422, with theta = 0.001
+ Avg David Bouldin score : 1.3676839090498452, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 50 :  k_knn = 3 
- Avg ACC : 20.473684210526315, with lambda = 10.0
- Avg NMI : 41.36546401596109, with lambda = 10.0
- Reconstruction Error : 5.009142659700253e+30
+ Avg ACC : 59.5921052631579, with theta = 10.0
+ Avg NMI : 77.77017420273616, with theta = 10.0
+ Reconstruction Error : 2.7237106135219724
+ Avg Silhoutte score : 0.22194478185154015, with theta = 10.0
+ Avg Dunn's Index score : 0.28882590745348435, with theta = 0.01
+ Avg David Bouldin score : 1.4282400305759768, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 60 :  k_knn = 3 
- Avg ACC : 20.38157894736842, with lambda = 10.0
- Avg NMI : 41.547341771178246, with lambda = 10.0
- Reconstruction Error : 1.4868402358926893e+31
+ Avg ACC : 59.1578947368421, with theta = 10.0
+ Avg NMI : 78.9320719929866, with theta = 10.0
+ Reconstruction Error : 2.6689901171336783
+ Avg Silhoutte score : 0.21335830410125076, with theta = 10.0
+ Avg Dunn's Index score : 0.3244398495468025, with theta = 0.001
+ Avg David Bouldin score : 1.472183654787231, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 70 :  k_knn = 3 
- Avg ACC : 20.25, with lambda = 10.0
- Avg NMI : 41.01238516370087, with lambda = 10.0
- Reconstruction Error : 3.88536020080486e+31
+ Avg ACC : 58.6578947368421, with theta = 10.0
+ Avg NMI : 77.66990670107349, with theta = 10.0
+ Reconstruction Error : 2.6093270182820176
+ Avg Silhoutte score : 0.2044925594580686, with theta = 10.0
+ Avg Dunn's Index score : 0.3409306295018607, with theta = 0.01
+ Avg David Bouldin score : 1.5303753870273114, with theta = 10.0
 ##################################################################################################
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 ##################################################################################################
  k = 10 :  k_knn = 5  
- Max ACC : 25.0, with theta = 10.0
- Max NMI : 46.76717706742177, with theta = 10.0
- Reconstruction Error : 1.8464269173204727e+27
+ Max ACC : 58.25, with theta = 10.0
+ Max NMI : 76.37021896050808, with theta = 10.0
+ Reconstruction Error : 3.342128478842464
+ Max Silhoutter score : 0.35398551761642033, with theta = 10.0
+ Max Dunn's Index score : 0.09176681245016316, with theta = 0.01
+ Min David Bouldin score : 1.3389214644172822, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 20 :  k_knn = 5  
- Max ACC : 25.25, with theta = 10.0
- Max NMI : 46.82879897960205, with theta = 10.0
- Reconstruction Error : 1.004312316966076e+29
+ Max ACC : 62.74999999999999, with theta = 10.0
+ Max NMI : 78.69540154115279, with theta = 10.0
+ Reconstruction Error : 3.089476158074301
+ Max Silhoutter score : 0.35910832493223, with theta = 10.0
+ Max Dunn's Index score : 0.2293021382026667, with theta = 0.001
+ Min David Bouldin score : 1.5529558008678201, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 30 :  k_knn = 5  
- Max ACC : 27.250000000000004, with theta = 10.0
- Max NMI : 47.77381113772722, with theta = 10.0
- Reconstruction Error : 1.2488082594818714e+30
+ Max ACC : 64.0, with theta = 10.0
+ Max NMI : 79.39533177537291, with theta = 10.0
+ Reconstruction Error : 2.919415411190708
+ Max Silhoutter score : 0.34399954655339715, with theta = 10.0
+ Max Dunn's Index score : 0.24477635715790738, with theta = 0.001
+ Min David Bouldin score : 1.6907411547966373, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 40 :  k_knn = 5  
- Max ACC : 28.249999999999996, with theta = 10.0
- Max NMI : 49.63032579152164, with theta = 10.0
- Reconstruction Error : 6.164087378975897e+30
+ Max ACC : 64.75, with theta = 10.0
+ Max NMI : 79.66399011361594, with theta = 10.0
+ Reconstruction Error : 2.806150565565984
+ Max Silhoutter score : 0.3298500276903467, with theta = 10.0
+ Max Dunn's Index score : 0.2672228573635313, with theta = 0.1
+ Min David Bouldin score : 1.7042714371889314, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 50 :  k_knn = 5  
- Max ACC : 28.249999999999996, with theta = 10.0
- Max NMI : 49.80525912953601, with theta = 10.0
- Reconstruction Error : 2.4118927873267916e+31
+ Max ACC : 66.0, with theta = 10.0
+ Max NMI : 80.44482180625236, with theta = 10.0
+ Reconstruction Error : 2.739714304020511
+ Max Silhoutter score : 0.30557816773728314, with theta = 10.0
+ Max Dunn's Index score : 0.296854454871205, with theta = 0.001
+ Min David Bouldin score : 1.746842708722945, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 60 :  k_knn = 5  
- Max ACC : 33.0, with theta = 10.0
- Max NMI : 51.90686132143378, with theta = 10.0
- Reconstruction Error : 7.457168132275733e+31
+ Max ACC : 65.25, with theta = 10.0
+ Max NMI : 80.2023878065759, with theta = 10.0
+ Reconstruction Error : 2.6674542519105966
+ Max Silhoutter score : 0.3051997395348337, with theta = 10.0
+ Max Dunn's Index score : 0.322593817200887, with theta = 0.1
+ Min David Bouldin score : 1.8076202308323353, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 70 :  k_knn = 5  
- Max ACC : 29.75, with theta = 10.0
- Max NMI : 51.76088262947714, with theta = 10.0
- Reconstruction Error : 1.8485257957711697e+32
+ Max ACC : 66.75, with theta = 10.0
+ Max NMI : 80.36840543420082, with theta = 10.0
+ Reconstruction Error : 2.625352167970614
+ Max Silhoutter score : 0.2959296153184402, with theta = 10.0
+ Max Dunn's Index score : 0.33667745009658845, with theta = 0.1
+ Min David Bouldin score : 1.7916860142981839, with theta = 10.0
 ##################################################################################################
 The results of running the Kmeans method 20 times and the average of 20 runs
 ##################################################################################################
 k = 10 :  k_knn = 5 
- Avg ACC : 23.55263157894737, with lambda = 10.0
- Avg NMI : 45.541984109005746, with lambda = 10.0
- Reconstruction Error : 1.8464269173204727e+27
+ Avg ACC : 56.171052631578945, with theta = 10.0
+ Avg NMI : 75.14209293291904, with theta = 10.0
+ Reconstruction Error : 3.342128478842464
+ Avg Silhoutte score : 0.34526667133653305, with theta = 10.0
+ Avg Dunn's Index score : 0.09176681245016316, with theta = 0.01
+ Avg David Bouldin score : 0.9578036682811303, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 20 :  k_knn = 5 
- Avg ACC : 22.855263157894736, with lambda = 10.0
- Avg NMI : 44.7776422088137, with lambda = 10.0
- Reconstruction Error : 1.004312316966076e+29
+ Avg ACC : 60.39473684210526, with theta = 10.0
+ Avg NMI : 77.36110426506366, with theta = 10.0
+ Reconstruction Error : 3.089476158074301
+ Avg Silhoutte score : 0.3459591343822371, with theta = 10.0
+ Avg Dunn's Index score : 0.2293021382026667, with theta = 0.001
+ Avg David Bouldin score : 1.0001392005059053, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 30 :  k_knn = 5 
- Avg ACC : 24.592105263157894, with lambda = 10.0
- Avg NMI : 45.37843151220711, with lambda = 10.0
- Reconstruction Error : 1.2488082594818714e+30
+ Avg ACC : 61.17105263157895, with theta = 10.0
+ Avg NMI : 78.03973218670136, with theta = 10.0
+ Reconstruction Error : 2.919415411190708
+ Avg Silhoutte score : 0.3320527380668131, with theta = 10.0
+ Avg Dunn's Index score : 0.24477635715790738, with theta = 0.001
+ Avg David Bouldin score : 1.067238072216921, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 40 :  k_knn = 5 
- Avg ACC : 26.05263157894737, with lambda = 10.0
- Avg NMI : 46.946560949088045, with lambda = 10.0
- Reconstruction Error : 6.164087378975897e+30
+ Avg ACC : 60.10526315789474, with theta = 10.0
+ Avg NMI : 77.61911234489939, with theta = 10.0
+ Reconstruction Error : 2.806150565565984
+ Avg Silhoutte score : 0.31741960121122875, with theta = 10.0
+ Avg Dunn's Index score : 0.2672228573635313, with theta = 0.1
+ Avg David Bouldin score : 1.1235282180838824, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 50 :  k_knn = 5 
- Avg ACC : 26.565789473684212, with lambda = 10.0
- Avg NMI : 47.38029948940757, with lambda = 10.0
- Reconstruction Error : 2.4118927873267916e+31
+ Avg ACC : 62.0, with theta = 10.0
+ Avg NMI : 78.64057681643318, with theta = 10.0
+ Reconstruction Error : 2.739714304020511
+ Avg Silhoutte score : 0.2964215337750837, with theta = 10.0
+ Avg Dunn's Index score : 0.296854454871205, with theta = 0.001
+ Avg David Bouldin score : 1.184877948907477, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 60 :  k_knn = 5 
- Avg ACC : 29.684210526315788, with lambda = 10.0
- Avg NMI : 49.41668822961856, with lambda = 10.0
- Reconstruction Error : 7.457168132275733e+31
+ Avg ACC : 62.421052631578945, with theta = 10.0
+ Avg NMI : 78.66752407266974, with theta = 10.0
+ Reconstruction Error : 2.6674542519105966
+ Avg Silhoutte score : 0.2970561017860413, with theta = 10.0
+ Avg Dunn's Index score : 0.322593817200887, with theta = 0.1
+ Avg David Bouldin score : 1.1866181161077556, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 70 :  k_knn = 5 
- Avg ACC : 27.157894736842106, with lambda = 10.0
- Avg NMI : 48.86574391791537, with lambda = 10.0
- Reconstruction Error : 1.8485257957711697e+32
+ Avg ACC : 60.6578947368421, with theta = 10.0
+ Avg NMI : 77.80742133935355, with theta = 10.0
+ Reconstruction Error : 2.625352167970614
+ Avg Silhoutte score : 0.28232025360683755, with theta = 10.0
+ Avg Dunn's Index score : 0.33667745009658845, with theta = 0.1
+ Avg David Bouldin score : 1.2471081010726417, with theta = 10.0
 ##################################################################################################
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 ##################################################################################################
  k = 10 :  k_knn = 6  
- Max ACC : 26.25, with theta = 10.0
- Max NMI : 48.419611858286565, with theta = 10.0
- Reconstruction Error : 4.1480641326198074e+27
+ Max ACC : 54.25, with theta = 10.0
+ Max NMI : 73.34638295564405, with theta = 10.0
+ Reconstruction Error : 3.41589494061774
+ Max Silhoutter score : 0.33919769619700496, with theta = 10.0
+ Max Dunn's Index score : 0.09490628205628301, with theta = 0.001
+ Min David Bouldin score : 1.330034529097111, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 20 :  k_knn = 6  
- Max ACC : 24.75, with theta = 10.0
- Max NMI : 47.40894051327971, with theta = 10.0
- Reconstruction Error : 2.5166234140381304e+29
+ Max ACC : 61.75000000000001, with theta = 10.0
+ Max NMI : 77.33171926030224, with theta = 10.0
+ Reconstruction Error : 3.1168054213898304
+ Max Silhoutter score : 0.3463370744631795, with theta = 10.0
+ Max Dunn's Index score : 0.1832604421168571, with theta = 0.1
+ Min David Bouldin score : 1.5204396132691724, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 30 :  k_knn = 6  
- Max ACC : 28.000000000000004, with theta = 10.0
- Max NMI : 50.05765393792435, with theta = 10.0
- Reconstruction Error : 2.5210620511698535e+30
+ Max ACC : 65.0, with theta = 10.0
+ Max NMI : 78.50274052897208, with theta = 10.0
+ Reconstruction Error : 2.929612379170635
+ Max Silhoutter score : 0.3453287438615351, with theta = 10.0
+ Max Dunn's Index score : 0.24376749574277654, with theta = 0.1
+ Min David Bouldin score : 1.635043800646951, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 40 :  k_knn = 6  
- Max ACC : 27.750000000000004, with theta = 10.0
- Max NMI : 50.26598764823118, with theta = 10.0
- Reconstruction Error : 1.350826679177464e+31
+ Max ACC : 62.5, with theta = 10.0
+ Max NMI : 78.70268085139801, with theta = 10.0
+ Reconstruction Error : 2.8199263252321605
+ Max Silhoutter score : 0.3349927146536091, with theta = 10.0
+ Max Dunn's Index score : 0.27920622040383586, with theta = 0.01
+ Min David Bouldin score : 1.685886426999211, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 50 :  k_knn = 6  
- Max ACC : 27.750000000000004, with theta = 10.0
- Max NMI : 49.463567523320336, with theta = 10.0
- Reconstruction Error : 5.074347294256341e+31
+ Max ACC : 62.5, with theta = 10.0
+ Max NMI : 77.60050910191832, with theta = 10.0
+ Reconstruction Error : 2.762716812691388
+ Max Silhoutter score : 0.33061688331126426, with theta = 10.0
+ Max Dunn's Index score : 0.29022924106225384, with theta = 0.01
+ Min David Bouldin score : 1.7281173459468486, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 60 :  k_knn = 6  
- Max ACC : 27.250000000000004, with theta = 10.0
- Max NMI : 48.322485276857314, with theta = 10.0
- Reconstruction Error : 1.5614250456642905e+32
+ Max ACC : 64.0, with theta = 10.0
+ Max NMI : 79.40493406522715, with theta = 10.0
+ Reconstruction Error : 2.6838837421368287
+ Max Silhoutter score : 0.31706251408381897, with theta = 10.0
+ Max Dunn's Index score : 0.3314882067937736, with theta = 0.01
+ Min David Bouldin score : 1.823560644784378, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 70 :  k_knn = 6  
- Max ACC : 30.5, with theta = 10.0
- Max NMI : 51.555243978471324, with theta = 10.0
- Reconstruction Error : 3.7425626875011935e+32
+ Max ACC : 64.25, with theta = 10.0
+ Max NMI : 80.22369764141366, with theta = 10.0
+ Reconstruction Error : 2.626453210505389
+ Max Silhoutter score : 0.3104879168254531, with theta = 10.0
+ Max Dunn's Index score : 0.3373861872225889, with theta = 0.01
+ Min David Bouldin score : 1.8597214093516587, with theta = 10.0
 ##################################################################################################
 The results of running the Kmeans method 20 times and the average of 20 runs
 ##################################################################################################
 k = 10 :  k_knn = 6 
- Avg ACC : 24.960526315789473, with lambda = 10.0
- Avg NMI : 47.006733106056515, with lambda = 10.0
- Reconstruction Error : 4.1480641326198074e+27
+ Avg ACC : 51.328947368421055, with theta = 10.0
+ Avg NMI : 71.50084012052616, with theta = 10.0
+ Reconstruction Error : 3.41589494061774
+ Avg Silhoutte score : 0.3266782311683683, with theta = 10.0
+ Avg Dunn's Index score : 0.09490628205628301, with theta = 0.001
+ Avg David Bouldin score : 0.98510939779689, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 20 :  k_knn = 6 
- Avg ACC : 22.63157894736842, with lambda = 10.0
- Avg NMI : 45.09344888061574, with lambda = 10.0
- Reconstruction Error : 2.5166234140381304e+29
+ Avg ACC : 58.026315789473685, with theta = 10.0
+ Avg NMI : 75.65529847099512, with theta = 10.0
+ Reconstruction Error : 3.1168054213898304
+ Avg Silhoutte score : 0.33578175910514096, with theta = 10.0
+ Avg Dunn's Index score : 0.1832604421168571, with theta = 0.1
+ Avg David Bouldin score : 1.0098356920331224, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 30 :  k_knn = 6 
- Avg ACC : 25.63157894736842, with lambda = 10.0
- Avg NMI : 47.76978541400794, with lambda = 10.0
- Reconstruction Error : 2.5210620511698535e+30
+ Avg ACC : 60.223684210526315, with theta = 10.0
+ Avg NMI : 76.80988969662144, with theta = 10.0
+ Reconstruction Error : 2.929612379170635
+ Avg Silhoutte score : 0.33590275221046084, with theta = 10.0
+ Avg Dunn's Index score : 0.24376749574277654, with theta = 0.1
+ Avg David Bouldin score : 1.0557180154819055, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 40 :  k_knn = 6 
- Avg ACC : 26.36842105263158, with lambda = 10.0
- Avg NMI : 48.24880454324736, with lambda = 10.0
- Reconstruction Error : 1.350826679177464e+31
+ Avg ACC : 59.94736842105263, with theta = 10.0
+ Avg NMI : 77.08889698910636, with theta = 10.0
+ Reconstruction Error : 2.8199263252321605
+ Avg Silhoutte score : 0.3248022464160102, with theta = 10.0
+ Avg Dunn's Index score : 0.27920622040383586, with theta = 0.01
+ Avg David Bouldin score : 1.0887103143188055, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 50 :  k_knn = 6 
- Avg ACC : 25.55263157894737, with lambda = 10.0
- Avg NMI : 46.976027444647904, with lambda = 10.0
- Reconstruction Error : 5.074347294256341e+31
+ Avg ACC : 59.38157894736842, with theta = 10.0
+ Avg NMI : 76.47335057245252, with theta = 10.0
+ Reconstruction Error : 2.762716812691388
+ Avg Silhoutte score : 0.32068486000105656, with theta = 10.0
+ Avg Dunn's Index score : 0.29022924106225384, with theta = 0.01
+ Avg David Bouldin score : 1.100755709843949, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 60 :  k_knn = 6 
- Avg ACC : 25.13157894736842, with lambda = 10.0
- Avg NMI : 46.48076927546462, with lambda = 10.0
- Reconstruction Error : 1.5614250456642905e+32
+ Avg ACC : 61.44736842105264, with theta = 10.0
+ Avg NMI : 77.87041118647721, with theta = 10.0
+ Reconstruction Error : 2.6838837421368287
+ Avg Silhoutte score : 0.3068203846063136, with theta = 10.0
+ Avg Dunn's Index score : 0.3314882067937736, with theta = 0.01
+ Avg David Bouldin score : 1.1567147484031914, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 70 :  k_knn = 6 
- Avg ACC : 27.57894736842105, with lambda = 10.0
- Avg NMI : 49.24099680251863, with lambda = 10.0
- Reconstruction Error : 3.7425626875011935e+32
+ Avg ACC : 60.973684210526315, with theta = 10.0
+ Avg NMI : 77.60405875430666, with theta = 10.0
+ Reconstruction Error : 2.626453210505389
+ Avg Silhoutte score : 0.30063526768194804, with theta = 10.0
+ Avg Dunn's Index score : 0.3373861872225889, with theta = 0.01
+ Avg David Bouldin score : 1.1724617701900015, with theta = 10.0
 ##################################################################################################
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 ##################################################################################################
  k = 10 :  k_knn = 11  
- Max ACC : 21.75, with theta = 10.0
- Max NMI : 42.577033383563275, with theta = 10.0
- Reconstruction Error : 6.302306875819579e+28
+ Max ACC : 48.25, with theta = 0.1
+ Max NMI : 69.91248017803872, with theta = 0.1
+ Reconstruction Error : 3.985868706058089
+ Max Silhoutter score : 0.3374524045158329, with theta = 10.0
+ Max Dunn's Index score : 0.1058597434403598, with theta = 0.1
+ Min David Bouldin score : 1.3264829726659395, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 20 :  k_knn = 11  
- Max ACC : 23.5, with theta = 10.0
- Max NMI : 46.08673885185919, with theta = 10.0
- Reconstruction Error : 3.2762711913358226e+30
+ Max ACC : 50.74999999999999, with theta = 0.001
+ Max NMI : 71.48550943376658, with theta = 0.01
+ Reconstruction Error : 3.7335620972909034
+ Max Silhoutter score : 0.31194164635201477, with theta = 10.0
+ Max Dunn's Index score : 0.16710529324583925, with theta = 0.001
+ Min David Bouldin score : 1.5787330620451658, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 30 :  k_knn = 11  
- Max ACC : 27.750000000000004, with theta = 10.0
- Max NMI : 48.5447492970754, with theta = 10.0
- Reconstruction Error : 3.261658881055903e+31
+ Max ACC : 55.75, with theta = 0.01
+ Max NMI : 73.53927833913102, with theta = 0.01
+ Reconstruction Error : 3.561853566788636
+ Max Silhoutter score : 0.300406036151902, with theta = 10.0
+ Max Dunn's Index score : 0.25356856354650587, with theta = 0.01
+ Min David Bouldin score : 1.7244035517324185, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 40 :  k_knn = 11  
- Max ACC : 24.75, with theta = 10.0
- Max NMI : 45.71083299934271, with theta = 10.0
- Reconstruction Error : 1.8138743164022405e+32
+ Max ACC : 57.49999999999999, with theta = 0.001
+ Max NMI : 75.45973519155348, with theta = 0.001
+ Reconstruction Error : 3.370327301549238
+ Max Silhoutter score : 0.2997491896173571, with theta = 10.0
+ Max Dunn's Index score : 0.27720621037903503, with theta = 0.1
+ Min David Bouldin score : 1.706528528986214, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 50 :  k_knn = 11  
- Max ACC : 28.999999999999996, with theta = 10.0
- Max NMI : 50.80024347346986, with theta = 10.0
- Reconstruction Error : 6.1059945223241445e+32
+ Max ACC : 60.25, with theta = 0.1
+ Max NMI : 76.702208481085, with theta = 0.001
+ Reconstruction Error : 3.3339903532151003
+ Max Silhoutter score : 0.3042475830856601, with theta = 10.0
+ Max Dunn's Index score : 0.29916478822467696, with theta = 0.1
+ Min David Bouldin score : 1.7506358631092263, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 60 :  k_knn = 11  
- Max ACC : 28.999999999999996, with theta = 10.0
- Max NMI : 49.99190776272722, with theta = 10.0
- Reconstruction Error : 1.8643811542257167e+33
+ Max ACC : 61.0, with theta = 0.001
+ Max NMI : 77.01477095142847, with theta = 0.001
+ Reconstruction Error : 3.1956998369688256
+ Max Silhoutter score : 0.30238115678145105, with theta = 10.0
+ Max Dunn's Index score : 0.3066626185059881, with theta = 0.1
+ Min David Bouldin score : 1.7948166043734148, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 70 :  k_knn = 11  
- Max ACC : 31.75, with theta = 10.0
- Max NMI : 52.18509615722443, with theta = 10.0
- Reconstruction Error : 4.3563714877775125e+33
+ Max ACC : 58.5, with theta = 0.1
+ Max NMI : 76.28639512191654, with theta = 0.1
+ Reconstruction Error : 3.1460126683518257
+ Max Silhoutter score : 0.29818294111950416, with theta = 10.0
+ Max Dunn's Index score : 0.3427441018083218, with theta = 0.01
+ Min David Bouldin score : 1.8027694985339238, with theta = 10.0
 ##################################################################################################
 The results of running the Kmeans method 20 times and the average of 20 runs
 ##################################################################################################
 k = 10 :  k_knn = 11 
- Avg ACC : 20.07894736842105, with lambda = 10.0
- Avg NMI : 41.19791077285386, with lambda = 10.0
- Reconstruction Error : 6.302306875819579e+28
+ Avg ACC : 44.671052631578945, with theta = 0.01
+ Avg NMI : 67.40958990422881, with theta = 0.1
+ Reconstruction Error : 3.985868706058089
+ Avg Silhoutte score : 0.3273276251481615, with theta = 10.0
+ Avg Dunn's Index score : 0.1058597434403598, with theta = 0.1
+ Avg David Bouldin score : 0.8858798293837377, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 20 :  k_knn = 11 
- Avg ACC : 21.92105263157895, with lambda = 10.0
- Avg NMI : 44.68199683385429, with lambda = 10.0
- Reconstruction Error : 3.2762711913358226e+30
+ Avg ACC : 48.69736842105263, with theta = 0.01
+ Avg NMI : 69.75443646305307, with theta = 0.01
+ Reconstruction Error : 3.7335620972909034
+ Avg Silhoutte score : 0.2961904098252832, with theta = 10.0
+ Avg Dunn's Index score : 0.16710529324583925, with theta = 0.001
+ Avg David Bouldin score : 0.9993132021419028, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 30 :  k_knn = 11 
- Avg ACC : 24.157894736842106, with lambda = 10.0
- Avg NMI : 45.459872918130706, with lambda = 10.0
- Reconstruction Error : 3.261658881055903e+31
+ Avg ACC : 51.43421052631579, with theta = 0.01
+ Avg NMI : 71.95900696617643, with theta = 0.01
+ Reconstruction Error : 3.561853566788636
+ Avg Silhoutte score : 0.2900146783634507, with theta = 10.0
+ Avg Dunn's Index score : 0.25356856354650587, with theta = 0.01
+ Avg David Bouldin score : 1.0351512462742611, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 40 :  k_knn = 11 
- Avg ACC : 22.526315789473685, with lambda = 10.0
- Avg NMI : 44.0094246876219, with lambda = 10.0
- Reconstruction Error : 1.8138743164022405e+32
+ Avg ACC : 53.223684210526315, with theta = 0.01
+ Avg NMI : 73.18708200215963, with theta = 0.001
+ Reconstruction Error : 3.370327301549238
+ Avg Silhoutte score : 0.28983657309160465, with theta = 10.0
+ Avg Dunn's Index score : 0.27720621037903503, with theta = 0.1
+ Avg David Bouldin score : 1.07743469938701, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 50 :  k_knn = 11 
- Avg ACC : 25.36842105263158, with lambda = 10.0
- Avg NMI : 47.536513578876935, with lambda = 10.0
- Reconstruction Error : 6.1059945223241445e+32
+ Avg ACC : 55.0921052631579, with theta = 0.1
+ Avg NMI : 74.2217072022803, with theta = 0.1
+ Reconstruction Error : 3.3339903532151003
+ Avg Silhoutte score : 0.29111641567509894, with theta = 10.0
+ Avg Dunn's Index score : 0.29916478822467696, with theta = 0.1
+ Avg David Bouldin score : 1.078377097553681, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 60 :  k_knn = 11 
- Avg ACC : 26.013157894736842, with lambda = 10.0
- Avg NMI : 47.1395232502854, with lambda = 10.0
- Reconstruction Error : 1.8643811542257167e+33
+ Avg ACC : 55.05263157894737, with theta = 0.001
+ Avg NMI : 74.67463046936388, with theta = 0.001
+ Reconstruction Error : 3.1956998369688256
+ Avg Silhoutte score : 0.2919125779641027, with theta = 10.0
+ Avg Dunn's Index score : 0.3066626185059881, with theta = 0.1
+ Avg David Bouldin score : 1.107553912758504, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 70 :  k_knn = 11 
- Avg ACC : 27.460526315789473, with lambda = 10.0
- Avg NMI : 49.41831190013113, with lambda = 10.0
- Reconstruction Error : 4.3563714877775125e+33
+ Avg ACC : 55.35526315789474, with theta = 10.0
+ Avg NMI : 74.47254612548545, with theta = 0.1
+ Reconstruction Error : 3.1460126683518257
+ Avg Silhoutte score : 0.2835461767605771, with theta = 10.0
+ Avg Dunn's Index score : 0.3427441018083218, with theta = 0.01
+ Avg David Bouldin score : 1.1171999653699412, with theta = 10.0
 ##################################################################################################
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 ##################################################################################################
  k = 10 :  k_knn = 21  
- Max ACC : 17.75, with theta = 0.01
- Max NMI : 41.110445896112935, with theta = 0.1
- Reconstruction Error : 1.420171285485333e+30
+ Max ACC : 45.75, with theta = 0.001
+ Max NMI : 68.36053513678154, with theta = 0.001
+ Reconstruction Error : 4.3361052253156664
+ Max Silhoutter score : 0.30448800814055893, with theta = 10.0
+ Max Dunn's Index score : 0.08805870308644609, with theta = 0.01
+ Min David Bouldin score : 1.3024273994547193, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 20 :  k_knn = 21  
- Max ACC : 19.0, with theta = 10.0
- Max NMI : 40.543538849436295, with theta = 0.1
- Reconstruction Error : 5.750739639833783e+31
+ Max ACC : 55.50000000000001, with theta = 0.1
+ Max NMI : 72.34716660052644, with theta = 0.01
+ Reconstruction Error : 4.331340771407837
+ Max Silhoutter score : 0.2953589428506526, with theta = 10.0
+ Max Dunn's Index score : 0.19119512616805115, with theta = 0.01
+ Min David Bouldin score : 1.6028011541341498, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 30 :  k_knn = 21  
- Max ACC : 21.25, with theta = 10.0
- Max NMI : 44.21816870317733, with theta = 10.0
- Reconstruction Error : 5.4362322484137766e+32
+ Max ACC : 60.0, with theta = 0.1
+ Max NMI : 75.96286159792778, with theta = 0.1
+ Reconstruction Error : 4.329216265944488
+ Max Silhoutter score : 0.292538871314272, with theta = 10.0
+ Max Dunn's Index score : 0.2208665394163521, with theta = 0.1
+ Min David Bouldin score : 1.6135835951848017, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 40 :  k_knn = 21  
- Max ACC : 21.0, with theta = 10.0
- Max NMI : 44.045176851522186, with theta = 10.0
- Reconstruction Error : 2.654638156278969e+33
+ Max ACC : 56.25, with theta = 0.01
+ Max NMI : 74.38844660920742, with theta = 0.01
+ Reconstruction Error : 4.327441628022475
+ Max Silhoutter score : 0.25645163325433157, with theta = 10.0
+ Max Dunn's Index score : 0.2607796222911062, with theta = 0.001
+ Min David Bouldin score : 1.6916926729665953, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 50 :  k_knn = 21  
- Max ACC : 22.5, with theta = 10.0
- Max NMI : 46.889381203976015, with theta = 10.0
- Reconstruction Error : 9.801736737956563e+33
+ Max ACC : 58.75, with theta = 0.01
+ Max NMI : 75.95530893618673, with theta = 0.001
+ Reconstruction Error : 4.323403077902615
+ Max Silhoutter score : 0.24918337553011743, with theta = 10.0
+ Max Dunn's Index score : 0.288005412089537, with theta = 0.1
+ Min David Bouldin score : 1.7384862687358644, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 60 :  k_knn = 21  
- Max ACC : 22.75, with theta = 10.0
- Max NMI : 47.68097261341449, with theta = 10.0
- Reconstruction Error : 3.11311720811397e+34
+ Max ACC : 57.49999999999999, with theta = 0.01
+ Max NMI : 75.31001384073195, with theta = 0.1
+ Reconstruction Error : 4.324648731260883
+ Max Silhoutter score : 0.20143655147690304, with theta = 10.0
+ Max Dunn's Index score : 0.3012178792477312, with theta = 0.1
+ Min David Bouldin score : 1.7994289638570897, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
  k = 70 :  k_knn = 21  
- Max ACC : 24.5, with theta = 10.0
- Max NMI : 48.453896505918784, with theta = 10.0
- Reconstruction Error : 6.774283132313846e+34
+ Max ACC : 57.99999999999999, with theta = 0.1
+ Max NMI : 75.967697435125, with theta = 0.1
+ Reconstruction Error : 4.322780249214797
+ Max Silhoutter score : 0.22702445391797746, with theta = 10.0
+ Max Dunn's Index score : 0.330716545399777, with theta = 0.01
+ Min David Bouldin score : 1.8114727598822657, with theta = 10.0
 ##################################################################################################
 The results of running the Kmeans method 20 times and the average of 20 runs
 ##################################################################################################
 k = 10 :  k_knn = 21 
- Avg ACC : 17.0, with lambda = 0.1
- Avg NMI : 40.043253608394316, with lambda = 0.1
- Reconstruction Error : 1.420171285485333e+30
+ Avg ACC : 41.89473684210526, with theta = 0.001
+ Avg NMI : 66.08416670910508, with theta = 0.001
+ Reconstruction Error : 4.3361052253156664
+ Avg Silhoutte score : 0.29525129169346426, with theta = 10.0
+ Avg Dunn's Index score : 0.08805870308644609, with theta = 0.01
+ Avg David Bouldin score : 1.0173587701373505, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 20 :  k_knn = 21 
- Avg ACC : 17.157894736842106, with lambda = 0.1
- Avg NMI : 39.64042975647168, with lambda = 0.1
- Reconstruction Error : 5.750739639833783e+31
+ Avg ACC : 49.473684210526315, with theta = 0.1
+ Avg NMI : 70.77237949239843, with theta = 0.01
+ Reconstruction Error : 4.331340771407837
+ Avg Silhoutte score : 0.2829269978602447, with theta = 10.0
+ Avg Dunn's Index score : 0.19119512616805115, with theta = 0.01
+ Avg David Bouldin score : 1.0687191356339938, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 30 :  k_knn = 21 
- Avg ACC : 18.473684210526315, with lambda = 10.0
- Avg NMI : 40.95964899656895, with lambda = 10.0
- Reconstruction Error : 5.4362322484137766e+32
+ Avg ACC : 54.56578947368421, with theta = 0.01
+ Avg NMI : 73.5882180121715, with theta = 0.01
+ Reconstruction Error : 4.329216265944488
+ Avg Silhoutte score : 0.2834192567238133, with theta = 10.0
+ Avg Dunn's Index score : 0.2208665394163521, with theta = 0.1
+ Avg David Bouldin score : 1.0611151921968927, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 40 :  k_knn = 21 
- Avg ACC : 19.657894736842106, with lambda = 10.0
- Avg NMI : 42.3875052415772, with lambda = 10.0
- Reconstruction Error : 2.654638156278969e+33
+ Avg ACC : 51.80263157894737, with theta = 0.1
+ Avg NMI : 71.85946049488554, with theta = 0.01
+ Reconstruction Error : 4.327441628022475
+ Avg Silhoutte score : 0.2452580637719012, with theta = 10.0
+ Avg Dunn's Index score : 0.2607796222911062, with theta = 0.001
+ Avg David Bouldin score : 1.0882191240052737, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 50 :  k_knn = 21 
- Avg ACC : 20.605263157894736, with lambda = 10.0
- Avg NMI : 45.168840255395175, with lambda = 10.0
- Reconstruction Error : 9.801736737956563e+33
+ Avg ACC : 54.131578947368425, with theta = 0.001
+ Avg NMI : 73.92246450313036, with theta = 0.001
+ Reconstruction Error : 4.323403077902615
+ Avg Silhoutte score : 0.2289872699239463, with theta = 10.0
+ Avg Dunn's Index score : 0.288005412089537, with theta = 0.1
+ Avg David Bouldin score : 1.0754741708085882, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 60 :  k_knn = 21 
- Avg ACC : 21.592105263157894, with lambda = 10.0
- Avg NMI : 46.2131800730789, with lambda = 10.0
- Reconstruction Error : 3.11311720811397e+34
+ Avg ACC : 53.34210526315789, with theta = 0.1
+ Avg NMI : 73.72532800007716, with theta = 0.1
+ Reconstruction Error : 4.324648731260883
+ Avg Silhoutte score : 0.18688992957820674, with theta = 10.0
+ Avg Dunn's Index score : 0.3012178792477312, with theta = 0.1
+ Avg David Bouldin score : 1.2142723942831517, with theta = 10.0
 ##################################################################################################
 ##################################################################################################
 k = 70 :  k_knn = 21 
- Avg ACC : 22.57894736842105, with lambda = 10.0
- Avg NMI : 46.77051691731953, with lambda = 10.0
- Reconstruction Error : 6.774283132313846e+34
+ Avg ACC : 54.38157894736842, with theta = 0.01
+ Avg NMI : 73.89532977700802, with theta = 0.001
+ Reconstruction Error : 4.322780249214797
+ Avg Silhoutte score : 0.20732660192921223, with theta = 10.0
+ Avg Dunn's Index score : 0.330716545399777, with theta = 0.01
+ Avg David Bouldin score : 1.1253815149137274, with theta = 10.0
 ##################################################################################################
+{10: [100, 100, 100, 100, 10], 20: [100, 100, 100, 100, 7], 30: [100, 100, 100, 100, 8], 40: [100, 100, 100, 100, 7], 50: [100, 100, 100, 100, 7], 60: [100, 100, 100, 100, 7], 70: [100, 100, 100, 100, 8]}
+Average no. of iterations for k = 10 : 82
+Average no. of iterations for k = 20 : 81.4
+Average no. of iterations for k = 30 : 81.6
+Average no. of iterations for k = 40 : 81.4
+Average no. of iterations for k = 50 : 81.4
+Average no. of iterations for k = 60 : 81.4
+Average no. of iterations for k = 70 : 81.6
+Overall average no. of iterations : 95.38571428571429
 done

@@ -1,6 +1,7 @@
 import numpy as np
 
-from Utils.plot_metrics import plot_clusters_tsne, plot_acc, plot_nmi, plot_sil, plot_dunn, plot_db
+from Utils.plot_metrics import plot_clusters_tsne, plot_acc, plot_nmi, plot_sil, plot_dunn, plot_db, \
+    plot_model_performance
 from Utils.plot_utils import DGONMF_lists, erwnmf_lists, nmf_lists, gnmf_lists, dnsNMF_lists, dsnmf_lists, OGNMF_lists, \
     GRSNFM_lists, RSCNMF_lists, nsNMF_lists, DGRSNMF_lists
 
@@ -36,7 +37,7 @@ def plot_acc_nmi(dataset):
 
     plot_db(dataset, k_list, dgonmf_lst[4], erwnmf_lst[4], nmf_lst[4], gnmf_lst[4], dnsNMF_lst[4],
             dsnmf_lst[4], ognmf_lst[4], grsnmf_lst[4], rscnmf_lst[4], nsnmf_lst[4], dgrsnmf_lst[4])
-def plot_clusters():
+def plot_clusters(model, dataset):
     path = f'./Results/{dataset}/kmeans_{model}_{dataset}.npz'
     file = np.load(path)
     data = file['data']
@@ -46,10 +47,10 @@ def plot_clusters():
 
 
 if __name__ == '__main__':
-    # jaffe, orl, warpAR10P, umist, yale, yaleB
-    dataset = "jaffe"  # [jaffe, orl, warpAR10P, umist, yale, yaleB]
-    model = "DGONMF"
+    dataset = "umist"  # [jaffe, orl, warpAR10P, umist, yale, yaleB]
+    model = "DGRSNMF" #[DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, DGRSNMF]
 
-    plot_acc_nmi(dataset)
-    # plot_model_performance("DGONMF")
-    # plot_clusters()
+   # plot_acc_nmi(dataset)
+   # plot_model_performance("DGONMF")
+    for i in range(10):
+        plot_clusters(model, dataset)

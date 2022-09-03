@@ -1,0 +1,132 @@
+Model : NMF
+Dataset : umist
+max iterations : 100
+myeps_1 : 1e-12
+myeps_2 : 1e-10
+##################################################################################################
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+##################################################################################################
+ k = 10 : max ACC = 40.0
+ k = 10 : max NMI = 58.344319351880515
+ k = 10 : max Silhoutte Score = 0.27961549162864685
+ k = 10 : max Dunn's Index Score = 0.05979311069845407
+ k = 10 : min Davies bouldin Score = 1.2197064195703498
+##################################################################################################
+The results of running the Kmeans method 20 times and the average of 20 runs
+##################################################################################################
+ k = 10 : mean ACC = 37.848970251716246
+ k = 10 : mean NMI = 55.77102030203272
+ k = 10 : mean Silhoutte score = 0.26805076003074646
+ k = 10 : mean Dunn's Index Score = 0.05979311069845407
+ k = 10 : mean Davies bouldin Score = 1.2785145645195972
+
+
+##################################################################################################
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+##################################################################################################
+ k = 20 : max ACC = 40.34782608695652
+ k = 20 : max NMI = 58.91501718520368
+ k = 20 : max Silhoutte Score = 0.24026615917682648
+ k = 20 : max Dunn's Index Score = 0.1711385695519298
+ k = 20 : min Davies bouldin Score = 1.3682717162220577
+##################################################################################################
+The results of running the Kmeans method 20 times and the average of 20 runs
+##################################################################################################
+ k = 20 : mean ACC = 36.90617848970252
+ k = 20 : mean NMI = 56.01311082939713
+ k = 20 : mean Silhoutte score = 0.23125453293323517
+ k = 20 : mean Dunn's Index Score = 0.1711385695519298
+ k = 20 : mean Davies bouldin Score = 1.4045491577814508
+
+
+##################################################################################################
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+##################################################################################################
+ k = 30 : max ACC = 43.47826086956522
+ k = 30 : max NMI = 66.24409979424007
+ k = 30 : max Silhoutte Score = 0.2446979582309723
+ k = 30 : max Dunn's Index Score = 0.18899432459455373
+ k = 30 : min Davies bouldin Score = 1.4474514676717587
+##################################################################################################
+The results of running the Kmeans method 20 times and the average of 20 runs
+##################################################################################################
+ k = 30 : mean ACC = 40.71395881006865
+ k = 30 : mean NMI = 61.89407046574344
+ k = 30 : mean Silhoutte score = 0.2306946963071823
+ k = 30 : mean Dunn's Index Score = 0.18899432459455373
+ k = 30 : mean Davies bouldin Score = 1.4927279302932093
+
+
+##################################################################################################
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+##################################################################################################
+ k = 40 : max ACC = 45.565217391304344
+ k = 40 : max NMI = 62.807879886647285
+ k = 40 : max Silhoutte Score = 0.21678616106510162
+ k = 40 : max Dunn's Index Score = 0.23472817795411624
+ k = 40 : min Davies bouldin Score = 1.549397385070594
+##################################################################################################
+The results of running the Kmeans method 20 times and the average of 20 runs
+##################################################################################################
+ k = 40 : mean ACC = 41.693363844393595
+ k = 40 : mean NMI = 60.27021859829869
+ k = 40 : mean Silhoutte score = 0.21071061491966248
+ k = 40 : mean Dunn's Index Score = 0.23472817795411624
+ k = 40 : mean Davies bouldin Score = 1.6019167144082305
+
+
+##################################################################################################
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+##################################################################################################
+ k = 50 : max ACC = 42.608695652173914
+ k = 50 : max NMI = 60.49315472946585
+ k = 50 : max Silhoutte Score = 0.22088117897510529
+ k = 50 : max Dunn's Index Score = 0.16371902928566773
+ k = 50 : min Davies bouldin Score = 1.4704115528196935
+##################################################################################################
+The results of running the Kmeans method 20 times and the average of 20 runs
+##################################################################################################
+ k = 50 : mean ACC = 39.139588100686495
+ k = 50 : mean NMI = 57.522810606103214
+ k = 50 : mean Silhoutte score = 0.20335237681865692
+ k = 50 : mean Dunn's Index Score = 0.16371902928566773
+ k = 50 : mean Davies bouldin Score = 1.5948021420264875
+
+
+##################################################################################################
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+##################################################################################################
+ k = 60 : max ACC = 42.608695652173914
+ k = 60 : max NMI = 63.4231299466961
+ k = 60 : max Silhoutte Score = 0.19677074253559113
+ k = 60 : max Dunn's Index Score = 0.2667109878228936
+ k = 60 : min Davies bouldin Score = 1.6439097843752553
+##################################################################################################
+The results of running the Kmeans method 20 times and the average of 20 runs
+##################################################################################################
+ k = 60 : mean ACC = 39.28604118993135
+ k = 60 : mean NMI = 60.19954929106592
+ k = 60 : mean Silhoutte score = 0.18683326244354248
+ k = 60 : mean Dunn's Index Score = 0.2667109878228936
+ k = 60 : mean Davies bouldin Score = 1.699960197692761
+
+
+##################################################################################################
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+##################################################################################################
+ k = 70 : max ACC = 39.47826086956522
+ k = 70 : max NMI = 57.30095725765988
+ k = 70 : max Silhoutte Score = 0.19057326018810272
+ k = 70 : max Dunn's Index Score = 0.22991208703373367
+ k = 70 : min Davies bouldin Score = 1.7060349639116812
+##################################################################################################
+The results of running the Kmeans method 20 times and the average of 20 runs
+##################################################################################################
+ k = 70 : mean ACC = 36.329519450800916
+ k = 70 : mean NMI = 53.751744206369786
+ k = 70 : mean Silhoutte score = 0.17733921110630035
+ k = 70 : mean Dunn's Index Score = 0.22991208703373367
+ k = 70 : mean Davies bouldin Score = 1.7810861907975744
+
+
+#Done!

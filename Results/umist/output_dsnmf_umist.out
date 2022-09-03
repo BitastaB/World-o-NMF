@@ -1,0 +1,512 @@
+Model : dsnmf
+Dataset : umist
+max iterations : 100
+myeps_1 : 1e-12
+myeps_2 : 1e-10
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 80 : k2 = 10 : best max_acc = 39.65217391304348 
+k1 = 80 : k2 = 10 : best max_nmi = 55.09191294101773 
+k1 = 80 : k2 = 10 : best max_Silhoutte score = 0.3191116282570652 
+k1 = 80 : k2 = 10 : best max_Dunn'd index score = 1.177728820885414 
+k1 = 80 : k2 = 10 : best max_Davies bouldin score = 0.017997062820456867 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 80 :  k2 = 10 : avg_acc = 38.17848970251716 
+k1 = 80 :  k2 = 10 : avg_nmi = 53.661893597017375  
+k1 = 80 :  k2 = 10 : avg_Silhoutte score = 0.303555957232287  
+k1 = 80 :  k2 = 10 : avg_Dunn'd index score = 1.0941456101846694  
+k1 = 80 :  k2 = 10 : avg_Davies bouldin score = 0.017997062820456867  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 80 : k2 = 20 : best max_acc = 44.869565217391305 
+k1 = 80 : k2 = 20 : best max_nmi = 63.47005638579331 
+k1 = 80 : k2 = 20 : best max_Silhoutte score = 0.23205653582359012 
+k1 = 80 : k2 = 20 : best max_Dunn'd index score = 1.4873580863311393 
+k1 = 80 : k2 = 20 : best max_Davies bouldin score = 0.1467177060138288 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 80 :  k2 = 20 : avg_acc = 40.31121281464531 
+k1 = 80 :  k2 = 20 : avg_nmi = 59.26740350699482  
+k1 = 80 :  k2 = 20 : avg_Silhoutte score = 0.22221490489247975  
+k1 = 80 :  k2 = 20 : avg_Dunn'd index score = 1.4348624522306357  
+k1 = 80 :  k2 = 20 : avg_Davies bouldin score = 0.1467177060138288  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 80 : k2 = 30 : best max_acc = 47.82608695652174 
+k1 = 80 : k2 = 30 : best max_nmi = 63.46165267974925 
+k1 = 80 : k2 = 30 : best max_Silhoutte score = 0.16588744647498566 
+k1 = 80 : k2 = 30 : best max_Dunn'd index score = 1.9235138701907704 
+k1 = 80 : k2 = 30 : best max_Davies bouldin score = 0.1919540244547832 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 80 :  k2 = 30 : avg_acc = 43.36842105263158 
+k1 = 80 :  k2 = 30 : avg_nmi = 59.69970978179171  
+k1 = 80 :  k2 = 30 : avg_Silhoutte score = 0.1527459063358152  
+k1 = 80 :  k2 = 30 : avg_Dunn'd index score = 1.8545437248918224  
+k1 = 80 :  k2 = 30 : avg_Davies bouldin score = 0.1919540244547832  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 80 : k2 = 40 : best max_acc = 43.130434782608695 
+k1 = 80 : k2 = 40 : best max_nmi = 59.34250257099911 
+k1 = 80 : k2 = 40 : best max_Silhoutte score = 0.13110172576714474 
+k1 = 80 : k2 = 40 : best max_Dunn'd index score = 2.260442214438044 
+k1 = 80 : k2 = 40 : best max_Davies bouldin score = 0.22276366941808473 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 80 :  k2 = 40 : avg_acc = 39.16704805491991 
+k1 = 80 :  k2 = 40 : avg_nmi = 55.46369358602782  
+k1 = 80 :  k2 = 40 : avg_Silhoutte score = 0.12301750062502524  
+k1 = 80 :  k2 = 40 : avg_Dunn'd index score = 2.161319527598831  
+k1 = 80 :  k2 = 40 : avg_Davies bouldin score = 0.22276366941808473  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 80 : k2 = 50 : best max_acc = 45.73913043478261 
+k1 = 80 : k2 = 50 : best max_nmi = 58.46035349812345 
+k1 = 80 : k2 = 50 : best max_Silhoutte score = 0.10415800417259163 
+k1 = 80 : k2 = 50 : best max_Dunn'd index score = 2.4975689393157268 
+k1 = 80 : k2 = 50 : best max_Davies bouldin score = 0.2725686036938677 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 80 :  k2 = 50 : avg_acc = 40.091533180778036 
+k1 = 80 :  k2 = 50 : avg_nmi = 54.39257289240141  
+k1 = 80 :  k2 = 50 : avg_Silhoutte score = 0.09520706409055538  
+k1 = 80 :  k2 = 50 : avg_Dunn'd index score = 2.4263078305803263  
+k1 = 80 :  k2 = 50 : avg_Davies bouldin score = 0.2725686036938677  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 80 : k2 = 60 : best max_acc = 39.65217391304348 
+k1 = 80 : k2 = 60 : best max_nmi = 54.893002940828914 
+k1 = 80 : k2 = 60 : best max_Silhoutte score = 0.07247483625829344 
+k1 = 80 : k2 = 60 : best max_Dunn'd index score = 2.8368499238024167 
+k1 = 80 : k2 = 60 : best max_Davies bouldin score = 0.2795197983030052 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 80 :  k2 = 60 : avg_acc = 35.37757437070938 
+k1 = 80 :  k2 = 60 : avg_nmi = 49.01125146436309  
+k1 = 80 :  k2 = 60 : avg_Silhoutte score = 0.06642984462549768  
+k1 = 80 :  k2 = 60 : avg_Dunn'd index score = 2.717320648274126  
+k1 = 80 :  k2 = 60 : avg_Davies bouldin score = 0.2795197983030052  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 80 : k2 = 70 : best max_acc = 38.608695652173914 
+k1 = 80 : k2 = 70 : best max_nmi = 47.02407060807336 
+k1 = 80 : k2 = 70 : best max_Silhoutte score = 0.061869514772246344 
+k1 = 80 : k2 = 70 : best max_Dunn'd index score = 3.1007340272460637 
+k1 = 80 : k2 = 70 : best max_Davies bouldin score = 0.22359391260816228 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 80 :  k2 = 70 : avg_acc = 33.95881006864989 
+k1 = 80 :  k2 = 70 : avg_nmi = 43.74581617304519  
+k1 = 80 :  k2 = 70 : avg_Silhoutte score = 0.05606755343974065  
+k1 = 80 :  k2 = 70 : avg_Dunn'd index score = 2.9583908005957507  
+k1 = 80 :  k2 = 70 : avg_Davies bouldin score = 0.22359391260816228  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 100 : k2 = 10 : best max_acc = 38.08695652173913 
+k1 = 100 : k2 = 10 : best max_nmi = 57.199277444295724 
+k1 = 100 : k2 = 10 : best max_Silhoutte score = 0.28697684700663534 
+k1 = 100 : k2 = 10 : best max_Dunn'd index score = 1.2122670984119785 
+k1 = 100 : k2 = 10 : best max_Davies bouldin score = 0.032864468686970766 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 100 :  k2 = 10 : avg_acc = 36.549199084668196 
+k1 = 100 :  k2 = 10 : avg_nmi = 55.30946628669639  
+k1 = 100 :  k2 = 10 : avg_Silhoutte score = 0.27832075512327104  
+k1 = 100 :  k2 = 10 : avg_Dunn'd index score = 1.1612260652655129  
+k1 = 100 :  k2 = 10 : avg_Davies bouldin score = 0.032864468686970766  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 100 : k2 = 20 : best max_acc = 42.08695652173913 
+k1 = 100 : k2 = 20 : best max_nmi = 60.184996381611874 
+k1 = 100 : k2 = 20 : best max_Silhoutte score = 0.21711177878263296 
+k1 = 100 : k2 = 20 : best max_Dunn'd index score = 1.5913502477860244 
+k1 = 100 : k2 = 20 : best max_Davies bouldin score = 0.1223345389232125 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 100 :  k2 = 20 : avg_acc = 39.450800915331804 
+k1 = 100 :  k2 = 20 : avg_nmi = 57.37382360967941  
+k1 = 100 :  k2 = 20 : avg_Silhoutte score = 0.20502344002160608  
+k1 = 100 :  k2 = 20 : avg_Dunn'd index score = 1.5181352690313328  
+k1 = 100 :  k2 = 20 : avg_Davies bouldin score = 0.1223345389232125  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 100 : k2 = 30 : best max_acc = 49.913043478260875 
+k1 = 100 : k2 = 30 : best max_nmi = 61.60748488403102 
+k1 = 100 : k2 = 30 : best max_Silhoutte score = 0.16783416668661294 
+k1 = 100 : k2 = 30 : best max_Dunn'd index score = 1.9614503914178 
+k1 = 100 : k2 = 30 : best max_Davies bouldin score = 0.16766477994525575 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 100 :  k2 = 30 : avg_acc = 46.40732265446224 
+k1 = 100 :  k2 = 30 : avg_nmi = 59.31175829021081  
+k1 = 100 :  k2 = 30 : avg_Silhoutte score = 0.15552904674821572  
+k1 = 100 :  k2 = 30 : avg_Dunn'd index score = 1.85915486331467  
+k1 = 100 :  k2 = 30 : avg_Davies bouldin score = 0.16766477994525575  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 100 : k2 = 40 : best max_acc = 43.30434782608696 
+k1 = 100 : k2 = 40 : best max_nmi = 56.40841359672125 
+k1 = 100 : k2 = 40 : best max_Silhoutte score = 0.12027860735032 
+k1 = 100 : k2 = 40 : best max_Dunn'd index score = 2.289092044379569 
+k1 = 100 : k2 = 40 : best max_Davies bouldin score = 0.22349617870037142 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 100 :  k2 = 40 : avg_acc = 38.25171624713959 
+k1 = 100 :  k2 = 40 : avg_nmi = 52.99666670498809  
+k1 = 100 :  k2 = 40 : avg_Silhoutte score = 0.10877627363216784  
+k1 = 100 :  k2 = 40 : avg_Dunn'd index score = 2.208294290889488  
+k1 = 100 :  k2 = 40 : avg_Davies bouldin score = 0.22349617870037142  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 100 : k2 = 50 : best max_acc = 38.43478260869565 
+k1 = 100 : k2 = 50 : best max_nmi = 52.33903146747579 
+k1 = 100 : k2 = 50 : best max_Silhoutte score = 0.09467132662815303 
+k1 = 100 : k2 = 50 : best max_Dunn'd index score = 2.6183551923643256 
+k1 = 100 : k2 = 50 : best max_Davies bouldin score = 0.28709171883247575 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 100 :  k2 = 50 : avg_acc = 35.64302059496568 
+k1 = 100 :  k2 = 50 : avg_nmi = 49.61419000779946  
+k1 = 100 :  k2 = 50 : avg_Silhoutte score = 0.08829097391279515  
+k1 = 100 :  k2 = 50 : avg_Dunn'd index score = 2.5107841287930786  
+k1 = 100 :  k2 = 50 : avg_Davies bouldin score = 0.28709171883247575  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 100 : k2 = 60 : best max_acc = 41.391304347826086 
+k1 = 100 : k2 = 60 : best max_nmi = 53.888926084656006 
+k1 = 100 : k2 = 60 : best max_Silhoutte score = 0.07451177670147086 
+k1 = 100 : k2 = 60 : best max_Dunn'd index score = 2.808492209623323 
+k1 = 100 : k2 = 60 : best max_Davies bouldin score = 0.3111469013156718 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 100 :  k2 = 60 : avg_acc = 37.18993135011441 
+k1 = 100 :  k2 = 60 : avg_nmi = 50.02662269060442  
+k1 = 100 :  k2 = 60 : avg_Silhoutte score = 0.06822917559898888  
+k1 = 100 :  k2 = 60 : avg_Dunn'd index score = 2.705500720179611  
+k1 = 100 :  k2 = 60 : avg_Davies bouldin score = 0.3111469013156718  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 100 : k2 = 70 : best max_acc = 39.130434782608695 
+k1 = 100 : k2 = 70 : best max_nmi = 48.150866209912174 
+k1 = 100 : k2 = 70 : best max_Silhoutte score = 0.061367825419283366 
+k1 = 100 : k2 = 70 : best max_Dunn'd index score = 3.033165048958824 
+k1 = 100 : k2 = 70 : best max_Davies bouldin score = 0.34379771733241954 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 100 :  k2 = 70 : avg_acc = 34.18764302059497 
+k1 = 100 :  k2 = 70 : avg_nmi = 45.891258587858644  
+k1 = 100 :  k2 = 70 : avg_Silhoutte score = 0.054150513608964855  
+k1 = 100 :  k2 = 70 : avg_Dunn'd index score = 2.9553725692733734  
+k1 = 100 :  k2 = 70 : avg_Davies bouldin score = 0.34379771733241954  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 120 : k2 = 10 : best max_acc = 40.69565217391305 
+k1 = 120 : k2 = 10 : best max_nmi = 58.72239665892898 
+k1 = 120 : k2 = 10 : best max_Silhoutte score = 0.3009244776710109 
+k1 = 120 : k2 = 10 : best max_Dunn'd index score = 1.2215744776319784 
+k1 = 120 : k2 = 10 : best max_Davies bouldin score = 0.04979799546915408 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 120 :  k2 = 10 : avg_acc = 38.55377574370709 
+k1 = 120 :  k2 = 10 : avg_nmi = 56.3354866399299  
+k1 = 120 :  k2 = 10 : avg_Silhoutte score = 0.29197434578786663  
+k1 = 120 :  k2 = 10 : avg_Dunn'd index score = 1.1450049414814425  
+k1 = 120 :  k2 = 10 : avg_Davies bouldin score = 0.04979799546915408  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 120 : k2 = 20 : best max_acc = 47.82608695652174 
+k1 = 120 : k2 = 20 : best max_nmi = 61.52115082509951 
+k1 = 120 : k2 = 20 : best max_Silhoutte score = 0.21864134696786403 
+k1 = 120 : k2 = 20 : best max_Dunn'd index score = 1.508777556875134 
+k1 = 120 : k2 = 20 : best max_Davies bouldin score = 0.12045377908174952 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 120 :  k2 = 20 : avg_acc = 43.60640732265446 
+k1 = 120 :  k2 = 20 : avg_nmi = 58.77355185409592  
+k1 = 120 :  k2 = 20 : avg_Silhoutte score = 0.20882775013999302  
+k1 = 120 :  k2 = 20 : avg_Dunn'd index score = 1.472350100128587  
+k1 = 120 :  k2 = 20 : avg_Davies bouldin score = 0.12045377908174952  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 120 : k2 = 30 : best max_acc = 45.04347826086956 
+k1 = 120 : k2 = 30 : best max_nmi = 60.49956141266971 
+k1 = 120 : k2 = 30 : best max_Silhoutte score = 0.1536891139504821 
+k1 = 120 : k2 = 30 : best max_Dunn'd index score = 2.0337363504961616 
+k1 = 120 : k2 = 30 : best max_Davies bouldin score = 0.17020635240086218 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 120 :  k2 = 30 : avg_acc = 42.04118993135011 
+k1 = 120 :  k2 = 30 : avg_nmi = 56.8530864133811  
+k1 = 120 :  k2 = 30 : avg_Silhoutte score = 0.14552696469076626  
+k1 = 120 :  k2 = 30 : avg_Dunn'd index score = 1.8916383274799626  
+k1 = 120 :  k2 = 30 : avg_Davies bouldin score = 0.17020635240086218  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 120 : k2 = 40 : best max_acc = 44.34782608695652 
+k1 = 120 : k2 = 40 : best max_nmi = 57.44199167053542 
+k1 = 120 : k2 = 40 : best max_Silhoutte score = 0.12385411311123933 
+k1 = 120 : k2 = 40 : best max_Dunn'd index score = 2.286451978092442 
+k1 = 120 : k2 = 40 : best max_Davies bouldin score = 0.22593230743622725 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 120 :  k2 = 40 : avg_acc = 40.22883295194508 
+k1 = 120 :  k2 = 40 : avg_nmi = 55.12593138407587  
+k1 = 120 :  k2 = 40 : avg_Silhoutte score = 0.11381689007810591  
+k1 = 120 :  k2 = 40 : avg_Dunn'd index score = 2.1910723462679997  
+k1 = 120 :  k2 = 40 : avg_Davies bouldin score = 0.22593230743622725  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 120 : k2 = 50 : best max_acc = 43.30434782608696 
+k1 = 120 : k2 = 50 : best max_nmi = 55.455388573609376 
+k1 = 120 : k2 = 50 : best max_Silhoutte score = 0.09809259824188471 
+k1 = 120 : k2 = 50 : best max_Dunn'd index score = 2.58014946750569 
+k1 = 120 : k2 = 50 : best max_Davies bouldin score = 0.3031663429963968 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 120 :  k2 = 50 : avg_acc = 38.93821510297483 
+k1 = 120 :  k2 = 50 : avg_nmi = 51.813399948426  
+k1 = 120 :  k2 = 50 : avg_Silhoutte score = 0.08810433486663106  
+k1 = 120 :  k2 = 50 : avg_Dunn'd index score = 2.4982902524011146  
+k1 = 120 :  k2 = 50 : avg_Davies bouldin score = 0.3031663429963968  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 120 : k2 = 60 : best max_acc = 39.30434782608695 
+k1 = 120 : k2 = 60 : best max_nmi = 53.551285840711685 
+k1 = 120 : k2 = 60 : best max_Silhoutte score = 0.07563845133769208 
+k1 = 120 : k2 = 60 : best max_Dunn'd index score = 2.7425064193683015 
+k1 = 120 : k2 = 60 : best max_Davies bouldin score = 0.3423220105683713 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 120 :  k2 = 60 : avg_acc = 35.69794050343249 
+k1 = 120 :  k2 = 60 : avg_nmi = 49.25886305916233  
+k1 = 120 :  k2 = 60 : avg_Silhoutte score = 0.06684373079850758  
+k1 = 120 :  k2 = 60 : avg_Dunn'd index score = 2.641223382090474  
+k1 = 120 :  k2 = 60 : avg_Davies bouldin score = 0.3423220105683713  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 120 : k2 = 70 : best max_acc = 36.869565217391305 
+k1 = 120 : k2 = 70 : best max_nmi = 47.66127030638928 
+k1 = 120 : k2 = 70 : best max_Silhoutte score = 0.06144804405131018 
+k1 = 120 : k2 = 70 : best max_Dunn'd index score = 2.9856125560488467 
+k1 = 120 : k2 = 70 : best max_Davies bouldin score = 0.3581891538844835 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 120 :  k2 = 70 : avg_acc = 32.0 
+k1 = 120 :  k2 = 70 : avg_nmi = 44.070887387641854  
+k1 = 120 :  k2 = 70 : avg_Silhoutte score = 0.0525373249713976  
+k1 = 120 :  k2 = 70 : avg_Dunn'd index score = 2.9055634588664834  
+k1 = 120 :  k2 = 70 : avg_Davies bouldin score = 0.3581891538844835  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 200 : k2 = 10 : best max_acc = 48.0 
+k1 = 200 : k2 = 10 : best max_nmi = 62.348798549849924 
+k1 = 200 : k2 = 10 : best max_Silhoutte score = 0.28410866370116467 
+k1 = 200 : k2 = 10 : best max_Dunn'd index score = 1.1994228327926506 
+k1 = 200 : k2 = 10 : best max_Davies bouldin score = 0.045737438319167406 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 200 :  k2 = 10 : avg_acc = 44.924485125858126 
+k1 = 200 :  k2 = 10 : avg_nmi = 60.125280769903526  
+k1 = 200 :  k2 = 10 : avg_Silhoutte score = 0.2768749543351813  
+k1 = 200 :  k2 = 10 : avg_Dunn'd index score = 1.1514033557036236  
+k1 = 200 :  k2 = 10 : avg_Davies bouldin score = 0.045737438319167406  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 200 : k2 = 20 : best max_acc = 49.21739130434782 
+k1 = 200 : k2 = 20 : best max_nmi = 64.26455065029549 
+k1 = 200 : k2 = 20 : best max_Silhoutte score = 0.20566909860450752 
+k1 = 200 : k2 = 20 : best max_Dunn'd index score = 1.6309550991917465 
+k1 = 200 : k2 = 20 : best max_Davies bouldin score = 0.11330895792594527 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 200 :  k2 = 20 : avg_acc = 45.81235697940503 
+k1 = 200 :  k2 = 20 : avg_nmi = 61.22157080661136  
+k1 = 200 :  k2 = 20 : avg_Silhoutte score = 0.19762146614459825  
+k1 = 200 :  k2 = 20 : avg_Dunn'd index score = 1.5675525278208682  
+k1 = 200 :  k2 = 20 : avg_Davies bouldin score = 0.11330895792594527  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 200 : k2 = 30 : best max_acc = 47.30434782608695 
+k1 = 200 : k2 = 30 : best max_nmi = 61.265998332937045 
+k1 = 200 : k2 = 30 : best max_Silhoutte score = 0.14994243426654327 
+k1 = 200 : k2 = 30 : best max_Dunn'd index score = 2.055786331876491 
+k1 = 200 : k2 = 30 : best max_Davies bouldin score = 0.16591165412954767 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 200 :  k2 = 30 : avg_acc = 41.45537757437071 
+k1 = 200 :  k2 = 30 : avg_nmi = 55.92788942099911  
+k1 = 200 :  k2 = 30 : avg_Silhoutte score = 0.14229941009839522  
+k1 = 200 :  k2 = 30 : avg_Dunn'd index score = 1.970496785689702  
+k1 = 200 :  k2 = 30 : avg_Davies bouldin score = 0.16591165412954767  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 200 : k2 = 40 : best max_acc = 43.826086956521735 
+k1 = 200 : k2 = 40 : best max_nmi = 60.320134883091406 
+k1 = 200 : k2 = 40 : best max_Silhoutte score = 0.11409732862880229 
+k1 = 200 : k2 = 40 : best max_Dunn'd index score = 2.3526394780246744 
+k1 = 200 : k2 = 40 : best max_Davies bouldin score = 0.23055467254829098 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 200 :  k2 = 40 : avg_acc = 40.30205949656751 
+k1 = 200 :  k2 = 40 : avg_nmi = 56.278087498789716  
+k1 = 200 :  k2 = 40 : avg_Silhoutte score = 0.10176959230052854  
+k1 = 200 :  k2 = 40 : avg_Dunn'd index score = 2.264116245166512  
+k1 = 200 :  k2 = 40 : avg_Davies bouldin score = 0.23055467254829098  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 200 : k2 = 50 : best max_acc = 44.69565217391304 
+k1 = 200 : k2 = 50 : best max_nmi = 57.70089599442184 
+k1 = 200 : k2 = 50 : best max_Silhoutte score = 0.09247976791218224 
+k1 = 200 : k2 = 50 : best max_Dunn'd index score = 2.6148373726731178 
+k1 = 200 : k2 = 50 : best max_Davies bouldin score = 0.28346848170558636 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 200 :  k2 = 50 : avg_acc = 40.70480549199085 
+k1 = 200 :  k2 = 50 : avg_nmi = 53.178277167734905  
+k1 = 200 :  k2 = 50 : avg_Silhoutte score = 0.08169035036776151  
+k1 = 200 :  k2 = 50 : avg_Dunn'd index score = 2.543786245462223  
+k1 = 200 :  k2 = 50 : avg_Davies bouldin score = 0.28346848170558636  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 200 : k2 = 60 : best max_acc = 39.47826086956522 
+k1 = 200 : k2 = 60 : best max_nmi = 52.65299602511904 
+k1 = 200 : k2 = 60 : best max_Silhoutte score = 0.07814059005168758 
+k1 = 200 : k2 = 60 : best max_Dunn'd index score = 2.734145453355274 
+k1 = 200 : k2 = 60 : best max_Davies bouldin score = 0.29226636132999917 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 200 :  k2 = 60 : avg_acc = 35.82608695652174 
+k1 = 200 :  k2 = 60 : avg_nmi = 49.609401252092894  
+k1 = 200 :  k2 = 60 : avg_Silhoutte score = 0.07178836681377468  
+k1 = 200 :  k2 = 60 : avg_Dunn'd index score = 2.674576269276528  
+k1 = 200 :  k2 = 60 : avg_Davies bouldin score = 0.29226636132999917  
+**********************************************************************************************************
+**********************************************************************************************************
+The results of running the Kmeans method 20 times and the report of maximum of 20 runs
+
+k1 = 200 : k2 = 70 : best max_acc = 37.913043478260875 
+k1 = 200 : k2 = 70 : best max_nmi = 46.99264634013688 
+k1 = 200 : k2 = 70 : best max_Silhoutte score = 0.06367567931618875 
+k1 = 200 : k2 = 70 : best max_Dunn'd index score = 3.0339874606119333 
+k1 = 200 : k2 = 70 : best max_Davies bouldin score = 0.32949435878091554 
+
+
+The results of running the Kmeans method 20 times and the report of average of 20 runs
+
+k1 = 200 :  k2 = 70 : avg_acc = 32.421052631578945 
+k1 = 200 :  k2 = 70 : avg_nmi = 43.51893889649076  
+k1 = 200 :  k2 = 70 : avg_Silhoutte score = 0.048130585989438625  
+k1 = 200 :  k2 = 70 : avg_Dunn'd index score = 2.930924905591295  
+k1 = 200 :  k2 = 70 : avg_Davies bouldin score = 0.32949435878091554  
+**********************************************************************************************************
+done!
+************
+done!
