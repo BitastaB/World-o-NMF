@@ -10,9 +10,10 @@ from Utils.utils import init_kmeans, construct_similarity_matrix, store_kmeans
 
 # Update H_i if i = 1
 def update_H_1(matX, dictH, dictV, phi, sci, myeps_1, myeps_2, l):
-    num = matX @ dictV[l].T @ sci[2].T
-    den = dictH[1] @ sci[2] @ dictV[l] @ dictV[l].T @ sci[2].T
-    den[den < myeps_1] = myeps_2
+    A = sci[2] @ dictV[l]
+    num = matX @ A.T
+    den = dictH[1] @ A @ A.T
+    den[den < myeps_2] = myeps_2
     res = np.divide(num, den)
     dictH[1] = np.multiply(dictH[1], np.sqrt(res))
     return dictH
@@ -20,36 +21,32 @@ def update_H_1(matX, dictH, dictV, phi, sci, myeps_1, myeps_2, l):
 
 # Update H_i when i>1
 def update_H(i, matX, dictH, dictV, phi, sci, myeps_1, myeps_2, l):
-    num = phi[i - 1].T @ matX @ dictV[l].T @ sci[i + 1].T
-    den = phi[i - 1].T @ phi[i - 1] @ dictH[i] @ sci[i + 1] @ dictV[l] @ dictV[l].T @ sci[i + 1].T
-    den[den < myeps_1] = myeps_2
+    A = sci[i + 1] @ dictV[l]
+    num = phi[i - 1].T @ matX @ A.T
+    den = phi[i - 1].T @ phi[i - 1] @ dictH[i] @ A @ A.T
+    den[den < myeps_2] = myeps_2
     res = num / den
     dictH[i] = np.multiply(dictH[i], np.sqrt(res))
     return dictH
 
 
 # Update V_i if i == l
-def update_V_l(matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, myeps_2, r_i, l):  ##alpha and beta???
+def update_V_l(matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, myeps_2, r_i, l):
     num = (phi[l].T @ matX) + (alpha * dictV[l] @ matS) + (beta * dictV[l])
-
-    ones = np.ones((r_i, r_i))
-    den = (phi[l].T @ phi[l] @ dictV[l]) + (alpha * dictV[l] @ matD) + (beta * ones @ dictV[l])
-
-    den[den < myeps_1] = myeps_2
+    den = (phi[l].T @ phi[l] @ dictV[l]) + (alpha * dictV[l] @ matD) + (beta * dictV[l])
+    den[den < myeps_2] = myeps_2
     res = num / den
-    dictV[l] = np.multiply(dictV[l], np.sqrt(res))
+    dictV[l] = np.multiply(dictV[l], np.power(res, (1/4)))
     return dictV
 
 
 # Update V_i when i<l
 def update_V(i, matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, myeps_2, r_i, l):
-    num = (phi[i].T @ matX) + (alpha * dictV[i] @ matS) + (beta * dictV[i])
-    ones = np.ones((r_i, r_i))
-    den = (phi[i].T @ phi[i] @ dictV[i]) + (alpha * dictV[i] @ matD) + (beta * ones @ dictV[i])
-
-    den[den < myeps_1] = myeps_2
+    num = (phi[i].T @ matX) + (alpha * dictV[i] @ matD) + (beta * dictV[i])
+    den = (phi[i].T @ phi[i] @ dictV[i]) + (alpha * dictV[i] @ matD) + (beta * dictV[i] @ dictV[i].T @ dictV[i])
+    den[den < myeps_2] = myeps_2
     res = num / den
-    dictV[i] = np.multiply(dictV[i], np.sqrt(res))
+    dictV[i] = np.multiply(dictV[i], np.power(res, (1/4)))
     return dictV
 
 
@@ -57,16 +54,17 @@ def update_V(i, matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, 
 
 
 def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2):
-    ## Pretrain all layers
+
+    # Pretrain all layers
     dictH = {}
     dictV = {}
     matZ = matX
     for i in range(1, l + 1):
         r_i = k[i - 1]
         nmf_model = NMF(r_i)
-        nmf_features = nmf_model.fit_transform(matZ)  ##H
+        nmf_features = nmf_model.fit_transform(matZ)  # H
         dictH[i] = nmf_features
-        nmf_components = nmf_model.components_  ##V
+        nmf_components = nmf_model.components_  # V
         dictV[i] = nmf_components
         matZ = dictV[i]
 
@@ -84,7 +82,7 @@ def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2
     err = 1
     t = 1
 
-    while t <= max_iter and err >= 1e-04:
+    while t <= max_iter and err >= 1e-06:
         phi = {}
         sci = {}
 
@@ -92,8 +90,7 @@ def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2
 
             # Define phi_i-1
             if i == 1:
-                phi[0] = np.identity(
-                    m)
+                phi[0] = np.identity(m)
             else:
                 temp = np.identity(dictH[1].shape[0])
                 for j in range(1, i):
@@ -308,7 +305,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
                 iterations_k2[k_2] = [n_iteration]
             else:
                 iterations_k2[k_2].append(n_iteration)
-            print(f"k1 = {k_1} k2 = {k_2}:\n{iterations_k2}")
 
         # ENd for k2
 
