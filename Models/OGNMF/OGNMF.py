@@ -208,7 +208,6 @@ def run_model(model, dataset, matImg, y, alpha_range, beta_range, knn_neigh_list
                 "**********************************************************************************************************")
 
     ## print for convergence comparison
-    print(iterations_k2)
     for k in k_list:
         print(f"Average no. of iterations for k = {k} : {statistics.mean(iterations_k2[k])}")
     print(f"Overall average no. of iterations : {statistics.mean(iterations)}")

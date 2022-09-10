@@ -1,7 +1,7 @@
 import numpy as np
 
 from Utils.plot_metrics import plot_clusters_tsne, plot_acc, plot_nmi, plot_sil, plot_dunn, plot_db, \
-    plot_model_performance
+    plot_model_performance, plot_iter
 from Utils.plot_utils import DGONMF_lists, erwnmf_lists, nmf_lists, gnmf_lists, dnsNMF_lists, dsnmf_lists, OGNMF_lists, \
     GRSNFM_lists, RSCNMF_lists, nsNMF_lists, DGRSNMF_lists, get_iter_list
 
@@ -47,14 +47,22 @@ def plot_clusters(model, dataset):
 
 def plot_iterations(dataset):
     k_list = [10, 20, 30, 40, 50, 60, 70]
-    model = "RSCNMF"
-    get_iter_list(dataset, model)
 
+    dgonmf_knn_iters = get_iter_list(dataset, "DGONMF_knn")
+    ognmf_iters = get_iter_list(dataset, "OGNMF")
+    gnmf_iters = get_iter_list(dataset, "GNMF")
+    grsnmf_iters = get_iter_list(dataset, "GRSNMF")
+    nsnmf_iters = get_iter_list(dataset, "nsNMF")
+    rscnmf_iters = get_iter_list(dataset, "RSCNMF")
+
+    other_iter = np.full(7, 100)
+    print(other_iter)
+    plot_iter(dataset, k_list, dgonmf_knn_iters, ognmf_iters, gnmf_iters, grsnmf_iters, nsnmf_iters, rscnmf_iters, other_iter)
 
 
 if __name__ == '__main__':
-    dataset = "yale"  # [jaffe, orl, warpAR10P, umist, yale, yaleB]
-    model = "OGNMF" #[DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, DGRSNMF]
+    dataset = "orl"  # [jaffe, orl, warpAR10P, umist, yale, yaleB]
+    model = "OGNMF" #[DGONMF_knn, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, DGRSNMF]
 
    # plot_acc_nmi(dataset)
 
