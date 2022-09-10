@@ -6,521 +6,521 @@ myeps_2 : 1e-10
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 ##################################################################################################
  k1 = 80 : k2 = 10 
- Max ACC : 55.00000000000001, with (alpha, beta) = (0.1, 0.1)
- Max NMI : 73.21327495657471, with (alpha, beta) = (0.1, 0.1)
- Reconstruction Error : 5.68256298001774
- Max Silhoutter score : 0.24134214942565285, with (alpha, beta) = (10.0, 0.01)
- Max Dunn's Index score : 0.09623439265604732, with (alpha, beta) = (0.1, 0.01)
- Min David Bouldin score : 1.2178181256101397, with (alpha, beta) = (10.0, 0.1)
+ Max ACC : 100.0, with (alpha, beta) = (10.0, 0.1)
+ Max NMI : 100.0, with (alpha, beta) = (10.0, 0.1)
+ Reconstruction Error : 4.022233610593854
+ Max Silhoutter score : 0.9087194382524553, with (alpha, beta) = (10.0, 0.1)
+ Max Dunn's Index score : 0.8777081140826221, with (alpha, beta) = (10.0, 0.1)
+ Min David Bouldin score : 1.2682526650511687, with (alpha, beta) = (10.0, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 20 
- Max ACC : 81.5, with (alpha, beta) = (0.1, 0.01)
- Max NMI : 88.97963991246178, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 7.807826054369694
- Max Silhoutter score : 0.3249488177264571, with (alpha, beta) = (0.1, 0.1)
- Max Dunn's Index score : 0.2525764994415688, with (alpha, beta) = (0.1, 0.1)
- Min David Bouldin score : 1.3789729692509165, with (alpha, beta) = (0.1, 0.1)
+ Max ACC : 99.25, with (alpha, beta) = (0.1, 0.01)
+ Max NMI : 99.4234195894727, with (alpha, beta) = (0.1, 1)
+ Reconstruction Error : 3.98429264005997
+ Max Silhoutter score : 0.5567007847425793, with (alpha, beta) = (0.1, 1)
+ Max Dunn's Index score : 0.45280131435461823, with (alpha, beta) = (0.1, 1)
+ Min David Bouldin score : 1.4499151298308373, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 30 
- Max ACC : 76.5, with (alpha, beta) = (10.0, 0.01)
- Max NMI : 87.44943320767213, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 10.275245337073285
- Max Silhoutter score : 0.27163925521447735, with (alpha, beta) = (10.0, 1)
- Max Dunn's Index score : 0.19572384756129949, with (alpha, beta) = (0.001, 0.01)
- Min David Bouldin score : 1.4902513697931132, with (alpha, beta) = (0.1, 1)
+ Max ACC : 100.0, with (alpha, beta) = (0.1, 0.01)
+ Max NMI : 100.0, with (alpha, beta) = (0.1, 0.01)
+ Reconstruction Error : 3.529808850283372
+ Max Silhoutter score : 0.7002229444315173, with (alpha, beta) = (0.1, 0.1)
+ Max Dunn's Index score : 0.5167466050049561, with (alpha, beta) = (0.1, 0.1)
+ Min David Bouldin score : 1.378926025619238, with (alpha, beta) = (0.1, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 40 
- Max ACC : 63.0, with (alpha, beta) = (10.0, 0.01)
- Max NMI : 80.1603373151925, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 12.779792202639975
- Max Silhoutter score : 0.2508323896996174, with (alpha, beta) = (0.01, 1)
- Max Dunn's Index score : 0.25176416006651486, with (alpha, beta) = (0.01, 0.01)
- Min David Bouldin score : 1.509413832481561, with (alpha, beta) = (0.01, 1)
+ Max ACC : 99.5, with (alpha, beta) = (0.01, 0.01)
+ Max NMI : 99.55255551990096, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 3.192474700164649
+ Max Silhoutter score : 0.5237669994967582, with (alpha, beta) = (0.01, 0.01)
+ Max Dunn's Index score : 0.487111703876296, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 1.2821031437367836, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 50 
- Max ACC : 60.75000000000001, with (alpha, beta) = (10.0, 0.1)
- Max NMI : 78.25001389744726, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 12.887577857993724
- Max Silhoutter score : 0.2678151835972827, with (alpha, beta) = (0.01, 0.01)
- Max Dunn's Index score : 0.15575206171103942, with (alpha, beta) = (10.0, 0.1)
- Min David Bouldin score : 1.3226537903787992, with (alpha, beta) = (0.01, 0.01)
+ Max ACC : 77.25, with (alpha, beta) = (0.01, 1)
+ Max NMI : 88.29837576616112, with (alpha, beta) = (0.01, 1)
+ Reconstruction Error : 2.984531561574106
+ Max Silhoutter score : 0.3698879642945488, with (alpha, beta) = (0.01, 1)
+ Max Dunn's Index score : 0.24288069778333077, with (alpha, beta) = (0.001, 0.01)
+ Min David Bouldin score : 1.2845683721666767, with (alpha, beta) = (0.001, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 60 
- Max ACC : 77.25, with (alpha, beta) = (10.0, 0.1)
- Max NMI : 86.10740490514229, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 15.263340176157755
- Max Silhoutter score : 0.38429351357872704, with (alpha, beta) = (0.001, 1)
- Max Dunn's Index score : 0.1982473056282501, with (alpha, beta) = (10.0, 0.1)
- Min David Bouldin score : 1.4327300346196388, with (alpha, beta) = (0.001, 1)
+ Max ACC : 80.75, with (alpha, beta) = (0.001, 0.1)
+ Max NMI : 89.687558226527, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 2.7495061178804288
+ Max Silhoutter score : 0.3130082887081194, with (alpha, beta) = (0.01, 0.01)
+ Max Dunn's Index score : 0.3128224201372415, with (alpha, beta) = (0.001, 0.01)
+ Min David Bouldin score : 1.336551000680661, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 70 
- Max ACC : 60.25, with (alpha, beta) = (0.1, 0.01)
- Max NMI : 76.5249561116276, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 16.21211797678053
- Max Silhoutter score : 0.7300452670434862, with (alpha, beta) = (0.1, 0.1)
- Max Dunn's Index score : 0.14602268087537923, with (alpha, beta) = (0.1, 0.01)
- Min David Bouldin score : 1.2625893416901546, with (alpha, beta) = (0.1, 0.1)
+ Max ACC : 88.5, with (alpha, beta) = (0.001, 0.01)
+ Max NMI : 93.7803755631738, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 2.578804449877175
+ Max Silhoutter score : 0.37513037161226664, with (alpha, beta) = (0.001, 1)
+ Max Dunn's Index score : 0.2963358961909241, with (alpha, beta) = (0.001, 0.01)
+ Min David Bouldin score : 1.2135430106710818, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 The results of running the Kmeans method 20 times and the average of 20 runs
 ##################################################################################################
  k1 = 80 : k2 = 10
- Avg ACC : 51.723684210526315, with (alpha, beta) = (0.1, 0.1)
- Avg NMI : 71.80303800867524, with (alpha, beta) = (0.1, 0.1)
- Reconstruction Error : 5.68256298001774
- Avg Silhoutte score : 0.23351260445174282, with (alpha, beta) = (10.0, 0.01)
- Avg Dunn's Index score : 0.09623439265604732, with (alpha, beta) = (0.1, 0.01)
- Avg David Bouldin score : 1.2167769043246366, with (alpha, beta) = (10.0, 0.01)
+ Avg ACC : 100.0, with (alpha, beta) = (10.0, 0.1)
+ Avg NMI : 100.0, with (alpha, beta) = (10.0, 0.1)
+ Reconstruction Error : 4.022233610593854
+ Avg Silhoutte score : 0.9087194382524553, with (alpha, beta) = (10.0, 0.1)
+ Avg Dunn's Index score : 0.8777081140826221, with (alpha, beta) = (10.0, 0.1)
+ Avg David Bouldin score : 0.14787677953818795, with (alpha, beta) = (10.0, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 20
- Avg ACC : 76.84210526315789, with (alpha, beta) = (0.1, 0.01)
- Avg NMI : 87.62413473290968, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 7.807826054369694
- Avg Silhoutte score : 0.3127780663000493, with (alpha, beta) = (0.1, 0.1)
- Avg Dunn's Index score : 0.2525764994415688, with (alpha, beta) = (0.1, 0.1)
- Avg David Bouldin score : 1.2281149101278879, with (alpha, beta) = (0.1, 0.1)
+ Avg ACC : 97.35526315789474, with (alpha, beta) = (0.1, 1)
+ Avg NMI : 98.806121948146, with (alpha, beta) = (0.1, 1)
+ Reconstruction Error : 3.98429264005997
+ Avg Silhoutte score : 0.5522229980600577, with (alpha, beta) = (0.1, 1)
+ Avg Dunn's Index score : 0.45280131435461823, with (alpha, beta) = (0.1, 1)
+ Avg David Bouldin score : 0.7196425889660373, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 30
- Avg ACC : 72.14473684210526, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 85.77374400174307, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 10.275245337073285
- Avg Silhoutte score : 0.25995570073954244, with (alpha, beta) = (10.0, 0.01)
- Avg Dunn's Index score : 0.19572384756129949, with (alpha, beta) = (0.001, 0.01)
- Avg David Bouldin score : 1.207497602319178, with (alpha, beta) = (10.0, 1)
+ Avg ACC : 99.35526315789474, with (alpha, beta) = (0.1, 0.1)
+ Avg NMI : 99.54528931171392, with (alpha, beta) = (0.1, 0.01)
+ Reconstruction Error : 3.529808850283372
+ Avg Silhoutte score : 0.6996987848694455, with (alpha, beta) = (0.1, 0.1)
+ Avg Dunn's Index score : 0.5167466050049561, with (alpha, beta) = (0.1, 0.1)
+ Avg David Bouldin score : 0.4647912224617903, with (alpha, beta) = (0.1, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 40
- Avg ACC : 58.921052631578945, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 76.85108631105358, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 12.779792202639975
- Avg Silhoutte score : 0.23432601898369096, with (alpha, beta) = (0.01, 1)
- Avg Dunn's Index score : 0.25176416006651486, with (alpha, beta) = (0.01, 0.01)
- Avg David Bouldin score : 0.9458647392963084, with (alpha, beta) = (0.01, 1)
+ Avg ACC : 96.90789473684211, with (alpha, beta) = (0.01, 0.01)
+ Avg NMI : 98.86096227367322, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 3.192474700164649
+ Avg Silhoutte score : 0.5206299770528042, with (alpha, beta) = (0.01, 0.01)
+ Avg Dunn's Index score : 0.487111703876296, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.7971878096327927, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 50
- Avg ACC : 55.3421052631579, with (alpha, beta) = (10.0, 0.1)
- Avg NMI : 75.0034788876716, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 12.887577857993724
- Avg Silhoutte score : 0.25242832483998234, with (alpha, beta) = (0.01, 0.01)
- Avg Dunn's Index score : 0.15575206171103942, with (alpha, beta) = (10.0, 0.1)
- Avg David Bouldin score : 0.726439719512691, with (alpha, beta) = (0.01, 0.01)
+ Avg ACC : 74.3157894736842, with (alpha, beta) = (0.01, 1)
+ Avg NMI : 86.91783162876374, with (alpha, beta) = (0.01, 1)
+ Reconstruction Error : 2.984531561574106
+ Avg Silhoutte score : 0.34909781662737116, with (alpha, beta) = (0.01, 1)
+ Avg Dunn's Index score : 0.24288069778333077, with (alpha, beta) = (0.001, 0.01)
+ Avg David Bouldin score : 0.9370665794125, with (alpha, beta) = (0.001, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 60
- Avg ACC : 72.94736842105263, with (alpha, beta) = (10.0, 0.1)
- Avg NMI : 84.61506534442685, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 15.263340176157755
- Avg Silhoutte score : 0.32714007103950665, with (alpha, beta) = (0.001, 1)
- Avg Dunn's Index score : 0.1982473056282501, with (alpha, beta) = (10.0, 0.1)
- Avg David Bouldin score : 0.7285376024071714, with (alpha, beta) = (0.001, 1)
+ Avg ACC : 75.55263157894737, with (alpha, beta) = (0.001, 0.1)
+ Avg NMI : 87.39258838165615, with (alpha, beta) = (0.001, 0.1)
+ Reconstruction Error : 2.7495061178804288
+ Avg Silhoutte score : 0.2909734999127174, with (alpha, beta) = (0.01, 0.01)
+ Avg Dunn's Index score : 0.3128224201372415, with (alpha, beta) = (0.001, 0.01)
+ Avg David Bouldin score : 0.8160405051125144, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 80 : k2 = 70
- Avg ACC : 56.46052631578947, with (alpha, beta) = (0.1, 0.01)
- Avg NMI : 75.03370311422293, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 16.21211797678053
- Avg Silhoutte score : 0.7241329283324746, with (alpha, beta) = (0.1, 0.1)
- Avg Dunn's Index score : 0.14602268087537923, with (alpha, beta) = (0.1, 0.01)
- Avg David Bouldin score : 0.36957515787039463, with (alpha, beta) = (0.1, 0.1)
+ Avg ACC : 85.1842105263158, with (alpha, beta) = (0.001, 0.01)
+ Avg NMI : 92.77295685860366, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 2.578804449877175
+ Avg Silhoutte score : 0.3522790230456995, with (alpha, beta) = (0.001, 1)
+ Avg Dunn's Index score : 0.2963358961909241, with (alpha, beta) = (0.001, 0.01)
+ Avg David Bouldin score : 0.614639785923265, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 ##################################################################################################
  k1 = 100 : k2 = 10 
- Max ACC : 81.25, with (alpha, beta) = (0.1, 0.01)
- Max NMI : 89.25318463798658, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 8.236265127531743
- Max Silhoutter score : 0.33782450060297264, with (alpha, beta) = (0.1, 0.01)
- Max Dunn's Index score : 0.17380479985273845, with (alpha, beta) = (0.1, 0.01)
- Min David Bouldin score : 1.283409645935053, with (alpha, beta) = (0.1, 0.01)
+ Max ACC : 100.0, with (alpha, beta) = (10.0, 0.01)
+ Max NMI : 100.0, with (alpha, beta) = (10.0, 0.01)
+ Reconstruction Error : 7.508173041565707
+ Max Silhoutter score : 0.9448294206343982, with (alpha, beta) = (10.0, 0.01)
+ Max Dunn's Index score : 0.9453142407091742, with (alpha, beta) = (10.0, 0.01)
+ Min David Bouldin score : 1.2817387958361341, with (alpha, beta) = (10.0, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 20 
- Max ACC : 97.0, with (alpha, beta) = (0.1, 0.01)
- Max NMI : 97.79942698530792, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 9.655853705631053
- Max Silhoutter score : 0.45201577632211487, with (alpha, beta) = (0.1, 0.01)
- Max Dunn's Index score : 0.25296013458490135, with (alpha, beta) = (0.1, 0.01)
- Min David Bouldin score : 1.3656828165741652, with (alpha, beta) = (0.1, 0.01)
+ Max ACC : 99.25, with (alpha, beta) = (0.1, 1)
+ Max NMI : 99.32570461091953, with (alpha, beta) = (0.1, 1)
+ Reconstruction Error : 4.627140741568126
+ Max Silhoutter score : 0.6224700961948022, with (alpha, beta) = (0.1, 1)
+ Max Dunn's Index score : 0.2988269604588249, with (alpha, beta) = (0.1, 0.01)
+ Min David Bouldin score : 1.4039884175742863, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 30 
- Max ACC : 80.75, with (alpha, beta) = (10.0, 0.01)
- Max NMI : 87.93003475251851, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 11.47778129164222
- Max Silhoutter score : 0.3769724769595277, with (alpha, beta) = (10.0, 0.1)
- Max Dunn's Index score : 0.20508661006664558, with (alpha, beta) = (0.001, 0.01)
- Min David Bouldin score : 1.4510424695741317, with (alpha, beta) = (10.0, 0.1)
+ Max ACC : 99.75, with (alpha, beta) = (0.1, 0.01)
+ Max NMI : 99.7762853538628, with (alpha, beta) = (0.1, 0.1)
+ Reconstruction Error : 4.109113844309019
+ Max Silhoutter score : 0.7076366882877173, with (alpha, beta) = (0.1, 1)
+ Max Dunn's Index score : 0.5052019668957094, with (alpha, beta) = (0.1, 0.1)
+ Min David Bouldin score : 1.4597416111535524, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 40 
- Max ACC : 71.0, with (alpha, beta) = (10.0, 0.01)
- Max NMI : 83.88170810313372, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 13.22860678447609
- Max Silhoutter score : 0.30067578772021336, with (alpha, beta) = (0.1, 0.1)
- Max Dunn's Index score : 0.25960653626079006, with (alpha, beta) = (10.0, 0.01)
- Min David Bouldin score : 1.475215877821504, with (alpha, beta) = (0.1, 0.1)
+ Max ACC : 99.25, with (alpha, beta) = (0.01, 0.01)
+ Max NMI : 99.32945266484975, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 3.5515193549658197
+ Max Silhoutter score : 0.6832764178321449, with (alpha, beta) = (0.1, 0.1)
+ Max Dunn's Index score : 0.44087816440704053, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 1.436983471030097, with (alpha, beta) = (0.1, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 50 
- Max ACC : 61.75000000000001, with (alpha, beta) = (0.1, 0.01)
- Max NMI : 76.8546158537495, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 13.871381206063191
- Max Silhoutter score : 0.20894218362628195, with (alpha, beta) = (0.1, 0.01)
- Max Dunn's Index score : 0.19199034132483936, with (alpha, beta) = (0.01, 0.01)
- Min David Bouldin score : 1.5872560566862117, with (alpha, beta) = (0.001, 1)
+ Max ACC : 96.5, with (alpha, beta) = (0.01, 0.01)
+ Max NMI : 98.9009530164287, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 3.4257544252615
+ Max Silhoutter score : 0.4437964125153239, with (alpha, beta) = (0.01, 0.01)
+ Max Dunn's Index score : 0.38666264899192465, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 1.3867604832705243, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 60 
- Max ACC : 61.0, with (alpha, beta) = (0.1, 0.01)
- Max NMI : 77.87038484204659, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 14.078707366821044
- Max Silhoutter score : 0.2165865506393784, with (alpha, beta) = (0.001, 0.1)
- Max Dunn's Index score : 0.1402295583699729, with (alpha, beta) = (0.1, 0.01)
- Min David Bouldin score : 1.2358092589130092, with (alpha, beta) = (0.001, 0.1)
+ Max ACC : 95.5, with (alpha, beta) = (0.01, 0.01)
+ Max NMI : 97.82293552064604, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 3.0920387662153237
+ Max Silhoutter score : 0.5502713356383341, with (alpha, beta) = (0.01, 0.01)
+ Max Dunn's Index score : 0.23947311215316402, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 0.8460474449794095, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 70 
- Max ACC : 68.25, with (alpha, beta) = (10.0, 0.1)
- Max NMI : 81.65512880182646, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 15.192419917267229
- Max Silhoutter score : 0.3215505066797269, with (alpha, beta) = (0.1, 1)
- Max Dunn's Index score : 0.13133113326689677, with (alpha, beta) = (10.0, 0.1)
- Min David Bouldin score : 1.304553447584673, with (alpha, beta) = (0.1, 1)
+ Max ACC : 85.5, with (alpha, beta) = (0.001, 0.01)
+ Max NMI : 92.40060176992797, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 2.9155311588038337
+ Max Silhoutter score : 0.34527450415130645, with (alpha, beta) = (0.001, 0.01)
+ Max Dunn's Index score : 0.21757542849969203, with (alpha, beta) = (0.001, 0.01)
+ Min David Bouldin score : 1.1156088296463618, with (alpha, beta) = (10.0, 0.1)
 ##################################################################################################
 The results of running the Kmeans method 20 times and the average of 20 runs
 ##################################################################################################
  k1 = 100 : k2 = 10
- Avg ACC : 77.92105263157895, with (alpha, beta) = (0.1, 0.01)
- Avg NMI : 87.40354782925901, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 8.236265127531743
- Avg Silhoutte score : 0.32584736119492563, with (alpha, beta) = (0.1, 0.01)
- Avg Dunn's Index score : 0.17380479985273845, with (alpha, beta) = (0.1, 0.01)
- Avg David Bouldin score : 1.1362772566853871, with (alpha, beta) = (0.1, 0.01)
+ Avg ACC : 100.0, with (alpha, beta) = (10.0, 0.01)
+ Avg NMI : 100.0, with (alpha, beta) = (10.0, 0.01)
+ Reconstruction Error : 7.508173041565707
+ Avg Silhoutte score : 0.9448294206343982, with (alpha, beta) = (10.0, 0.01)
+ Avg Dunn's Index score : 0.9453142407091742, with (alpha, beta) = (10.0, 0.01)
+ Avg David Bouldin score : 0.10064099699170272, with (alpha, beta) = (10.0, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 20
- Avg ACC : 92.88157894736842, with (alpha, beta) = (0.1, 0.01)
- Avg NMI : 96.883264127071, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 9.655853705631053
- Avg Silhoutte score : 0.44540068679731126, with (alpha, beta) = (0.1, 0.01)
- Avg Dunn's Index score : 0.25296013458490135, with (alpha, beta) = (0.1, 0.01)
- Avg David Bouldin score : 0.9383882295634104, with (alpha, beta) = (0.1, 0.01)
+ Avg ACC : 98.47368421052632, with (alpha, beta) = (0.1, 1)
+ Avg NMI : 99.14395432776806, with (alpha, beta) = (0.1, 1)
+ Reconstruction Error : 4.627140741568126
+ Avg Silhoutte score : 0.6216490681094892, with (alpha, beta) = (0.1, 1)
+ Avg Dunn's Index score : 0.2988269604588249, with (alpha, beta) = (0.1, 0.01)
+ Avg David Bouldin score : 0.61087791471358, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 30
- Avg ACC : 74.27631578947368, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 85.5965765986237, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 11.47778129164222
- Avg Silhoutte score : 0.357899674131909, with (alpha, beta) = (10.0, 0.1)
- Avg Dunn's Index score : 0.20508661006664558, with (alpha, beta) = (0.001, 0.01)
- Avg David Bouldin score : 0.7156131199863672, with (alpha, beta) = (10.0, 0.1)
+ Avg ACC : 99.22368421052632, with (alpha, beta) = (0.1, 0.1)
+ Avg NMI : 99.6470398668385, with (alpha, beta) = (0.1, 0.1)
+ Reconstruction Error : 4.109113844309019
+ Avg Silhoutte score : 0.7074545651370787, with (alpha, beta) = (0.1, 1)
+ Avg Dunn's Index score : 0.5052019668957094, with (alpha, beta) = (0.1, 0.1)
+ Avg David Bouldin score : 0.45381065887558075, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 40
- Avg ACC : 67.69736842105263, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 81.87096920542662, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 13.22860678447609
- Avg Silhoutte score : 0.2821947089387728, with (alpha, beta) = (0.1, 0.1)
- Avg Dunn's Index score : 0.25960653626079006, with (alpha, beta) = (10.0, 0.01)
- Avg David Bouldin score : 0.8572373761146536, with (alpha, beta) = (0.1, 0.1)
+ Avg ACC : 98.89473684210526, with (alpha, beta) = (0.1, 0.1)
+ Avg NMI : 99.09752934689419, with (alpha, beta) = (0.1, 0.1)
+ Reconstruction Error : 3.5515193549658197
+ Avg Silhoutte score : 0.6824374192497868, with (alpha, beta) = (0.1, 0.1)
+ Avg Dunn's Index score : 0.44087816440704053, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.49000945515632616, with (alpha, beta) = (0.1, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 50
- Avg ACC : 57.25, with (alpha, beta) = (0.1, 0.01)
- Avg NMI : 74.75495815927785, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 13.871381206063191
- Avg Silhoutte score : 0.19795128912204868, with (alpha, beta) = (0.1, 0.01)
- Avg Dunn's Index score : 0.19199034132483936, with (alpha, beta) = (0.01, 0.01)
- Avg David Bouldin score : 1.208275541976129, with (alpha, beta) = (0.001, 1)
+ Avg ACC : 93.25, with (alpha, beta) = (0.01, 0.01)
+ Avg NMI : 97.98693536400874, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 3.4257544252615
+ Avg Silhoutte score : 0.4375756364548875, with (alpha, beta) = (0.01, 0.01)
+ Avg Dunn's Index score : 0.38666264899192465, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.9882505708018268, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 60
- Avg ACC : 57.53947368421053, with (alpha, beta) = (0.1, 0.01)
- Avg NMI : 76.36367291624077, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 14.078707366821044
- Avg Silhoutte score : 0.1996480358694186, with (alpha, beta) = (10.0, 0.1)
- Avg Dunn's Index score : 0.1402295583699729, with (alpha, beta) = (0.1, 0.01)
- Avg David Bouldin score : 1.1770678083188375, with (alpha, beta) = (0.001, 0.1)
+ Avg ACC : 94.21052631578948, with (alpha, beta) = (0.01, 0.01)
+ Avg NMI : 97.25925197390339, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 3.0920387662153237
+ Avg Silhoutte score : 0.5440480412159876, with (alpha, beta) = (0.01, 0.01)
+ Avg Dunn's Index score : 0.23947311215316402, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.7686345361850958, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 100 : k2 = 70
- Avg ACC : 63.05263157894737, with (alpha, beta) = (10.0, 0.1)
- Avg NMI : 79.01973378038389, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 15.192419917267229
- Avg Silhoutte score : 0.31003895876515936, with (alpha, beta) = (0.1, 1)
- Avg Dunn's Index score : 0.13133113326689677, with (alpha, beta) = (10.0, 0.1)
- Avg David Bouldin score : 0.6947090002694146, with (alpha, beta) = (0.1, 1)
+ Avg ACC : 82.38157894736842, with (alpha, beta) = (0.001, 0.01)
+ Avg NMI : 90.92628190372504, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 2.9155311588038337
+ Avg Silhoutte score : 0.33757898519733265, with (alpha, beta) = (0.001, 0.01)
+ Avg Dunn's Index score : 0.21757542849969203, with (alpha, beta) = (0.001, 0.01)
+ Avg David Bouldin score : 1.0301877670006594, with (alpha, beta) = (10.0, 0.1)
 ##################################################################################################
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 ##################################################################################################
  k1 = 120 : k2 = 10 
- Max ACC : 97.5, with (alpha, beta) = (10.0, 0.01)
- Max NMI : 97.85882047331978, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 9.631284933304084
- Max Silhoutter score : 0.6804609571677941, with (alpha, beta) = (10.0, 0.01)
- Max Dunn's Index score : 0.29595289365270544, with (alpha, beta) = (10.0, 0.01)
- Min David Bouldin score : 1.3381117454861258, with (alpha, beta) = (10.0, 0.01)
+ Max ACC : 100.0, with (alpha, beta) = (10.0, 0.1)
+ Max NMI : 100.0, with (alpha, beta) = (10.0, 0.1)
+ Reconstruction Error : 5.525397032663439
+ Max Silhoutter score : 0.9292893591215516, with (alpha, beta) = (10.0, 0.1)
+ Max Dunn's Index score : 0.46544923156078427, with (alpha, beta) = (10.0, 0.1)
+ Min David Bouldin score : 1.344429828704906, with (alpha, beta) = (10.0, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 20 
- Max ACC : 99.5, with (alpha, beta) = (0.1, 0.01)
- Max NMI : 99.55255551990099, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 11.739308177823219
- Max Silhoutter score : 0.5674990530700526, with (alpha, beta) = (0.1, 0.01)
- Max Dunn's Index score : 0.42011005139820756, with (alpha, beta) = (0.1, 0.01)
- Min David Bouldin score : 1.4984393907629978, with (alpha, beta) = (0.1, 0.01)
+ Max ACC : 100.0, with (alpha, beta) = (0.1, 0.01)
+ Max NMI : 100.0, with (alpha, beta) = (0.1, 0.01)
+ Reconstruction Error : 5.592865107967237
+ Max Silhoutter score : 0.777761362807468, with (alpha, beta) = (0.1, 1)
+ Max Dunn's Index score : 0.670065480950475, with (alpha, beta) = (0.1, 0.1)
+ Min David Bouldin score : 1.4341183490239444, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 30 
- Max ACC : 75.0, with (alpha, beta) = (0.01, 0.01)
- Max NMI : 86.14808793287891, with (alpha, beta) = (0.01, 0.01)
- Reconstruction Error : 12.629342140977474
- Max Silhoutter score : 0.26605458905407053, with (alpha, beta) = (0.01, 0.01)
- Max Dunn's Index score : 0.3062659489183092, with (alpha, beta) = (0.01, 0.01)
- Min David Bouldin score : 1.4806940446555739, with (alpha, beta) = (0.01, 0.01)
+ Max ACC : 100.0, with (alpha, beta) = (0.1, 0.01)
+ Max NMI : 100.0, with (alpha, beta) = (0.1, 0.01)
+ Reconstruction Error : 4.670103210627892
+ Max Silhoutter score : 0.8879602575312608, with (alpha, beta) = (0.1, 0.01)
+ Max Dunn's Index score : 0.7992243364797298, with (alpha, beta) = (0.1, 0.01)
+ Min David Bouldin score : 1.5233888844641112, with (alpha, beta) = (0.1, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 40 
- Max ACC : 68.25, with (alpha, beta) = (10.0, 0.1)
- Max NMI : 82.72419069638919, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 13.937627780891242
- Max Silhoutter score : 0.2687744067249489, with (alpha, beta) = (0.1, 1)
- Max Dunn's Index score : 0.2098836527402547, with (alpha, beta) = (10.0, 0.1)
- Min David Bouldin score : 1.5056506051541692, with (alpha, beta) = (0.1, 1)
+ Max ACC : 100.0, with (alpha, beta) = (0.1, 0.1)
+ Max NMI : 100.0, with (alpha, beta) = (0.1, 0.1)
+ Reconstruction Error : 4.357255762140478
+ Max Silhoutter score : 0.7674842906500061, with (alpha, beta) = (0.1, 0.1)
+ Max Dunn's Index score : 0.7906396866948018, with (alpha, beta) = (0.1, 0.1)
+ Min David Bouldin score : 1.4687827915322835, with (alpha, beta) = (0.1, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 50 
- Max ACC : 71.5, with (alpha, beta) = (10.0, 1)
- Max NMI : 84.71068961096047, with (alpha, beta) = (10.0, 1)
- Reconstruction Error : 14.19257128377852
- Max Silhoutter score : 0.2253144740387603, with (alpha, beta) = (0.01, 0.01)
- Max Dunn's Index score : 0.20527239374349826, with (alpha, beta) = (0.1, 0.1)
- Min David Bouldin score : 1.537818423063054, with (alpha, beta) = (0.01, 0.01)
+ Max ACC : 99.0, with (alpha, beta) = (0.01, 0.1)
+ Max NMI : 99.25295316427663, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 4.000246011407102
+ Max Silhoutter score : 0.4867307750275961, with (alpha, beta) = (0.01, 0.1)
+ Max Dunn's Index score : 0.4657827371797019, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 1.2130987643435969, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 60 
- Max ACC : 62.25000000000001, with (alpha, beta) = (0.1, 0.01)
- Max NMI : 78.77270805594245, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 15.220821212145058
- Max Silhoutter score : 0.32124127664961194, with (alpha, beta) = (0.001, 1)
- Max Dunn's Index score : 0.19209887223621297, with (alpha, beta) = (10.0, 0.01)
- Min David Bouldin score : 1.501458664255344, with (alpha, beta) = (0.001, 1)
+ Max ACC : 99.75, with (alpha, beta) = (0.01, 0.01)
+ Max NMI : 99.77628535386279, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 4.209498771220107
+ Max Silhoutter score : 0.4902014948937885, with (alpha, beta) = (0.01, 0.1)
+ Max Dunn's Index score : 0.46872647215397506, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 1.4599541620733025, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 70 
- Max ACC : 67.25, with (alpha, beta) = (10.0, 1)
- Max NMI : 80.20827283240224, with (alpha, beta) = (10.0, 1)
- Reconstruction Error : 14.46755624456054
- Max Silhoutter score : 0.20563690601330428, with (alpha, beta) = (10.0, 0.01)
- Max Dunn's Index score : 0.2114410026677695, with (alpha, beta) = (0.01, 0.01)
- Min David Bouldin score : 1.3300270262806435, with (alpha, beta) = (0.1, 1)
+ Max ACC : 100.0, with (alpha, beta) = (0.01, 0.01)
+ Max NMI : 100.0, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 3.383499400054147
+ Max Silhoutter score : 0.5892702813340398, with (alpha, beta) = (0.01, 0.01)
+ Max Dunn's Index score : 0.5738543262036274, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 1.2141958699520745, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 The results of running the Kmeans method 20 times and the average of 20 runs
 ##################################################################################################
  k1 = 120 : k2 = 10
- Avg ACC : 96.73684210526316, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 97.52659232597216, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 9.631284933304084
- Avg Silhoutte score : 0.678374976243227, with (alpha, beta) = (10.0, 0.01)
- Avg Dunn's Index score : 0.29595289365270544, with (alpha, beta) = (10.0, 0.01)
- Avg David Bouldin score : 0.5319610734521188, with (alpha, beta) = (10.0, 0.01)
+ Avg ACC : 100.0, with (alpha, beta) = (10.0, 0.1)
+ Avg NMI : 100.0, with (alpha, beta) = (10.0, 0.1)
+ Reconstruction Error : 5.525397032663439
+ Avg Silhoutte score : 0.9292893591215516, with (alpha, beta) = (10.0, 0.1)
+ Avg Dunn's Index score : 0.46544923156078427, with (alpha, beta) = (10.0, 0.1)
+ Avg David Bouldin score : 0.1337747701050973, with (alpha, beta) = (10.0, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 20
- Avg ACC : 97.72368421052632, with (alpha, beta) = (0.1, 0.01)
- Avg NMI : 99.02358789911162, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 11.739308177823219
- Avg Silhoutte score : 0.5604446849524918, with (alpha, beta) = (0.1, 0.01)
- Avg Dunn's Index score : 0.42011005139820756, with (alpha, beta) = (0.1, 0.01)
- Avg David Bouldin score : 0.7458792198956679, with (alpha, beta) = (0.1, 0.01)
+ Avg ACC : 100.0, with (alpha, beta) = (0.1, 0.1)
+ Avg NMI : 100.0, with (alpha, beta) = (0.1, 0.1)
+ Reconstruction Error : 5.592865107967237
+ Avg Silhoutte score : 0.777761362807468, with (alpha, beta) = (0.1, 1)
+ Avg Dunn's Index score : 0.670065480950475, with (alpha, beta) = (0.1, 0.1)
+ Avg David Bouldin score : 0.33651718869468195, with (alpha, beta) = (0.1, 1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 30
- Avg ACC : 71.4342105263158, with (alpha, beta) = (0.01, 0.01)
- Avg NMI : 84.31157233507773, with (alpha, beta) = (0.01, 0.01)
- Reconstruction Error : 12.629342140977474
- Avg Silhoutte score : 0.25826124378425364, with (alpha, beta) = (0.01, 0.01)
- Avg Dunn's Index score : 0.3062659489183092, with (alpha, beta) = (0.01, 0.01)
- Avg David Bouldin score : 1.3368186168544907, with (alpha, beta) = (0.01, 0.01)
+ Avg ACC : 100.0, with (alpha, beta) = (0.1, 0.01)
+ Avg NMI : 100.0, with (alpha, beta) = (0.1, 0.01)
+ Reconstruction Error : 4.670103210627892
+ Avg Silhoutte score : 0.8879602575312608, with (alpha, beta) = (0.1, 0.01)
+ Avg Dunn's Index score : 0.7992243364797298, with (alpha, beta) = (0.1, 0.01)
+ Avg David Bouldin score : 0.15742838159515735, with (alpha, beta) = (0.1, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 40
- Avg ACC : 64.52631578947368, with (alpha, beta) = (10.0, 0.1)
- Avg NMI : 80.7682383914578, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 13.937627780891242
- Avg Silhoutte score : 0.24651711707523496, with (alpha, beta) = (0.1, 1)
- Avg Dunn's Index score : 0.2098836527402547, with (alpha, beta) = (10.0, 0.1)
- Avg David Bouldin score : 1.0101828571145612, with (alpha, beta) = (0.1, 1)
+ Avg ACC : 99.8157894736842, with (alpha, beta) = (0.1, 0.1)
+ Avg NMI : 99.83515762916205, with (alpha, beta) = (0.1, 0.1)
+ Reconstruction Error : 4.357255762140478
+ Avg Silhoutte score : 0.7674048679977632, with (alpha, beta) = (0.1, 0.1)
+ Avg Dunn's Index score : 0.7906396866948018, with (alpha, beta) = (0.1, 0.1)
+ Avg David Bouldin score : 0.35273558924383425, with (alpha, beta) = (0.1, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 50
- Avg ACC : 67.26315789473684, with (alpha, beta) = (10.0, 1)
- Avg NMI : 82.97667144078197, with (alpha, beta) = (10.0, 1)
- Reconstruction Error : 14.19257128377852
- Avg Silhoutte score : 0.21494276861652203, with (alpha, beta) = (0.01, 0.01)
- Avg Dunn's Index score : 0.20527239374349826, with (alpha, beta) = (0.1, 0.1)
- Avg David Bouldin score : 1.0767444573325968, with (alpha, beta) = (0.01, 0.01)
+ Avg ACC : 96.86842105263158, with (alpha, beta) = (0.01, 0.01)
+ Avg NMI : 98.67542284485384, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 4.000246011407102
+ Avg Silhoutte score : 0.4813165129746789, with (alpha, beta) = (0.01, 0.1)
+ Avg Dunn's Index score : 0.4657827371797019, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.9154254469323718, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 60
- Avg ACC : 58.0921052631579, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 76.72318714722122, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 15.220821212145058
- Avg Silhoutte score : 0.30246331125602294, with (alpha, beta) = (0.001, 1)
- Avg Dunn's Index score : 0.19209887223621297, with (alpha, beta) = (10.0, 0.01)
- Avg David Bouldin score : 0.6905187985818758, with (alpha, beta) = (0.001, 1)
+ Avg ACC : 97.32894736842105, with (alpha, beta) = (0.01, 0.1)
+ Avg NMI : 99.24658743624938, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 4.209498771220107
+ Avg Silhoutte score : 0.4838926011710049, with (alpha, beta) = (0.01, 0.1)
+ Avg Dunn's Index score : 0.46872647215397506, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.8418514030119938, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 120 : k2 = 70
- Avg ACC : 63.64473684210526, with (alpha, beta) = (10.0, 1)
- Avg NMI : 78.07624740933825, with (alpha, beta) = (10.0, 1)
- Reconstruction Error : 14.46755624456054
- Avg Silhoutte score : 0.20021564041169007, with (alpha, beta) = (10.0, 0.01)
- Avg Dunn's Index score : 0.2114410026677695, with (alpha, beta) = (0.01, 0.01)
- Avg David Bouldin score : 1.256163065761246, with (alpha, beta) = (0.1, 1)
+ Avg ACC : 98.0, with (alpha, beta) = (0.01, 0.01)
+ Avg NMI : 99.48150502608686, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 3.383499400054147
+ Avg Silhoutte score : 0.5818081700661786, with (alpha, beta) = (0.01, 0.01)
+ Avg Dunn's Index score : 0.5738543262036274, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.6986094488679868, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 The results of running the Kmeans method 20 times and the report of maximum of 20 runs
 ##################################################################################################
  k1 = 200 : k2 = 10 
- Max ACC : 91.5, with (alpha, beta) = (10.0, 0.1)
- Max NMI : 95.27539733599987, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 14.142036015814796
- Max Silhoutter score : 0.631626825064391, with (alpha, beta) = (10.0, 0.01)
- Max Dunn's Index score : 0.08404260003508471, with (alpha, beta) = (10.0, 0.01)
- Min David Bouldin score : 1.0678849629110057, with (alpha, beta) = (0.001, 0.1)
+ Max ACC : 95.0, with (alpha, beta) = (0.01, 0.01)
+ Max NMI : 97.39021301807217, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 7.001366116253414
+ Max Silhoutter score : 0.8716047319178779, with (alpha, beta) = (0.01, 0.01)
+ Max Dunn's Index score : 0.14405019832073343, with (alpha, beta) = (0.1, 1)
+ Min David Bouldin score : 0.7078230287884095, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 20 
- Max ACC : 49.25, with (alpha, beta) = (10.0, 0.01)
- Max NMI : 68.04407927323264, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 14.124360050305093
- Max Silhoutter score : 0.25289572558776136, with (alpha, beta) = (0.1, 1)
- Max Dunn's Index score : 0.11690787514076044, with (alpha, beta) = (10.0, 0.01)
- Min David Bouldin score : 1.0451472966538073, with (alpha, beta) = (0.001, 0.1)
+ Max ACC : 99.5, with (alpha, beta) = (0.01, 0.01)
+ Max NMI : 99.55255551990096, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 6.474478372798027
+ Max Silhoutter score : 0.892743724720428, with (alpha, beta) = (0.1, 0.1)
+ Max Dunn's Index score : 0.39859337114152316, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 0.4423556837182666, with (alpha, beta) = (0.1, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 30 
- Max ACC : 38.25, with (alpha, beta) = (0.01, 0.01)
- Max NMI : 60.5258539481971, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 15.929149689460136
- Max Silhoutter score : 0.33612646127169377, with (alpha, beta) = (0.1, 1)
- Max Dunn's Index score : 0.06129287570617914, with (alpha, beta) = (10.0, 0.1)
- Min David Bouldin score : 0.9723169869194394, with (alpha, beta) = (0.1, 1)
+ Max ACC : 99.75, with (alpha, beta) = (0.01, 0.01)
+ Max NMI : 99.7762853538628, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 6.903158401154904
+ Max Silhoutter score : 0.8430072989056814, with (alpha, beta) = (0.01, 0.01)
+ Max Dunn's Index score : 0.38379212242862865, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 0.3494815436107067, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 40 
- Max ACC : 51.24999999999999, with (alpha, beta) = (10.0, 0.01)
- Max NMI : 69.45001266768716, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 15.978765117782741
- Max Silhoutter score : 0.30406472528307793, with (alpha, beta) = (0.01, 0.1)
- Max Dunn's Index score : 0.12319677152817271, with (alpha, beta) = (10.0, 0.01)
- Min David Bouldin score : 1.1865522705982738, with (alpha, beta) = (0.01, 0.1)
+ Max ACC : 79.0, with (alpha, beta) = (0.001, 0.01)
+ Max NMI : 88.24035300792569, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 7.073751255960212
+ Max Silhoutter score : 0.7844725564012495, with (alpha, beta) = (0.001, 0.01)
+ Max Dunn's Index score : 0.12032353403793782, with (alpha, beta) = (0.01, 1)
+ Min David Bouldin score : 0.2609200197702097, with (alpha, beta) = (0.001, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 50 
- Max ACC : 47.25, with (alpha, beta) = (10.0, 1)
- Max NMI : 65.54836417253338, with (alpha, beta) = (10.0, 1)
- Reconstruction Error : 16.658218621598543
- Max Silhoutter score : 0.42491754318884917, with (alpha, beta) = (0.001, 1)
- Max Dunn's Index score : 0.10088318566501962, with (alpha, beta) = (10.0, 1)
- Min David Bouldin score : 0.7764710118500384, with (alpha, beta) = (0.001, 1)
+ Max ACC : 97.5, with (alpha, beta) = (0.001, 0.01)
+ Max NMI : 97.93392214101398, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 5.631210001829552
+ Max Silhoutter score : 0.7135018314251499, with (alpha, beta) = (0.01, 0.1)
+ Max Dunn's Index score : 0.19078062300260895, with (alpha, beta) = (0.001, 0.01)
+ Min David Bouldin score : 0.4500769302976472, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 60 
- Max ACC : 39.25, with (alpha, beta) = (0.1, 0.01)
- Max NMI : 61.54218364712194, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 16.49548246719476
- Max Silhoutter score : 0.3085023267719073, with (alpha, beta) = (0.1, 1)
- Max Dunn's Index score : 0.06809733208568786, with (alpha, beta) = (10.0, 0.01)
- Min David Bouldin score : 0.9301085729851769, with (alpha, beta) = (0.001, 1)
+ Max ACC : 91.75, with (alpha, beta) = (0.01, 0.1)
+ Max NMI : 94.30188057530395, with (alpha, beta) = (0.01, 0.1)
+ Reconstruction Error : 5.197222765567413
+ Max Silhoutter score : 0.7953442622990927, with (alpha, beta) = (0.01, 0.1)
+ Max Dunn's Index score : 0.09814403818364516, with (alpha, beta) = (0.01, 0.01)
+ Min David Bouldin score : 0.3511286814649161, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 70 
- Max ACC : 43.5, with (alpha, beta) = (10.0, 0.01)
- Max NMI : 63.89160337168926, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 16.422951040050222
- Max Silhoutter score : 0.27751897208546067, with (alpha, beta) = (0.01, 1)
- Max Dunn's Index score : 0.07427711689640272, with (alpha, beta) = (10.0, 0.01)
- Min David Bouldin score : 1.0995331604805694, with (alpha, beta) = (0.001, 0.1)
+ Max ACC : 94.25, with (alpha, beta) = (0.001, 0.01)
+ Max NMI : 96.89712721357286, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 6.553264969794398
+ Max Silhoutter score : 0.765969060105966, with (alpha, beta) = (0.001, 0.01)
+ Max Dunn's Index score : 0.08519291014166891, with (alpha, beta) = (0.1, 0.1)
+ Min David Bouldin score : 0.3338838463075854, with (alpha, beta) = (0.001, 0.01)
 ##################################################################################################
 The results of running the Kmeans method 20 times and the average of 20 runs
 ##################################################################################################
  k1 = 200 : k2 = 10
- Avg ACC : 88.75, with (alpha, beta) = (10.0, 0.1)
- Avg NMI : 94.63160857787578, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 14.142036015814796
- Avg Silhoutte score : 0.6159829291741259, with (alpha, beta) = (10.0, 0.01)
- Avg Dunn's Index score : 0.08404260003508471, with (alpha, beta) = (10.0, 0.01)
- Avg David Bouldin score : 0.5768450104575329, with (alpha, beta) = (0.001, 0.1)
+ Avg ACC : 92.82894736842105, with (alpha, beta) = (0.01, 0.01)
+ Avg NMI : 96.96012588981286, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 7.001366116253414
+ Avg Silhoutte score : 0.8709344803202923, with (alpha, beta) = (0.01, 0.01)
+ Avg Dunn's Index score : 0.14405019832073343, with (alpha, beta) = (0.1, 1)
+ Avg David Bouldin score : 0.23085010202122486, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 20
- Avg ACC : 46.53947368421053, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 66.68607315855166, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 14.124360050305093
- Avg Silhoutte score : 0.241838547494215, with (alpha, beta) = (0.1, 1)
- Avg Dunn's Index score : 0.11690787514076044, with (alpha, beta) = (10.0, 0.01)
- Avg David Bouldin score : 0.9305011554297359, with (alpha, beta) = (0.001, 0.1)
+ Avg ACC : 99.26315789473684, with (alpha, beta) = (0.01, 0.01)
+ Avg NMI : 99.34058655042749, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 6.474478372798027
+ Avg Silhoutte score : 0.8884927391916777, with (alpha, beta) = (0.1, 0.1)
+ Avg Dunn's Index score : 0.39859337114152316, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.19031539333862124, with (alpha, beta) = (0.1, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 30
- Avg ACC : 36.276315789473685, with (alpha, beta) = (10.0, 0.1)
- Avg NMI : 58.744407202483536, with (alpha, beta) = (10.0, 0.1)
- Reconstruction Error : 15.929149689460136
- Avg Silhoutte score : 0.3248748017005056, with (alpha, beta) = (0.1, 1)
- Avg Dunn's Index score : 0.06129287570617914, with (alpha, beta) = (10.0, 0.1)
- Avg David Bouldin score : 0.7392919098611536, with (alpha, beta) = (0.1, 1)
+ Avg ACC : 99.69736842105263, with (alpha, beta) = (0.01, 0.01)
+ Avg NMI : 99.72918433618662, with (alpha, beta) = (0.01, 0.01)
+ Reconstruction Error : 6.903158401154904
+ Avg Silhoutte score : 0.8429848713064956, with (alpha, beta) = (0.01, 0.01)
+ Avg Dunn's Index score : 0.38379212242862865, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.22364838357511554, with (alpha, beta) = (0.01, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 40
- Avg ACC : 46.526315789473685, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 67.58042168641154, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 15.978765117782741
- Avg Silhoutte score : 0.27039005153626783, with (alpha, beta) = (0.1, 1)
- Avg Dunn's Index score : 0.12319677152817271, with (alpha, beta) = (10.0, 0.01)
- Avg David Bouldin score : 0.6780002137465007, with (alpha, beta) = (0.01, 0.1)
+ Avg ACC : 77.0657894736842, with (alpha, beta) = (0.001, 0.01)
+ Avg NMI : 87.56263764247619, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 7.073751255960212
+ Avg Silhoutte score : 0.7671257841963038, with (alpha, beta) = (0.001, 0.01)
+ Avg Dunn's Index score : 0.12032353403793782, with (alpha, beta) = (0.01, 1)
+ Avg David Bouldin score : 0.2976079295529313, with (alpha, beta) = (0.001, 0.01)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 50
- Avg ACC : 42.38157894736842, with (alpha, beta) = (10.0, 1)
- Avg NMI : 62.625099857724216, with (alpha, beta) = (10.0, 1)
- Reconstruction Error : 16.658218621598543
- Avg Silhoutte score : 0.39318441991907527, with (alpha, beta) = (0.001, 1)
- Avg Dunn's Index score : 0.10088318566501962, with (alpha, beta) = (10.0, 1)
- Avg David Bouldin score : 0.5656293667615299, with (alpha, beta) = (0.001, 1)
+ Avg ACC : 96.07894736842105, with (alpha, beta) = (0.001, 0.01)
+ Avg NMI : 97.43360228735433, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 5.631210001829552
+ Avg Silhoutte score : 0.7101476492911418, with (alpha, beta) = (0.001, 0.01)
+ Avg Dunn's Index score : 0.19078062300260895, with (alpha, beta) = (0.001, 0.01)
+ Avg David Bouldin score : 0.3864081619527774, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 60
- Avg ACC : 37.60526315789474, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 59.864398463742106, with (alpha, beta) = (0.1, 0.01)
- Reconstruction Error : 16.49548246719476
- Avg Silhoutte score : 0.27684942146377706, with (alpha, beta) = (0.1, 1)
- Avg Dunn's Index score : 0.06809733208568786, with (alpha, beta) = (10.0, 0.01)
- Avg David Bouldin score : 0.738866066566001, with (alpha, beta) = (0.001, 1)
+ Avg ACC : 90.51315789473684, with (alpha, beta) = (0.01, 0.1)
+ Avg NMI : 93.82196764913964, with (alpha, beta) = (0.01, 0.1)
+ Reconstruction Error : 5.197222765567413
+ Avg Silhoutte score : 0.7900475733932761, with (alpha, beta) = (0.01, 0.1)
+ Avg Dunn's Index score : 0.09814403818364516, with (alpha, beta) = (0.01, 0.01)
+ Avg David Bouldin score : 0.32938226162307493, with (alpha, beta) = (0.01, 0.1)
 ##################################################################################################
 ##################################################################################################
  k1 = 200 : k2 = 70
- Avg ACC : 41.5, with (alpha, beta) = (10.0, 0.01)
- Avg NMI : 62.34386624014251, with (alpha, beta) = (10.0, 0.01)
- Reconstruction Error : 16.422951040050222
- Avg Silhoutte score : 0.2468417496939601, with (alpha, beta) = (0.01, 1)
- Avg Dunn's Index score : 0.07427711689640272, with (alpha, beta) = (10.0, 0.01)
- Avg David Bouldin score : 0.8766961988234615, with (alpha, beta) = (0.001, 0.1)
+ Avg ACC : 93.60526315789474, with (alpha, beta) = (0.001, 0.01)
+ Avg NMI : 96.56202835852054, with (alpha, beta) = (0.001, 0.01)
+ Reconstruction Error : 6.553264969794398
+ Avg Silhoutte score : 0.7593013530755857, with (alpha, beta) = (0.001, 0.01)
+ Avg Dunn's Index score : 0.08519291014166891, with (alpha, beta) = (0.1, 0.1)
+ Avg David Bouldin score : 0.3407970752180287, with (alpha, beta) = (0.001, 0.01)
 ##################################################################################################
-Average no. of iterations for k2 = 10 : 1
-Average no. of iterations for k2 = 20 : 1
+Average no. of iterations for k2 = 10 : 55
+Average no. of iterations for k2 = 20 : 3.25
 Average no. of iterations for k2 = 30 : 1
 Average no. of iterations for k2 = 40 : 1
 Average no. of iterations for k2 = 50 : 1
 Average no. of iterations for k2 = 60 : 1
 Average no. of iterations for k2 = 70 : 1
-Overall average no. of iterations : 3.363095238095238
+Overall average no. of iterations : 56.107142857142854
 #Done!

@@ -286,15 +286,14 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
 
         ##**
 
-        # print for convergence comparison
-        print(iterations_k2)
-        for k in k_list:
-            print(f"Average no. of iterations for k = {k} : {statistics.mean(iterations_k2[k])}")
-        print(f"Overall average no. of iterations : {statistics.mean(iterations)}")
+     # print for convergence comparison
+    for k in k_list:
+        print(f"Average no. of iterations for k = {k} : {statistics.mean(iterations_k2[k])}")
+    print(f"Overall average no. of iterations : {statistics.mean(iterations)}")
 
-        # Storing details of best cluster
-        data = best_cluster_acc['data']
-        pred = best_cluster_acc['pred']
-        store_kmeans(data, pred, model, dataset)
+    # Storing details of best cluster
+    data = best_cluster_acc['data']
+    pred = best_cluster_acc['pred']
+    store_kmeans(data, pred, model, dataset)
 
-        print("Done")
+    print("Done")

@@ -19,6 +19,7 @@ def print_static(model, dataset, max_iter, eps_1, eps_2):
 
 
 def construct_similarity_matrix(gnd):
+
     m = len(gnd)
     S = np.zeros((m, m))
     for i in range(m):
@@ -48,5 +49,5 @@ def KNN(X, k=6):
 # Store best predicted cluster in file for later plotting
 def store_kmeans(data, pred, model, dataset):
     path = f"Results/{dataset}/kmeans_{model}_{dataset}"
-    np.savez(path, data=data, kmneans_pred=pred)
+  #  np.savez(path, data=data, kmneans_pred=pred)
 

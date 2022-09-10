@@ -217,3 +217,14 @@ def plot_db(dataset, k_list, dgonmf_db_list, erwnmf_db_list, nmf_db_list, gnmf_d
     plt.savefig(f'Results/plots/{dataset}/{dataset}_db.png', dpi=150)
     plt.show()
 
+def plot_iter(dataset):
+
+
+    plt.xlabel("k")
+    plt.ylabel("No. of iterations")
+    plt.legend(loc="right")
+    plt.title(f"Iterations required to converge for : {dataset}")
+    plt.savefig(f'Results/plots/{dataset}/{dataset}_iterations.png', dpi=150)
+    plt.show()
+
+

@@ -34,7 +34,6 @@ def run_model(model, dataset, matImg, y, k_list, maxiter_kmeans):
         lst_dunn_score = []
 
         for i in range(1, maxiter_kmeans):
-            pred = []
             pred = kmeans.fit_predict(H.T)
             nmi = 100 * evaluate_nmi(y, pred)
             acc = 100 * accuracy(y, pred)

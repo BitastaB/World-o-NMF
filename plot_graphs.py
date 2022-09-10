@@ -3,7 +3,7 @@ import numpy as np
 from Utils.plot_metrics import plot_clusters_tsne, plot_acc, plot_nmi, plot_sil, plot_dunn, plot_db, \
     plot_model_performance
 from Utils.plot_utils import DGONMF_lists, erwnmf_lists, nmf_lists, gnmf_lists, dnsNMF_lists, dsnmf_lists, OGNMF_lists, \
-    GRSNFM_lists, RSCNMF_lists, nsNMF_lists, DGRSNMF_lists
+    GRSNFM_lists, RSCNMF_lists, nsNMF_lists, DGRSNMF_lists, get_iter_list
 
 
 def plot_acc_nmi(dataset):
@@ -45,12 +45,21 @@ def plot_clusters(model, dataset):
     n_cluster = np.unique(pred).shape[0]
     plot_clusters_tsne(data.T, model, dataset, kmeans_cluster=n_cluster)
 
+def plot_iterations(dataset):
+    k_list = [10, 20, 30, 40, 50, 60, 70]
+    model = "RSCNMF"
+    get_iter_list(dataset, model)
+
+
 
 if __name__ == '__main__':
-    dataset = "umist"  # [jaffe, orl, warpAR10P, umist, yale, yaleB]
-    model = "DGRSNMF" #[DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, DGRSNMF]
+    dataset = "yale"  # [jaffe, orl, warpAR10P, umist, yale, yaleB]
+    model = "OGNMF" #[DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, DGRSNMF]
 
    # plot_acc_nmi(dataset)
+
    # plot_model_performance("DGONMF")
-    for i in range(10):
-        plot_clusters(model, dataset)
+
+   # for i in range(10):
+   #     plot_clusters(model, dataset)
+    plot_iterations(dataset)

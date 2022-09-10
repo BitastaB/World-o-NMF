@@ -271,6 +271,40 @@ def DGONMF_lists(dataset, rnd):
         db_list.values())
 
 
+def DGONMF_knn_lists(dataset, rnd):
+    path = f"Results/{dataset}/output_DGONMF_knn_{dataset}.out"
+    with open(path) as f:
+        line_list = list(f)
+        acc_list = {}
+        nmi_list = {}
+        sil_list = {}
+        dunn_list = {}
+        db_list = {}
+
+        for line in line_list:
+            if "Avg ACC" in line:
+                n = line_list.index(line)
+                k = int(line_list[n - 1].split("k2 = ")[1].split(" : knn_k")[0])
+                acc_val = round((float((line.split(" Avg ACC : ")[1]).split(", with ")[0])), rnd)
+                nmi_val = round((float((line_list[n + 1].split(" Avg NMI : ")[1]).split(", with ")[0])), rnd)
+                sil_val = round((float((line_list[n + 3].split(" Avg Silhoutte score : ")[1]).split(", with ")[0])),
+                                rnd)
+                dunn_val = round((float((line_list[n + 4].split(" Avg Dunn's Index score : ")[1]).split(", with ")[0])),
+                                 rnd)
+                db_val = round((float((line_list[n + 5].split(" Avg David Bouldin score : ")[1]).split(", with ")[0])),
+                               rnd)
+
+                acc_list = check_key_dict(k, acc_list, acc_val, 'gr')
+                nmi_list = check_key_dict(k, nmi_list, nmi_val, 'gr')
+                sil_list = check_key_dict(k, sil_list, sil_val, 'gr')
+                dunn_list = check_key_dict(k, dunn_list, dunn_val, 'gr')
+                db_list = check_key_dict(k, db_list, db_val, 'lr')
+
+    return list(acc_list.values()), list(nmi_list.values()), list(sil_list.values()), list(
+        dunn_list.values()), list(
+        db_list.values())
+
+
 # ERWNMF
 def erwnmf_lists(dataset, rnd):
     path = f"Results/{dataset}/output_ERWNMF_{dataset}.out"
@@ -375,3 +409,19 @@ def gnmf_lists(dataset, rnd):
     return list(acc_list.values()), list(nmi_list.values()), list(sil_list.values()), list(
         dunn_list.values()), list(
         db_list.values())
+
+
+def get_iter_list(dataset, model):
+    path = f"Results/{dataset}/output_{model}_{dataset}.out"
+    print(f"file = {path}")
+    iter_list = []
+    with open(path) as f:
+        line_list = list(f)
+        for line in line_list:
+            if "Average no. of iterations for k" in line:
+                n = line_list.index(line)
+                for i in range(7):
+                    print(f"{line_list[n + i]}")
+                    t = int(line_list[n + i].split(" : ")[1])
+                    print(f" {(i + 1) * 10} : {t}")
+                break

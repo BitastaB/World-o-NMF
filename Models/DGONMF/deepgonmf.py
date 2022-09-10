@@ -1,6 +1,9 @@
-import numpy as np
-from sklearn.decomposition import NMF
 import statistics
+
+import numpy as np
+import scipy
+from sklearn.decomposition import NMF
+
 from Utils.metrics_evaluation import accuracy, evaluate_nmi, calculate_silhouette_score, calculate_davies_bouldin_score, \
     calculate_dunn_index
 from Utils.utils import init_kmeans, construct_similarity_matrix, store_kmeans
@@ -36,7 +39,7 @@ def update_V_l(matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, m
     den = (phi[l].T @ phi[l] @ dictV[l]) + (alpha * dictV[l] @ matD) + (beta * dictV[l])
     den[den < myeps_2] = myeps_2
     res = num / den
-    dictV[l] = np.multiply(dictV[l], np.power(res, (1/4)))
+    dictV[l] = np.multiply(dictV[l], np.power(res, (1 / 4)))
     return dictV
 
 
@@ -46,7 +49,7 @@ def update_V(i, matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, 
     den = (phi[i].T @ phi[i] @ dictV[i]) + (alpha * dictV[i] @ matD) + (beta * dictV[i] @ dictV[i].T @ dictV[i])
     den[den < myeps_2] = myeps_2
     res = num / den
-    dictV[i] = np.multiply(dictV[i], np.power(res, (1/4)))
+    dictV[i] = np.multiply(dictV[i], np.power(res, (1 / 4)))
     return dictV
 
 
@@ -54,7 +57,6 @@ def update_V(i, matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, 
 
 
 def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2):
-
     # Pretrain all layers
     dictH = {}
     dictV = {}
@@ -142,9 +144,21 @@ def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2
     return matH, matV, t - 1
 
 
+def calculateDistance(X):
+
+    X= X.T
+    A = scipy.spatial.distance.cdist(X, X, metric='minkowski')
+    print(f"len : {len(A[0])}")
+    print(f"distance matrix : \n{A[0]}")
+    A = np.where(A < 0.1, 1, 0)
+    # A[A <= 0.1] = 1
+ #   A[A > 0.1] = 0
+    print(A)
+    return A
+
+
 def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxiter_kmeans, l, max_iter,
               myeps_1, myeps_2, y):
-
     # Normalise data
     norma = np.linalg.norm(matImg, 2, 1)[:, None]
     norma += 1e-10
@@ -155,6 +169,8 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
     matX = normal_img.T
     m, n = matX.shape
 
+    #   draw_layer_results(matX.T, 32, 32, "Original")
+
     parameters = []
     for a in alpha_range:
         for b in beta_range:
@@ -162,12 +178,13 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
 
     # Create similarity matrix
     matS = construct_similarity_matrix(matGnd)
-
+  #  print(matS.shape)
+    matS = calculateDistance(matX)
+   # print(matS_.shape)
 
     # Initialization
     diag = np.sum(matS, axis=1)
     matD = np.diag(diag)
-
 
     # Util for convergence comparison
     iterations = []
@@ -214,12 +231,14 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
                 beta = parameters[p][1]
 
                 # run deep gonmf for max_iter times
-                matH, matV, n_iteration = DGONMF(matX, matS, matD, m, n, l, [k_1, k_2], alpha, beta, max_iter, myeps_1, myeps_2)
+                matH, matV, n_iteration = DGONMF(matX, matS, matD, m, n, l, [k_1, k_2], alpha, beta, max_iter, myeps_1,
+                                                 myeps_2)
 
                 iterations.append(n_iteration)
 
                 # Reconstructed matrix
                 matX_reconstructed = matH @ matV
+                #  draw_layer_results(matX_reconstructed.T, 32, 32, f"k = {k_2}")
 
                 # Kmeans task
                 lst_acc = []
@@ -238,6 +257,7 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
 
                     # ACC
                     acc = 100 * accuracy(y, pred)
+
                     if acc > best_cluster_acc['acc']:
                         best_cluster_acc['acc'] = acc
                         best_cluster_acc['data'] = matV
@@ -280,7 +300,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
                 meanlst_davis_score.append(statistics.mean(lst_davis_score))
                 meanlst_dunn_score.append(statistics.mean(lst_dunn_score))
 
-
             # End for
 
             maxAcc[k_2] = maxlst_acc
@@ -290,7 +309,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
             maxDunnScore[k_2] = maxlst_dunn_score
             minDavisScore[k_2] = minlst_davis_score
 
-
             ##
             meanAcc[k_2] = meanlst_acc
             meanNmi[k_2] = meanlst_nmi
@@ -299,7 +317,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
             meanDavisScore[k_2] = meanlst_davis_score
             meanDunnScore[k_2] = meanlst_dunn_score
 
-
             # Dictionary for each k2 required iterations for convergence
             if k_2 not in iterations_k2.keys():
                 iterations_k2[k_2] = [n_iteration]
@@ -307,8 +324,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
                 iterations_k2[k_2].append(n_iteration)
 
         # ENd for k2
-
-
 
         maxacc_final = {}
         maxnmi_final = {}
@@ -356,7 +371,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
             meanDunnScore_final[k_2] = [max(meanDunnScore[k_2]), parameters[np.argmax(meanDunnScore[k_2])]]
             meanDavidScore_final[k_2] = [min(meanDavisScore[k_2]), parameters[np.argmin(meanDavisScore[k_2])]]
 
-
             print(f"##################################################################################################")
             print(f" k1 = {k_1} : k2 = {k_2}")
             print(f" Avg ACC : {meanacc_final[k_2][0]}, with (alpha, beta) = {parameters[np.argmax(meanAcc[k_2])]}")
@@ -369,7 +383,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
             print(f" Avg David Bouldin score : {meanDavidScore_final[k_2][0]}, with (alpha, beta) = "
                   f"{parameters[np.argmin(meanDavisScore[k_2])]}")
             print(f"##################################################################################################")
-
 
     ## print for convergence comparison
     for k_2 in k_2_list:
