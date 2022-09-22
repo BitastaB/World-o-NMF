@@ -633,7 +633,6 @@ k = 70 : best avg Silhoutte score = 0.14916811023268206 , with parameters = (10.
 k = 70 : best avg Dunn's Index score = 0.4928017342453568 , with parameters = (0.001, 0.01), k_knn = 21
 k = 70 : best avg Davies Bouldin score = 1.7676584609377055 , with parameters = (10.0, 1), k_knn = 21
 **********************************************************************************************************
-{10: [1, 1, 1, 1, 1], 20: [1, 1, 1, 1, 1], 30: [1, 1, 1, 1, 1], 40: [1, 1, 1, 1, 1], 50: [1, 1, 1, 1, 1], 60: [1, 1, 1, 1, 1], 70: [1, 1, 1, 1, 1]}
 Average no. of iterations for k = 10 : 1
 Average no. of iterations for k = 20 : 1
 Average no. of iterations for k = 30 : 1

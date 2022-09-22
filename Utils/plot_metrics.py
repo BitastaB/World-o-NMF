@@ -52,7 +52,7 @@ pallet = {0: '#090119',
 
 
 def plot_clusters_tsne(data, model, dataset, kmeans_cluster):
-    perp_list = [12]# [5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 50]
+    perp_list = [12]  # [5, 8, 10, 12, 15, 20, 25, 30, 35, 40, 50]
 
     for perp in perp_list:
         _title = f"dataset = {dataset}, model = {model}, with tsne perpexlity = {perp}"
@@ -114,7 +114,8 @@ def plot_model_performance(model):
 
 
 # Plotting average accuracy
-def plot_acc(dataset, k_list, dgonmf_acc_list,erwnmf_acc_list, nmf_acc_list, gnmf_acc_list, dnsNMF_acc_list, dsNMF_acc_list, ognmf_acc_list, grsnmf_acc_list, rscnmf_acc_list, nsnmf_acc_list, dgrsnmf_acc_list):
+def plot_acc(dataset, k_list, dgonmf_acc_list, erwnmf_acc_list, nmf_acc_list, gnmf_acc_list, dnsNMF_acc_list,
+             dsNMF_acc_list, ognmf_acc_list, grsnmf_acc_list, rscnmf_acc_list, nsnmf_acc_list, dgrsnmf_acc_list):
     # Plotting average accuracy
     plt.plot(k_list, dgonmf_acc_list, label="DGONMF", marker='.', c=Category10[10][0])
     plt.plot(k_list, erwnmf_acc_list, label="ERWNMF", marker='.', c=Category10[10][1])
@@ -135,7 +136,9 @@ def plot_acc(dataset, k_list, dgonmf_acc_list,erwnmf_acc_list, nmf_acc_list, gnm
     plt.savefig(f'Results/plots/{dataset}/{dataset}_acc.png', dpi=150)
     plt.show()
 
-def plot_nmi(dataset, k_list, dgonmf_nmi_list, erwnmf_nmi_list, nmf_nmi_list, gnmf_nmi_list, dnsNMF_nmi_list, dsNMF_nmi_list, ognmf_nmi_list, grsnmf_nmi_list, rscnmf_nmi_list, nsnmf_nmi_list, dgrsnmf_nmi_list):
+
+def plot_nmi(dataset, k_list, dgonmf_nmi_list, erwnmf_nmi_list, nmf_nmi_list, gnmf_nmi_list, dnsNMF_nmi_list,
+             dsNMF_nmi_list, ognmf_nmi_list, grsnmf_nmi_list, rscnmf_nmi_list, nsnmf_nmi_list, dgrsnmf_nmi_list):
     plt.plot(k_list, dgonmf_nmi_list, label="DGONMF", marker='.', c=Category10[10][0])
     plt.plot(k_list, erwnmf_nmi_list, label="ERWNMF", marker='.', c=Category10[10][1])
     plt.plot(k_list, nmf_nmi_list, label="NMF", marker='.', c=Category10[10][2])
@@ -155,7 +158,9 @@ def plot_nmi(dataset, k_list, dgonmf_nmi_list, erwnmf_nmi_list, nmf_nmi_list, gn
     plt.savefig(f'Results/plots/{dataset}/{dataset}_nmi.png', dpi=150)
     plt.show()
 
-def plot_sil(dataset, k_list, dgonmf_sil_list, erwnmf_sil_list, nmf_sil_list, gnmf_sil_list, dnsNMF_sil_list, dsNMF_sil_list, ognmf_sil_list, grsnmf_sil_list, rscnmf_sil_list, nsnmf_sil_list, dgrsnmf_sil_list):
+
+def plot_sil(dataset, k_list, dgonmf_sil_list, erwnmf_sil_list, nmf_sil_list, gnmf_sil_list, dnsNMF_sil_list,
+             dsNMF_sil_list, ognmf_sil_list, grsnmf_sil_list, rscnmf_sil_list, nsnmf_sil_list, dgrsnmf_sil_list):
     plt.plot(k_list, dgonmf_sil_list, label="DGONMF", marker='.', c=Category10[10][0])
     plt.plot(k_list, erwnmf_sil_list, label="ERWNMF", marker='.', c=Category10[10][1])
     plt.plot(k_list, nmf_sil_list, label="NMF", marker='.', c=Category10[10][2])
@@ -176,7 +181,8 @@ def plot_sil(dataset, k_list, dgonmf_sil_list, erwnmf_sil_list, nmf_sil_list, gn
     plt.show()
 
 
-def plot_dunn(dataset, k_list, dgonmf_dunn_list, erwnmf_dunn_list, nmf_dunn_list, gnmf_dunn_list, dnsNMF_dunn_list, dsNMF_dunn_list, ognmf_dunn_list, grsnmf_dunn_list, rscnmf_dunn_list, nsnmf_dunn_list, dgrsnmf_dunn_list):
+def plot_dunn(dataset, k_list, dgonmf_dunn_list, erwnmf_dunn_list, nmf_dunn_list, gnmf_dunn_list, dnsNMF_dunn_list,
+              dsNMF_dunn_list, ognmf_dunn_list, grsnmf_dunn_list, rscnmf_dunn_list, nsnmf_dunn_list, dgrsnmf_dunn_list):
     plt.plot(k_list, dgonmf_dunn_list, label="DGONMF", marker='.', c=Category10[10][0])
     plt.plot(k_list, erwnmf_dunn_list, label="ERWNMF", marker='.', c=Category10[10][1])
     plt.plot(k_list, nmf_dunn_list, label="NMF", marker='.', c=Category10[10][2])
@@ -197,7 +203,8 @@ def plot_dunn(dataset, k_list, dgonmf_dunn_list, erwnmf_dunn_list, nmf_dunn_list
     plt.show()
 
 
-def plot_db(dataset, k_list, dgonmf_db_list, erwnmf_db_list, nmf_db_list, gnmf_db_list, dnsNMF_db_list, dsNMF_db_list, ognmf_db_list, grsnmf_db_list, rscnmf_db_list, nsnmf_db_list, dgrsnmf_db_list):
+def plot_db(dataset, k_list, dgonmf_db_list, erwnmf_db_list, nmf_db_list, gnmf_db_list, dnsNMF_db_list, dsNMF_db_list,
+            ognmf_db_list, grsnmf_db_list, rscnmf_db_list, nsnmf_db_list, dgrsnmf_db_list):
     plt.plot(k_list, dgonmf_db_list, label="DGONMF", marker='.', c=Category10[10][0])
     plt.plot(k_list, erwnmf_db_list, label="ERWNMF", marker='.', c=Category10[10][1])
     plt.plot(k_list, nmf_db_list, label="NMF", marker='.', c=Category10[10][2])
@@ -217,8 +224,16 @@ def plot_db(dataset, k_list, dgonmf_db_list, erwnmf_db_list, nmf_db_list, gnmf_d
     plt.savefig(f'Results/plots/{dataset}/{dataset}_db.png', dpi=150)
     plt.show()
 
-def plot_iter(dataset):
 
+def plot_iter(dataset, k_list, dgonmf_knn_iters, ognmf_iters, gnmf_iters, grsnmf_iters, nsnmf_iters, rscnmf_iters, other_iter):
+    plt.plot(k_list, dgonmf_knn_iters, label="kDGONMF")
+    plt.plot(k_list, ognmf_iters, label="OGNMF")
+    plt.plot(k_list, gnmf_iters, label="GNMF")
+    plt.plot(k_list, grsnmf_iters, label="GRSNMF")
+    plt.plot(k_list, nsnmf_iters, label="nsNMF")
+    plt.plot(k_list, rscnmf_iters, label="RSCNMF")
+
+    plt.plot(k_list, other_iter, label="Other models")
 
     plt.xlabel("k")
     plt.ylabel("No. of iterations")
@@ -226,5 +241,3 @@ def plot_iter(dataset):
     plt.title(f"Iterations required to converge for : {dataset}")
     plt.savefig(f'Results/plots/{dataset}/{dataset}_iterations.png', dpi=150)
     plt.show()
-
-

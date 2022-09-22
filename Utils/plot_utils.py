@@ -413,7 +413,6 @@ def gnmf_lists(dataset, rnd):
 
 def get_iter_list(dataset, model):
     path = f"Results/{dataset}/output_{model}_{dataset}.out"
-    print(f"file = {path}")
     iter_list = []
     with open(path) as f:
         line_list = list(f)
@@ -421,7 +420,7 @@ def get_iter_list(dataset, model):
             if "Average no. of iterations for k" in line:
                 n = line_list.index(line)
                 for i in range(7):
-                    print(f"{line_list[n + i]}")
-                    t = int(line_list[n + i].split(" : ")[1])
-                    print(f" {(i + 1) * 10} : {t}")
+                    t = float(line_list[n + i].split(" : ")[1])
+                    iter_list.append(t)
                 break
+    return iter_list

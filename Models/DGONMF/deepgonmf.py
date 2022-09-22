@@ -144,19 +144,6 @@ def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2
     return matH, matV, t - 1
 
 
-def calculateDistance(X):
-
-    X= X.T
-    A = scipy.spatial.distance.cdist(X, X, metric='minkowski')
-    print(f"len : {len(A[0])}")
-    print(f"distance matrix : \n{A[0]}")
-    A = np.where(A < 0.1, 1, 0)
-    # A[A <= 0.1] = 1
- #   A[A > 0.1] = 0
-    print(A)
-    return A
-
-
 def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list, k_2_list, maxiter_kmeans, l, max_iter,
               myeps_1, myeps_2, y):
     # Normalise data
@@ -169,8 +156,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
     matX = normal_img.T
     m, n = matX.shape
 
-    #   draw_layer_results(matX.T, 32, 32, "Original")
-
     parameters = []
     for a in alpha_range:
         for b in beta_range:
@@ -178,9 +163,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
 
     # Create similarity matrix
     matS = construct_similarity_matrix(matGnd)
-  #  print(matS.shape)
-    matS = calculateDistance(matX)
-   # print(matS_.shape)
 
     # Initialization
     diag = np.sum(matS, axis=1)
@@ -238,7 +220,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
 
                 # Reconstructed matrix
                 matX_reconstructed = matH @ matV
-                #  draw_layer_results(matX_reconstructed.T, 32, 32, f"k = {k_2}")
 
                 # Kmeans task
                 lst_acc = []
