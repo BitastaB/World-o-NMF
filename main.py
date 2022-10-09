@@ -1,6 +1,6 @@
 import sys
 
-from Models.DGONMF import deepgonmf
+from Models.DGONMF import sDGONMF, kDGONMF
 from Models.ERWNMF import ERWNMF
 from Models.GNMF import GNMF
 from Models.DGRSNMF import GRDeepSNMF
@@ -60,13 +60,23 @@ def load_dataset(dataset):
         matGnd = imgData['gnd']
         y = matGnd.ravel()
 
+    if dataset == "coil20":
+        imgData = scipy.io.loadmat('./Image_Data/COIL20.mat')
+        matImg = imgData['X'].astype('float32')
+        matGnd = imgData['y']
+        y = matGnd.ravel()
+
+
     return imgData, matImg, matGnd, y
 
 
 def run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1, eps_2, y,
               maxiter_inner, pos_alpha_range, pos_beta_range, lambda_range, k_knn_list, plot_graphs):
-    if model == "DGONMF":
-        deepgonmf.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1,
+    if model == "sDGONMF":
+        sDGONMF.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1,
+                            eps_2, y)
+    elif model == "kDGONMF":
+        kDGONMF.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, k_knn_list, maxiter_kmeans, l, maxiter, eps_1,
                             eps_2, y)
 
     elif model == "dnsNMF":
@@ -102,13 +112,14 @@ def run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, m
 
 
 if __name__ == '__main__':
-    dataset = "jaffe"
-    model = "RSCNMF"  # Options : DGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, DGRSNMF
+    dataset = "orl"
+    model = "RSCNMF"  # Options : sDGONMF, kDGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF, DGRSNMF
     write_to_file = False
-    plot_graphs = True
+    plot_graphs = False
 
     if write_to_file:
-        path = f"Results/{dataset}/output_{model}_{dataset}.out"
+        path = f"Results/{dataset}/output_new_{model}_{dataset}.out"
+   #     path = f"Results/{dataset}/recon_{model}_{dataset}.out"
         sys.stdout = open(path, 'w')
 
     # Load dataset
@@ -116,14 +127,14 @@ if __name__ == '__main__':
 
     # Setting parameters and hyper-parameters
     l = 2  # The number of layers
-    k1_list = [80]#[80, 100, 120, 200]  # The size of the first layer
-    k2_list = [10, 20]#[10, 20, 30, 40, 50, 60, 70]
-    alpha_range = [1e-01] #[1e-03, 1e-02, 1e-01, 1e01]
-    beta_range = [1e-01]#[1e-02, 1e-01, 1]
+    k1_list = [80]# [80, 100, 120, 200]  # The size of the first layer
+    k2_list = [10]#[10, 20, 30, 40, 50, 60, 70]
+    alpha_range = [10] #[1e-03, 1e-02, 1e-01, 1e01]
+    beta_range = [0.1]#[1e-02, 1e-01, 1]
     pos_alpha_range = [1e03]#[1e03, 1e04, 1e05, 1e06]
     pos_beta_range = [10] #[10, 100, 1000]
     lambda_range = [1, 10, 100]
-    k_knn_list = [5]#[3, 5, 6, 11, 21]
+    k_knn_list = [3, 5]#[3, 5, 6, 11, 21]
     max_iter = 100  # Maximum Number of Iterations
     maxiter_inner = 100
     maxiter_kmeans = 20

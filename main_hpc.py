@@ -1,6 +1,6 @@
 import sys
 
-from Models.DGONMF import deepgonmf, deepgonmf_knn, deepgonmf_cosine
+from Models.DGONMF import sDGONMF, kDGONMF, deepgonmf_cosine
 from Models.ERWNMF import ERWNMF
 from Models.GNMF import GNMF
 from Models.DGRSNMF import GRDeepSNMF
@@ -60,6 +60,13 @@ def load_dataset(dataset):
         matGnd = imgData['gnd']
         y = matGnd.ravel()
 
+    if dataset == "coil20":
+        imgData = scipy.io.loadmat('./Image_Data/COIL20.mat')
+        matImg = imgData['X'].astype('float32')
+        matGnd = imgData['y']
+        y = matGnd.ravel()
+
+
     return imgData, matImg, matGnd, y, dataset
 
 
@@ -67,10 +74,10 @@ def run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, m
               y,
               maxiter_inner, pos_alpha_range, pos_beta_range, lambda_range, k_knn_list, plot_graphs):
     if model == "sDGONMF":
-        deepgonmf.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter,
+        sDGONMF.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter,
                             eps_1, eps_2, y)
     elif model == "kDGONMF":
-        deepgonmf_knn.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, k_knn_list,
+        kDGONMF.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, k_knn_list,
                                 maxiter_kmeans, l, maxiter, eps_1, eps_2, y)
 
     elif model == "dnsNMF":
@@ -125,7 +132,7 @@ if __name__ == '__main__':
     plot_graphs = False
 
     if write_to_file:
-        path = f"Results/{dataset}/output_{model}_{dataset}.out"
+        path = f"Results/{dataset}/output_new_{model}_{dataset}.out"
         sys.stdout = open(path, 'w')
 
     # Load dataset
