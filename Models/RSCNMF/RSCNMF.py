@@ -41,7 +41,7 @@ def RSCNMF(X, XX, e, S, D, alpha, beta, _lambda, l, n, maxiter):
     t = 1
 
     E = {t: np.trace(Z @ Q @ Z.T) + (alpha * np.trace(H @ (D - S) @ H.T)) + (
-            beta * np.trace(H @ (np.identity(n) - e) @ H.T)) + (_lambda * np.trace(W @ P @ W.T))}
+            beta * np.trace(H @ (e - np.identity(n)) @ H.T)) + (_lambda * np.trace(W @ P @ W.T))}
 
     err = 1
 
@@ -73,7 +73,7 @@ def RSCNMF(X, XX, e, S, D, alpha, beta, _lambda, l, n, maxiter):
 
         t += 1
         E[t] = np.trace(Z @ Q @ Z.T) + (alpha * np.trace(H @ (D - S) @ H.T)) + (
-                beta * np.trace(H @ (np.identity(n) - e) @ H.T)) + (_lambda * np.trace(W @ P @ W.T))
+                beta * np.trace(H @ (e - np.identity(n)) @ H.T)) + (_lambda * np.trace(W @ P @ W.T))
 
         err = abs(E[t - 1] - E[t]) / abs(E[t - 1])
 
@@ -132,6 +132,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
             meanSilScore = {}
             meanDunnScore = {}
             meanDavisScore = {}
+            meanReconErr = {}
 
             for p in parameters:
 
@@ -147,10 +148,15 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                 meanlst_sil_score = []
                 meanlst_dunn_score = []
                 meanlst_davis_score = []
+                meanlst_recon_err = []
 
                 for _lambda in lambda_list:
                     W, H, n_iteration = RSCNMF(X, XX, E, S, D, p[0], p[1], _lambda, k, n, maxiter)
 
+                    X_recon = X @W @ H
+                    # Reconstruction Error
+                    a = np.linalg.norm(X - X_recon, 'fro')
+                    recon_err = (a)  # /n
 
                     iterations.append(n_iteration)
 
@@ -160,6 +166,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                     lst_sil_score = []
                     lst_dunn_score = []
                     lst_davis_score = []
+                    lst_recon_err = []
 
                     for i in range(1, maxiter_kmeans):
 
@@ -172,8 +179,9 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                         acc = 100 * accuracy(y, pred)
                         if acc > best_cluster_acc['acc']:
                             best_cluster_acc['acc'] = acc
-                            best_cluster_acc['data'] = H
+                            best_cluster_acc['recon'] = X_recon
                             best_cluster_acc['pred'] = pred
+                            best_cluster_acc['data'] = H
 
                         # Silhoutte score
                         silhouette_score = calculate_silhouette_score(H.T, pred)
@@ -189,6 +197,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                         lst_sil_score.append(silhouette_score)
                         lst_davis_score.append(davis_score)
                         lst_dunn_score.append(dunn_score)
+                        lst_recon_err.append(recon_err)
 
                         ## End for
 
@@ -205,6 +214,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                     meanlst_sil_score.append(statistics.mean(lst_sil_score))
                     meanlst_davis_score.append(statistics.mean(lst_davis_score))
                     meanlst_dunn_score.append(statistics.mean(lst_dunn_score))
+                    meanlst_recon_err.append(statistics.mean(lst_recon_err))
 
                     ## End for
 
@@ -220,6 +230,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                 meanSilScore[p] = meanlst_sil_score
                 meanDavisScore[p] = meanlst_davis_score
                 meanDunnScore[p] = meanlst_dunn_score
+                meanReconErr[p] = meanlst_recon_err
 
 
             if k not in iterations_k2.keys():
@@ -262,6 +273,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
             meanSilScore_final = {}
             meanDunnScore_final = {}
             meanDavidScore_final = {}
+            meanReconErr_final = {}
 
             print("The results of running the Kmeans method 20 times and the average of 20 runs")
             for p in parameters:
@@ -270,6 +282,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                 meanSilScore_final[p] = [max(meanSilScore[p]), lambda_list[np.argmax(meanSilScore[p])]]
                 meanDunnScore_final[p] = [max(meanDunnScore[p]), lambda_list[np.argmax(meanDunnScore[p])]]
                 meanDavidScore_final[p] = [min(meanDavisScore[p]), lambda_list[np.argmin(meanDavisScore[p])]]
+                meanReconErr_final[p] = [max(meanReconErr[p]), lambda_list[np.argmax(meanReconErr[p])]]
 
                 print(
                     f"##################################################################################################")
@@ -279,6 +292,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
                 print(f" Avg Silhoutte score : {meanSilScore_final[p][0]}, with lambda = {lambda_list[np.argmax(meanSilScore[p])]}")
                 print(f" Avg Dunn's Index score : {meanDunnScore_final[p][0]}, with lambda = {lambda_list[np.argmax(meanDunnScore[p])]}")
                 print(f" Avg Davies Bouldin score : {meanDavidScore_final[p][0]}, with lambda = {lambda_list[np.argmax(meanDavisScore[p])]}")
+                print(f" Highest avg reconstruction error : {meanReconErr_final[p][0]}, with lambda = {lambda_list[np.argmax(meanReconErr[p])]}")
 
                 print(
                     f"##################################################################################################")
@@ -294,6 +308,7 @@ def run_model(model, dataset, matImg, y, alpha_list, beta_list, k_knn_range, k_l
     # Storing details of best cluster
     data = best_cluster_acc['data']
     pred = best_cluster_acc['pred']
-    store_kmeans(data, pred, model, dataset)
+    data_recon = best_cluster_acc['recon']
+    store_kmeans(data, pred, data_recon, model, dataset)
 
     print("Done")
