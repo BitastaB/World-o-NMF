@@ -242,6 +242,7 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
                     if acc > best_cluster_acc['acc']:
                         best_cluster_acc['acc'] = acc
                         best_cluster_acc['data'] = matV
+                        best_cluster_acc['recon'] = matX_reconstructed
                         best_cluster_acc['pred'] = pred
 
                     # Silhoutte score
@@ -373,5 +374,6 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
     # Storing details of best cluster
     data = best_cluster_acc['data']
     pred = best_cluster_acc['pred']
-    store_kmeans(data, pred, model, dataset)
+    data_recon = best_cluster_acc['recon']
+    store_kmeans(data, pred, data_recon, model, dataset)
     print("#Done!")
