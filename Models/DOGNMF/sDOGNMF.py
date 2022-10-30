@@ -1,12 +1,11 @@
 import statistics
 
 import numpy as np
-import scipy
 from sklearn.decomposition import NMF
 
 from Utils.metrics_evaluation import accuracy, evaluate_nmi, calculate_silhouette_score, calculate_davies_bouldin_score, \
     calculate_dunn_index
-from Utils.utils import init_kmeans, construct_similarity_matrix, store_kmeans
+from Utils.utils import init_kmeans, construct_similarity_matrix
 
 """Upadte H_i and V_i for i=1,2,...,l"""
 
@@ -53,7 +52,7 @@ def update_V(i, matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, 
     return dictV
 
 
-"""Deep Graph Orthogonal NMF (DGONMF)"""
+"""Deep Graph Orthogonal NMF (DOGNMF)"""
 
 
 def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2):
@@ -135,6 +134,7 @@ def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2
             else:
                 dictV = update_V(i, matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, myeps_2, r_i, l)
 
+
     # Calculate final H'
     matH = np.identity(dictH[1].shape[0])
     for q in range(1, l + 1):
@@ -160,6 +160,10 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
     for a in alpha_range:
         for b in beta_range:
             parameters.append((a, b))
+
+    matHeatmap_acc = np.zeros((len(alpha_range), len(beta_range)))
+    matHeatmap_nmi = np.zeros((len(alpha_range), len(beta_range)))
+    heat_count = 0
 
     # Create similarity matrix
     matS = construct_similarity_matrix(matGnd)
@@ -207,6 +211,8 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
             meanlst_sil_score = []
             meanlst_dunn_score = []
             meanlst_davis_score = []
+
+            heat_count += 1
 
             for p in range(len(parameters)):
                 alpha = parameters[p][0]
@@ -281,6 +287,19 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
                 meanlst_sil_score.append(statistics.mean(lst_sil_score))
                 meanlst_davis_score.append(statistics.mean(lst_davis_score))
                 meanlst_dunn_score.append(statistics.mean(lst_dunn_score))
+
+                ###################
+
+                print(
+                f"alpha = {alpha}, beta = {beta}, k1 = {k_1}, k2 = {k_2}, max acc = {max(lst_acc)}, max nmi = {max(lst_nmi)}, count = {heat_count}")
+                alpha_index = alpha_range.index(alpha)
+                beta_index = beta_range.index(beta)
+                matHeatmap_acc[alpha_index][beta_index] += max(lst_acc)
+                matHeatmap_nmi[alpha_index][beta_index] += max(lst_nmi)
+                print(f"new acc : {matHeatmap_acc[alpha_index][beta_index]}")
+                print(f"new nmi : {matHeatmap_nmi[alpha_index][beta_index]}")
+
+                ###################
 
             # End for
 
@@ -366,6 +385,40 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
                   f"{parameters[np.argmin(meanDavisScore[k_2])]}")
             print(f"##################################################################################################")
 
+    ## plot heatmap
+
+    import seaborn as sns
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+    matHeatmap_acc /= heat_count
+    matHeatmap_nmi /= heat_count
+    df_cm1 = pd.DataFrame(matHeatmap_acc, index=alpha_range, columns=beta_range)
+    df_cm2 = pd.DataFrame(matHeatmap_nmi, index=alpha_range, columns=beta_range)
+    cmap = sns.cm.rocket_r
+
+    fig, (ax1, ax2) = plt.subplots(1, 2)
+
+    ax1 = plt.axes()
+    sns.heatmap(df_cm1, ax=ax1, cmap=cmap)
+    ax1.set_title(f'{dataset} : ACC heatmap')
+    plt.xlabel("beta")
+    plt.ylabel("alpha")
+    #plt.savefig(f"Results/plots/{dataset}_sDGONMF_acc_heatmap")
+    plt.show()
+
+    ax2 = plt.axes()
+    sns.heatmap(df_cm2, ax=ax2, cmap=cmap)
+    ax2.set_title(f'{dataset} : NMI heatmap')
+    plt.xlabel("beta")
+    plt.ylabel("alpha")
+    # plt.savefig(f"Results/plots/{dataset}_sDGONMF_nmi_heatmap")
+    plt.show()
+    #####
+    ##############
+
+
+
     ## print for convergence comparison
     for k_2 in k_2_list:
         print(f"Average no. of iterations for k2 = {k_2} : {statistics.mean(iterations_k2[k_2])}")
@@ -375,5 +428,5 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
     data = best_cluster_acc['data']
     pred = best_cluster_acc['pred']
     data_recon = best_cluster_acc['recon']
-    store_kmeans(data, pred, data_recon, model, dataset)
+  #  store_kmeans(data, pred, data_recon, model, dataset)
     print("#Done!")

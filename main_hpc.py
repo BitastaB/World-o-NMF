@@ -1,13 +1,13 @@
 import sys
 
-from Models.DGONMF import sDGONMF, kDGONMF, deepgonmf_cosine
+from Models.DGLCF import DGLCF
+from Models.DOGNMF import sDOGNMF, kDOGNMF
 from Models.ERWNMF import ERWNMF
 from Models.GNMF import GNMF
 from Models.DGRSNMF import GRDeepSNMF
 from Models.GRSNMF import GRSNMF
 from Models.NMF import NMF
 from Models.OGNMF import OGNMF
-from Models.RSCNMF import RSCNMF
 from Models.dnsNMF import dnsNMF
 import scipy.io
 
@@ -73,11 +73,11 @@ def load_dataset(dataset):
 def run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter, eps_1, eps_2,
               y,
               maxiter_inner, pos_alpha_range, pos_beta_range, lambda_range, k_knn_list, plot_graphs):
-    if model == "sDGONMF":
-        sDGONMF.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter,
+    if model == "sDOGNMF":
+        sDOGNMF.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, maxiter_kmeans, l, maxiter,
                             eps_1, eps_2, y)
-    elif model == "kDGONMF":
-        kDGONMF.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, k_knn_list,
+    elif model == "kDOGNMF":
+        kDOGNMF.run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, k_knn_list,
                                 maxiter_kmeans, l, maxiter, eps_1, eps_2, y)
 
     elif model == "dnsNMF":
@@ -88,10 +88,6 @@ def run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, m
 
     elif model == "ERWNMF":
         ERWNMF.run_model(model, dataset, matImg, y, k2_list, maxiter, maxiter_kmeans, plot_graphs)
-
-    elif model == "RSCNMF":
-        RSCNMF.run_model(model, dataset, matImg, y, pos_alpha_range, pos_beta_range, k_knn_list, k2_list, lambda_range,
-                         maxiter_kmeans, maxiter)
 
     elif model == "OGNMF":
         OGNMF.run_model(model, dataset, matImg, y, alphas, betas, k_knn_list, k2_list, maxiter_kmeans, eps_1, eps_2,
@@ -112,6 +108,9 @@ def run_model(model, dataset, alphas, betas, matImg, matGnd, k1_list, k2_list, m
     elif model == "DGRSNMF":
         GRDeepSNMF.run_model(model, dataset, matImg, y, k_knn_list, k1_list, k2_list, alphas, l, maxiter_kmeans,
                              maxiter, maxiter_inner)
+    elif model == "DGLCF":
+        DGLCF.run_model(model, dataset, matImg, y, alphas, alphas, k_knn_list, k2_list, maxiter, maxiter_kmeans)
+
 
 
 if __name__ == '__main__':
@@ -119,14 +118,14 @@ if __name__ == '__main__':
     won_parser = argparse.ArgumentParser(description='World-o-NMF')
 
     won_parser.add_argument("-d", "--dataset", type=str, help="Dataset input name", default="orl", dest='dataset')
-    won_parser.add_argument("-m", "--model", type=str, help="Model input name", default="DGONMF", dest='model')
+    won_parser.add_argument("-m", "--model", type=str, help="Model input name", default="kDOGNMF", dest='model')
     won_parser.add_argument("-w", "--write-to-file", type=str, help="Boolean for write to file", default=True,
-                            dest='write_file')
+                            dest='write_to_file')
 
     args = won_parser.parse_args()
     dataset = args.dataset
-    model = args.model  # Options : kDGONMF, sDGONMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
-    write_to_file = args.write_file
+    model = args.model  # Options : kDOGNMF, sDOGNMF, dnsNMF, dsnmf, ERWNMF, DGLCF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
+    write_to_file = args.write_to_file
     print(f"dataset : {dataset}, model = {model}")
 
     plot_graphs = False
