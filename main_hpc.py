@@ -124,7 +124,8 @@ if __name__ == '__main__':
 
     args = won_parser.parse_args()
     dataset = args.dataset
-    model = args.model  # Options : kDOGNMF, sDOGNMF, dnsNMF, dsnmf, ERWNMF, DGLCF, OGNMF, GRSNMF, GNMF, NMF, nsNMF
+    model = args.model  # Options : sDOGNMF, kDOGNMF, dnsNMF, dsnmf, ERWNMF, RSCNMF, OGNMF, GRSNMF, GNMF, NMF,
+                                                                                # nsNMF, DGRSNMF
     write_to_file = args.write_to_file
     print(f"dataset : {dataset}, model = {model}")
 
