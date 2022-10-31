@@ -55,7 +55,7 @@ def update_V(i, matX, dictH, dictV, phi, sci, matS, matD, alpha, beta, myeps_1, 
 """Deep Graph Orthogonal NMF (DOGNMF)"""
 
 
-def DGONMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2):
+def DOGNMF(matX, matS, matD, m, n, l, k, alpha, beta, max_iter, myeps_1, myeps_2):
     # Pretrain all layers
     dictH = {}
     dictV = {}
@@ -219,7 +219,7 @@ def run_model(model, dataset, alpha_range, beta_range, matImg, matGnd, k_1_list,
                 beta = parameters[p][1]
 
                 # run deep gonmf for max_iter times
-                matH, matV, n_iteration = DGONMF(matX, matS, matD, m, n, l, [k_1, k_2], alpha, beta, max_iter, myeps_1,
+                matH, matV, n_iteration = DOGNMF(matX, matS, matD, m, n, l, [k_1, k_2], alpha, beta, max_iter, myeps_1,
                                                  myeps_2)
 
                 iterations.append(n_iteration)
